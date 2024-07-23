@@ -7,9 +7,9 @@ const config: Config = {
   tagline: 'TON Static Analyzer',
   favicon: 'img/favicon.ico',
   url: 'https://nowarp.github.io/',
-  baseUrl: '/misti/',
+  baseUrl: '/',
   organizationName: 'nowarp',
-  projectName: 'misti',
+  projectName: 'Misti',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
@@ -53,7 +53,7 @@ const config: Config = {
         //   label: 'Tutorial',
         // },
         // {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/docs', label: 'Documentation', position: 'left'},
+        {to: '/misti/api', label: 'API Reference', position: 'left'},
         {
           href: 'https://github.com/nowarp/misti',
           label: 'GitHub',
