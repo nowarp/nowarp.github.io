@@ -7,10 +7,10 @@ const config: Config = {
   tagline: 'TON Static Analyzer',
   favicon: 'img/favicon.ico',
   url: 'https://nowarp.github.io/',
-  baseUrl: '/',
+  baseUrl: '/docs/misti',
   organizationName: 'nowarp',
-  projectName: 'Misti',
-  onBrokenLinks: 'throw',
+  projectName: 'misti',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
@@ -22,13 +22,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // editUrl:
-          //   'https://github.com/nowarp/nowarp.github.io/tree/master/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -52,8 +46,7 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Tutorial',
         // },
-        // {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/misti/api', label: 'API Reference', position: 'left'},
+        {to: '/api', label: 'API Reference', position: 'left'},
         {
           href: 'https://github.com/nowarp/misti',
           label: 'GitHub',
