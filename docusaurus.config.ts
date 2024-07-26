@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Misti',
   tagline: 'TON Static Analyzer',
-  favicon: 'img/favicon.ico',
+  // favicon: 'img/favicon.ico',
   url: 'https://nowarp.github.io/',
   baseUrl: '/docs/misti',
   organizationName: 'nowarp',
@@ -32,7 +32,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Misti',
       // logo: {
