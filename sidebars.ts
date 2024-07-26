@@ -59,6 +59,22 @@ const sidebars: SidebarsConfig = {
         }
       ],
     },
+    {
+      type: 'category',
+      label: 'Hacking',
+      items: [
+        {
+          type: 'doc',
+          id: 'hacking/contributing',
+          label: 'Contributing',
+        },
+        {
+          type: 'doc',
+          id: 'hacking/custom-detector',
+          label: 'Custom Detectors',
+        },
+      ],
+    },
   ],
 };
 
