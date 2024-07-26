@@ -9,6 +9,27 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Tutorial',
+      items: [
+        {
+          type: 'doc',
+          id: 'tutorial/install',
+          label: 'Installation',
+        },
+        {
+          type: 'doc',
+          id: 'tutorial/quickstart',
+          label: 'Quick Start',
+        },
+        {
+          type: 'doc',
+          id: 'tutorial/configuration',
+          label: 'Configuration',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Detectors',
       items: [
         {
