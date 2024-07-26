@@ -70,6 +70,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'hacking/design',
+          label: 'Design Overview',
+        },
+        {
+          type: 'doc',
           id: 'hacking/custom-detector',
           label: 'Custom Detectors',
         },
