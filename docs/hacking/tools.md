@@ -37,6 +37,24 @@ To view the SVG file in Firefox, use the following command:
 firefox output.svg
 ```
 
+For example, for the following contract:
+
+```
+fun test(): Int {
+  let sum: Int = 0;
+  let i: Int = 0;
+  repeat (10) {
+    i = i + 1;
+    sum = sum + i;
+  }
+  return sum;
+}
+```
+
+The following CFG will be generated:
+
+![CFG Example](/img/cfg-example.svg)
+
 ### VS Code Plugin
 
 For real-time visualization of DOT files, you can use [one of the available](https://marketplace.visualstudio.com/search?term=tag%3Agraphviz&target=VSCode&category=All%20categories&sortBy=Relevance) Graphviz plugins for Visual Studio Code. These plugins allows you to view DOT diagrams directly within the editor, facilitating easier debugging and development.
