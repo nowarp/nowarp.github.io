@@ -1,6 +1,23 @@
 # Contributing Guide
 
-We appreciate any contributions you make to improve Misti.
+Thank you for your interest in contributing to Misti. This guide provides the information you need to start, from reporting issues to coding and documentation. Your participation makes this project better.
+
+## Issues reporting
+When Misti encounters an error and crashes, it generates a report and saves it to a file, displaying a message similar to the following:
+
+```
+The error report was saved to the file: /tmp/misti/reports/2024-07-29T08-48-59-308Z.txt.
+Please help us by publishing it and the input sources at:
+https://github.com/nowarp/misti/issues/new.
+```
+
+We encourage you to report these issues as it helps improve the project and enhances the tool's reliability for everyone. Sharing these reports ensures that we can address and fix problems promptly, benefiting all users.
+
+## Documentation contribution
+
+We welcome contributions to our documentation. If you find areas that need improvement or clarification, feel free to edit, add, or suggest changes. You can create new issues related to documentation in our docs repository: [nowarp.github.io Issues](https://github.com/nowarp/nowarp.github.io/issues). Additionally, many documentation pages have an `Edit` button that allows you to make direct contributions easily.
+
+## Code contribution
 
 1. **Navigate Issues and Find Tasks**
    - Browse the issues [here](https://github.com/nowarp/misti/issues). Sometimes, it can be beneficial to find TODOs in the source code and tests for easy issues.
