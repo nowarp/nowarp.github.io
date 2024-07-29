@@ -7,7 +7,7 @@ ensure accurate mathematical operations.
 Performing division before multiplication can lead to unexpected results due to precision loss and rounding errors:
 * Precision Loss: Dividing first can result in significant precision loss, especially when dealing with integers or fixed-point numbers.
 * Rounding Errors: Early division might cause rounding errors that propagate through subsequent calculations.
-* Unexpected Behavior: Misordered operations can lead to incorrect outcomes, making debugging and maintenance more challenging.
+* Unexpected Behavior: Incorrectly ordered operations can lead to incorrect outcomes, making debugging and maintenance more challenging.
 
 ## Example
 ```tact

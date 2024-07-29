@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Datalog",
+    "worklist",
+    "Anders",
+    "Møller",
+    "Schwartzbach",
+    "Uday",
+    "Khedker",
+    "Graphviz",
+    "Tsvg",
+    "Graphviz",
+    "nowarp",
+    "initializaiton"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "tags",
+    "node_modules",
+    "dist"
+  ]
+}
+
+

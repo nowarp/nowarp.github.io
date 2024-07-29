@@ -6,7 +6,7 @@ Misti is a static analyzer, a tool that examines code without executing it, iden
 
 ## Souffle Datalog Solver
 
-Misti leverages the [Souffle datalog solver](https://souffle-lang.github.io), an industry-grade and highly efficient datalog solver designed specifically for program analysis. Souffle provides native parallel execution and is extremely fast, making it an ideal choice for analyzing complex codebases.
+Misti leverages the [Souffle Datalog solver](https://souffle-lang.github.io), an industry-grade and highly efficient Datalog solver designed specifically for program analysis. Souffle provides native parallel execution and is extremely fast, making it an ideal choice for analyzing complex codebases.
 
 ## Dataflow Analysis in Misti
 
