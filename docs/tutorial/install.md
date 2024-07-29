@@ -42,7 +42,7 @@ To verify that the installation was successful, you can run the following comman
 ./bin/misti --version
 ```
 
-If everything is set up correctly, you should see the version number of the static analyzer displayed in your terminal.
+If everything is set up correctly, you should see the version number of the static analyzer and the supported version of Tact displayed in your terminal.
 
 ## Troubleshooting
 

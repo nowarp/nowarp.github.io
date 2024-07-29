@@ -6,12 +6,12 @@ This guide helps you quickly run Misti, by specifying a Tact project configurati
 
 1. **Navigate to the Misti Directory**
 
-   ```bash
-   cd misti
-   ```
+```bash
+cd misti
+```
 
 2. **Execute the Analyzer**
 
-   ```bash
-   ./bin/misti test/projects/simple/tactConfig.json
-   ```
+```bash
+./bin/misti test/projects/simple/tactConfig.json
+```
