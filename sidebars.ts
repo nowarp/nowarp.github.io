@@ -75,6 +75,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'hacking/souffle',
+          label: 'Soufflé',
+        },
+        {
+          type: 'doc',
           id: 'hacking/tools',
           label: 'Tools',
         },
