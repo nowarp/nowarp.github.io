@@ -1,13 +1,15 @@
 ---
 id: intro
-title: Misti
+title: Introduction
 slug: /
 sidebar_position: 1
 ---
 
-Misti is a static analysis tool targeting smart contracts on the [TON blockchain](https://ton.org/).
+Misti is a static analysis tool designed for smart contracts on the [TON blockchain](https://ton.org/).
 
-Currently, it supports the [Tact](https://tact-lang.org/) language and will be extended to support [FunC](https://docs.ton.org/develop/func/overview) in the future.
+**Language Support:**
+- [Tact](https://tact-lang.org/) 1.4.1 is currently supported.
+- Support for [FunC](https://docs.ton.org/develop/func/overview) is planned.
 
 ## Use Cases
 
