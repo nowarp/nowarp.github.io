@@ -6,6 +6,7 @@ Before you begin, ensure you have the following software installed on your syste
 - Git
 - Yarn
 - Node.js
+- [Soufflé](https://souffle-lang.github.io/install)
 
 ## Steps to Install
 
