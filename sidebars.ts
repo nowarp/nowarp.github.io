@@ -34,27 +34,27 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
-          id: 'detectors/divideBeforeMultiply',
+          id: 'detectors/DivideBeforeMultiply',
           label: 'Divide before Multiply',
         },
         {
           type: 'doc',
-          id: 'detectors/neverAccessedVariables',
+          id: 'detectors/NeverAccessedVariables',
           label: 'Never-accessed Variables',
         },
         {
           type: 'doc',
-          id: 'detectors/readOnlyVariables',
+          id: 'detectors/ReadOnlyVariables',
           label: 'Read-only Variables',
         },
         {
           type: 'doc',
-          id: 'detectors/unboundLoops',
+          id: 'detectors/UnboundLoops',
           label: 'Unbound Loops',
         },
         {
           type: 'doc',
-          id: 'detectors/zeroAddress',
+          id: 'detectors/ZeroAddress',
           label: 'Zero Address',
         }
       ],
