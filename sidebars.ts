@@ -13,13 +13,8 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
-          id: 'tutorial/install',
-          label: 'Installation',
-        },
-        {
-          type: 'doc',
-          id: 'tutorial/quickstart',
-          label: 'Quick Start',
+          id: 'tutorial/getting-started',
+          label: 'Getting Started',
         },
         {
           type: 'doc',
