@@ -5,7 +5,7 @@ export default function Home(): JSX.Element {
   const history = useHistory();
 
   useEffect(() => {
-    history.push('/docs/misti/docs');
+    history.push('/tools/misti/docs');
   }, [history]);
 
   return (

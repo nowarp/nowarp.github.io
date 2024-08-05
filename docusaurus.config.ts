@@ -7,7 +7,7 @@ const config: Config = {
   tagline: 'TON Static Analyzer',
   // favicon: 'img/favicon.ico',
   url: 'https://nowarp.github.io/',
-  baseUrl: '/docs/misti',
+  baseUrl: '/tools/misti',
   organizationName: 'nowarp',
   projectName: 'misti',
   onBrokenLinks: 'warn',
