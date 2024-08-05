@@ -27,13 +27,16 @@ We welcome contributions to our documentation. If you find areas that need impro
    - Implement your changes. Feel free to ask questions in the issue if needed.
 
 3. **Ensure Tests Pass**
-   - Before creating a PR, make sure all tests are passing by running:
+   - Before creating a PR, make sure all tests and CI checks are passing by running:
      ```bash
-     yarn test
+     yarn test-all
      ```
 
 4. **Create a PR**
    - Submit your pull request [here](https://github.com/nowarp/misti/pulls)
+
+5. **Add a CHANGELOG entry**
+   - Describe your changes in the `CHANGELOG.md` file according to the existing structure.
 
 All guidelines and additional hacking tips are available in the repo. For low-level details not present in the docs, refer to [HACKING.md](https://github.com/nowarp/misti/blob/master/HACKING.md).
 
