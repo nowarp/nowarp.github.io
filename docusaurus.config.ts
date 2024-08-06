@@ -89,7 +89,7 @@ const config: Config = {
         //   ],
         // },
       ],
-      // copyright: `Copyright © ${new Date().getFullYear()} Built with Docusaurus.`,
+      copyright: `Supported by TON Foundation`,
     },
     prism: {
       theme: prismThemes.github,
