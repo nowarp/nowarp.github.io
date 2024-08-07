@@ -19,7 +19,7 @@ This guide provides an example of the JSON configuration file for Misti, detaili
 To run Misti with the specified configuration file, use the following command:
 
 ```bash
-./bin/misti --config path/to/mistiConfig.json test/projects/simple/tactConfig.json
+npx misti --config path/to/mistiConfig.json test/projects/simple/tactConfig.json
 ```
 
 This command tells Misti to use the provided configuration file to analyze the specified Tact project configuration.

@@ -11,13 +11,13 @@ Misti provides a feature to dump the Control Flow Graph (CFG) in both JSON and D
 To dump the CFG in JSON format, use the following command:
 
 ```bash
-./bin/misti --dump-cfg="json" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+npx misti --dump-cfg="json" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 To dump the CFG in DOT format, use the following command:
 
 ```bash
-./bin/misti --dump-cfg="dot" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+npx misti --dump-cfg="dot" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 ### Converting DOT to SVG
@@ -25,7 +25,7 @@ To dump the CFG in DOT format, use the following command:
 To convert the resulting DOT file to an SVG for visualization, you can save the generated DOT dump to a file and use [Graphviz](https://graphviz.org) with the following command:
 
 ```bash
-./bin/misti --dump-cfg="dot" <TACT_CONFIG_PATH|TACT_FILE_PATH> > output.dot
+npx misti --dump-cfg="dot" <TACT_CONFIG_PATH|TACT_FILE_PATH> > output.dot
 dot -Tsvg output.dot -o output.svg
 ```
 
