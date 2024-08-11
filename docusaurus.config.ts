@@ -11,7 +11,7 @@ const config: Config = {
   organizationName: 'nowarp',
   projectName: 'misti',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
