@@ -46,7 +46,11 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Tutorial',
         // },
-        {to: '/api', label: 'API Reference', position: 'left'},
+        {
+          type: 'docsVersionDropdown',
+          position: 'left',
+        },
+        {to: '/api/', label: 'API Reference', position: 'left'},
         {
           href: 'https://github.com/nowarp/misti',
           label: 'GitHub',
