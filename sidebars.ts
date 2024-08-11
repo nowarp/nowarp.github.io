@@ -83,6 +83,11 @@ const sidebars: SidebarsConfig = {
           id: 'hacking/custom-detector',
           label: 'Custom Detectors',
         },
+        {
+          type: 'doc',
+          id: 'hacking/CHANGELOG',
+          label: 'CHANGELOG',
+        },
       ],
     },
   ],
