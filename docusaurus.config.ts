@@ -50,7 +50,7 @@ const config: Config = {
           type: 'docsVersionDropdown',
           position: 'left',
         },
-        {to: '/api/', label: 'API Reference', position: 'left'},
+        {to: 'https://nowarp.github.io/tools/misti/api/', label: 'API Reference', position: 'left'},
         {
           href: 'https://github.com/nowarp/misti',
           label: 'GitHub',
