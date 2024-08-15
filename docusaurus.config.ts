@@ -40,12 +40,6 @@ const config: Config = {
       //   src: 'img/logo.svg',
       // },
       items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
         {
           type: 'docsVersionDropdown',
           position: 'left',
@@ -61,15 +55,6 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        // {
-        //   title: 'Docs',
-        //   items: [
-        //     {
-        //       label: 'Tutorial',
-        //       to: '/docs/intro',
-        //     },
-        //   ],
-        // },
         {
           title: 'Community',
           items: [
@@ -77,21 +62,12 @@ const config: Config = {
               label: 'Telegram',
               href: 'https://t.me/misti_dev',
             },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/nowarp/misti',
+            },
           ],
         },
-        // {
-        //   title: 'More',
-        //   items: [
-        //     {
-        //       label: 'Blog',
-        //       to: '/blog',
-        //     },
-        //     {
-        //       label: 'GitHub',
-        //       href: 'https://github.com/facebook/docusaurus',
-        //     },
-        //   ],
-        // },
       ],
       copyright: `Supported by TON Foundation`,
     },
