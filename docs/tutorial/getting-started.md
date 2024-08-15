@@ -22,5 +22,15 @@ npx misti test/projects/simple/tactConfig.json
 
 This will highlight any warnings the analyzer found.
 
+You can also add a script to your `package.json` to simplify running the linting process:
+
+```json
+{
+  "scripts": {
+    "lint": "npx misti test/projects/simple/tactConfig.json"
+  }
+}
+```
+
 ## Troubleshooting
 If you encounter any issues during the installation process, feel free to [create an issue](https://github.com/nowarp/misti/issues/new) or ask in the [Misti Telegram group](https://t.me/misti_dev).
