@@ -56,6 +56,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/ZeroAddress',
           label: 'Zero Address',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/ConstantAddress',
+          label: 'Constant Address',
         }
       ],
     },
