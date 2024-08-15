@@ -24,6 +24,11 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'doc',
+      id: 'detectors',
+      label: 'Detectors Overview',
+    },
+    {
       type: 'category',
       label: 'Detectors',
       items: [
