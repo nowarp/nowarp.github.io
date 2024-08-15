@@ -9,7 +9,7 @@ export default function Home() {
       description="The TON Static Analyzer">
       <header className={styles.heroBanner}>
         <h1 className={styles.heroTitle}>Welcome to Misti</h1>
-        <p className={styles.heroSubtitle}>The tool for static analysis in the TON ecosystem.</p>
+        <p className={styles.heroSubtitle}>The tool for static analysis in the <a href="https://ton.org/">TON</a> ecosystem.</p>
         <div className={styles.buttons}>
           <a
             className="button button--primary button--lg"
@@ -24,7 +24,7 @@ export default function Home() {
             <div className="row">
               <div className="col col--4">
                 <h2>🔒 Detect Code Issues</h2>
-                <p>Identify and fix potential security flaws and code style problems early in the development cycle.</p>
+                <p>Identify and fix potential <a href="/tools/misti/docs/detectors">security flaws and code problems</a> early in the development cycle.</p>
               </div>
               <div className="col col--4">
                 <h2>⚙️ Streamline Development</h2>
@@ -32,7 +32,7 @@ export default function Home() {
               </div>
               <div className="col col--4">
                 <h2>🛠️ Custom Detectors</h2>
-                <p>Create custom detectors to solve specific problems in your code or to provide a thorough security review if you are an auditor.</p>
+                <p>Create <a href="/tools/misti/docs/next/hacking/custom-detector">custom detectors</a> to solve specific problems in your code or to provide a thorough security review if you are an auditor.</p>
               </div>
             </div>
           </div>
