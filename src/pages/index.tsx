@@ -28,11 +28,11 @@ export default function Home() {
               </div>
               <div className="col col--4">
                 <h2>⚙️ Streamline Development</h2>
-                <p>Integrate Misti into your CI/CD pipeline to ensure continuous code quality checks.</p>
+                <p><a href="/tools/misti/docs/tutorial/ci-cd">Integrate</a> Misti into your CI/CD pipeline to ensure continuous code quality checks.</p>
               </div>
               <div className="col col--4">
                 <h2>🛠️ Custom Detectors</h2>
-                <p>Create <a href="/tools/misti/docs/next/hacking/custom-detector">custom detectors</a> to solve specific problems in your code or to provide a thorough security review if you are an auditor.</p>
+                <p>Create <a href="/tools/misti/docs/hacking/custom-detector">custom detectors</a> to solve specific problems in your code or to provide a thorough security review if you are an auditor.</p>
               </div>
             </div>
           </div>

@@ -18,6 +18,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'tutorial/ci-cd',
+          label: 'CI/CD Integration',
+        },
+        {
+          type: 'doc',
           id: 'tutorial/configuration',
           label: 'Configuration',
         },
