@@ -6,10 +6,15 @@ Integrating Misti into your CI/CD pipeline ensures continuous code quality check
 
 To integrate Misti into your GitHub Actions workflow, you need to add a command that runs Misti as part of your CI process. Here's how you can do it:
 
-1. Open your GitHub repository.
-2. Create or edit the GitHub Actions workflow YAML file (e.g., `.github/workflows/main.yml`).
+**1. Open your GitHub repository**
 
-3. Add the step to run Misti to your YAML file. For example:
+**2. Create or edit the GitHub Actions workflow YAML file**
+
+It could be located at e.g., `.github/workflows/main.yml`.
+
+**3. Add the step to run Misti to your YAML file**
+
+For example:
 
    ```yaml
    name: Run Misti
@@ -30,6 +35,6 @@ To integrate Misti into your GitHub Actions workflow, you need to add a command 
 
 The `npx misti /path/to/your/tact.config.json` command will run Misti against your project. If Misti detects any issues that are not suppressed by your configuration, it will return a non-zero exit code, causing the CI pipeline to fail.
 
-4. Adjusting the Misti Configuration:
+**4. Adjusting the Misti Configuration**
 
 If you find that Misti is too noisy (e.g., detecting issues that are not relevant to your project), you can adjust your Misti configuration file to suppress those warnings. Refer to the [Configuration](./configuration) section for more details on how to customize your settings.
