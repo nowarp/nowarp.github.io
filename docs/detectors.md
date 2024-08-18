@@ -8,13 +8,13 @@ sidebar_label: Detectors Overview
 
 Here's a list of all the detectors:
 
-- [Divide before Multiply](./detectors/DivideBeforeMultiply)
-- [Never-accessed Variables](./detectors/NeverAccessedVariables)
-- [Read-only Variables](./detectors/ReadOnlyVariables)
-- [Unbound Loops](./detectors/UnboundLoops)
-- [Zero Address](./detectors/ZeroAddress)
-- [Constant Address](./detectors/ConstantAddress)
-- [Branch Duplicate](./detectors/BranchDuplicate)
+- [Divide before Multiply](./DivideBeforeMultiply)
+- [Never-accessed Variables](./NeverAccessedVariables)
+- [Read-only Variables](./ReadOnlyVariables)
+- [Unbound Loops](./UnboundLoops)
+- [Zero Address](./ZeroAddress)
+- [Constant Address](./ConstantAddress)
+- [Branch Duplicate](./BranchDuplicate)
 
 Each detector is designed to catch specific issues in your code. Click on any of them to learn more.
 
