@@ -69,8 +69,8 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
-          id: 'detectors/Duplicate Branch',
-          label: 'Duplicate Branch',
+          id: 'detectors/BranchDuplicate',
+          label: 'Branch Duplicate',
         }
       ],
     },
