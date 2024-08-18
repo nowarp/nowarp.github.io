@@ -14,6 +14,7 @@ Here's a list of all the detectors:
 - [Unbound Loops](./detectors/UnboundLoops)
 - [Zero Address](./detectors/ZeroAddress)
 - [Constant Address](./detectors/ConstantAddress)
+- [Branch Duplicate](./detectors/BranchDuplicate)
 
 Each detector is designed to catch specific issues in your code. Click on any of them to learn more.
 
