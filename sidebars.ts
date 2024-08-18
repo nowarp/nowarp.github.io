@@ -66,6 +66,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/ConstantAddress',
           label: 'Constant Address',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/Duplicate Branch',
+          label: 'Duplicate Branch',
         }
       ],
     },
