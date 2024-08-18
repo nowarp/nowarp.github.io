@@ -14,6 +14,14 @@ Misti is distributed via npm and should be added to your Tact project [in the sa
 yarn add @nowarp/misti
 ```
 
+### Using Development Version
+The latest development version may be unstable, yet it includes all the recently added detectors and therefore can provide a more comprehensive analysis.
+
+To install the latest development version you should:
+1. Clone Misti: `git clone https://github.com/nowarp/misti`
+2. Build it: `cd misti && yarn install && yarn build`
+3. Use it in your Tact project: `cd /path/to/tact/project && yarn add file:/path/to/misti`
+
 ## Running the analysis
 Run Misti by specifying a Tact project configuration:
 ```
