@@ -68,6 +68,23 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Developers',
+          items: [
+            {
+              label: 'API Reference',
+              href: 'https://nowarp.github.io/tools/misti/api/',
+            },
+            {
+              label: 'Changelog',
+              href: 'https://github.com/nowarp/misti/blob/master/CHANGELOG.md',
+            },
+            {
+              label: 'Roadmap',
+              href: 'https://github.com/nowarp/misti/milestones',
+            },
+          ],
+        },
       ],
       copyright: `Supported by TON Foundation`,
     },

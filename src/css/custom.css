@@ -28,3 +28,11 @@
   --ifm-color-primary-lightest: #81C3ED;
   --docusaurus-highlighted-code-line-bg: rgba(75, 135, 179, 0.3);
 }
+
+.footer__links {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  gap: 2rem;
+  padding: 1rem;
+}
