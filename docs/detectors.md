@@ -17,6 +17,7 @@ Here's a list of all the detectors:
 - [Branch Duplicate](./BranchDuplicate)
 - [`dump` Is Used](./DumpIsUsed)
 - [Field Initialized Twice](./FieldDoubleInit)
+- [Prefer Augmented Assignment](./PreferAugmentedAssign)
 
 Each detector is designed to catch specific issues in your code. Click on any of them to learn more.
 
