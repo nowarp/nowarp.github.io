@@ -15,6 +15,8 @@ Here's a list of all the detectors:
 - [Zero Address](./ZeroAddress)
 - [Constant Address](./ConstantAddress)
 - [Branch Duplicate](./BranchDuplicate)
+- [`dump` Is Used](./DumpIsUsed)
+- [Field Initialized Twice](./FieldDoubleInit)
 
 Each detector is designed to catch specific issues in your code. Click on any of them to learn more.
 
