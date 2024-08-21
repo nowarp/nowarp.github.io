@@ -71,6 +71,21 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/BranchDuplicate',
           label: 'Branch Duplicate',
+        },
+        {
+          type: "doc",
+          id: "detectors/DumpIsUsed",
+          label: "`dump` Is Used"
+        },
+        {
+          type: "doc",
+          id: "detectors/FieldDoubleInit",
+          label: "Field Initialized Twice"
+        },
+        {
+          type: "doc",
+          id: "detectors/PreferAugmentedAssign",
+          label: "Prefer Augmented Assignment"
         }
       ],
     },
