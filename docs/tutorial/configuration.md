@@ -12,6 +12,10 @@ This guide provides an example of the JSON configuration file for Misti, detaili
 
 - **soufflePath** (string, optional): Directory to save generated Soufflé files which is helpful for debugging purposes. If not set, a temporary directory will be used.
 
+- **tactStdlibPath** (string, optional): Path to Tact standard library. If not set, the default stdlib from the actual Tact setup will be used.
+
+- **unusedPrefix** (string, default: "_"): Identifiers starting with this prefix won't be reported as unused by built-in detectors.
+
 - **verbosity** (string, optional): Verbosity level of the logs. Possible values are `quiet`, `debug`, and `default`.
 
 ## Running Misti with Configuration
@@ -30,14 +34,18 @@ By default, Misti enables all built-in detectors. Below is an example of the def
 
 ```json
 {
-  "detectors": [
+  "detectorsEnabled": [
     { "className": "DivideBeforeMultiply" },
     { "className": "ReadOnlyVariables" },
     { "className": "NeverAccessedVariables" },
     { "className": "UnboundLoops" },
-    { "className": "ZeroAddress" }
+    { "className": "ZeroAddress" },
+    { "className": "BranchDuplicate" },
+    { "className": "FieldDoubleInit" },
+    { "className": "PreferAugmentedAssign" }
   ],
-  "ignored_projects": [],
+  "ignoredProjects": [],
+  "unusedPrefix": "_",
   "verbosity": "default"
 }
 ```

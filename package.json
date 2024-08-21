@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "spell": "cspell \"**/*.{md,mdx}\""
+    "spell": "cspell --no-progress \"**/*.{md,mdx}\""
   },
   "dependencies": {
     "@docusaurus/core": "3.4.0",
