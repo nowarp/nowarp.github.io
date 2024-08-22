@@ -26,6 +26,11 @@ const sidebars: SidebarsConfig = {
           id: 'tutorial/configuration',
           label: 'Configuration',
         },
+        {
+          type: 'doc',
+          id: 'tutorial/blueprint',
+          label: 'Using with Blueprint',
+        },
       ],
     },
     {
