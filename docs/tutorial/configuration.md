@@ -8,7 +8,7 @@ This guide provides an example of the JSON configuration file for Misti, detaili
   - **className** (string, required): The class name of the detector.
   - **modulePath** (string, optional): The file path of the detector module.
 
-- **ignored_projects** (array of strings, optional): List of Tact projects to ignore during analysis.
+- **ignoredProjects** (array of strings, optional): List of Tact projects to ignore during analysis.
 
 - **soufflePath** (string, optional): Directory to save generated Soufflé files which is helpful for debugging purposes. If not set, a temporary directory will be used.
 
@@ -34,7 +34,7 @@ By default, Misti enables all built-in detectors. Below is an example of the def
 
 ```json
 {
-  "detectorsEnabled": [
+  "detectors": [
     { "className": "DivideBeforeMultiply" },
     { "className": "ReadOnlyVariables" },
     { "className": "NeverAccessedVariables" },
