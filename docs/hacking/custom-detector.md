@@ -8,37 +8,38 @@ Detectors are designed to be dynamically loaded by the Misti driver, and they ar
 
 ## Writing a Detector
 
-To write a custom detector, create a TypeScript file using the Misti API. Here's an example of how to implement a custom detector:
+You can create a new custom detector by executing Misti with the `--new-detector` option: `npx misti --new-detector myDetector`.
+
+This will create the `myDetector.ts` file, which contains the template code for writing your own custom detector logic leveraging the Misti API.
+
+Here's an example of how to implement a custom detector using Misti API:
 
 ```typescript
-import { Detector } from "../../src/detectors/detector";
-import { MistiContext } from "../../src/internals/context";
-import { CompilationUnit } from "../../src/internals/ir";
+import { Detector } from "@nowarp/misti/dist/detectors/detector";
+import { CompilationUnit } from "@nowarp/misti/dist/internals/ir";
 import {
-  createError,
-  MistiTactError,
+  MistiTactWarning,
   Severity,
-} from "../../src/internals/errors";
+} from "@nowarp/misti/dist/internals/errors";
 
 /**
  * An example of a custom detector that showcases the usage of the detector API.
  *
- * It reports all the contracts that don't have an explicit implementation of the init function.
+ * It reports all the contracts that doesn't have an explicit implementation of the init function.
  */
 export class ImplicitInit extends Detector {
-  check(ctx: MistiContext, cu: CompilationUnit): MistiTactError[] {
+  check(cu: CompilationUnit): MistiTactWarning[] {
     return Array.from(cu.contracts).reduce((foundErrors, [_, contract]) => {
       if (!cu.findMethodCFGByName(contract.name, "init")) {
-        const err = createError(
-          ctx,
-          `contract ${contract.name} doesn't define an init function`,
+        const err = this.makeError(
+          `Contract ${contract.name} doesn't define an init function`,
           Severity.INFO,
           contract.ref,
         );
         foundErrors.push(err);
       }
       return foundErrors;
-    }, [] as MistiTactError[]);
+    }, [] as MistiTactWarning[]);
   }
 }
 ```
@@ -53,7 +54,7 @@ After creating a detector, you need to specify it in your configuration. Update 
     { "className": "UnboundLoops" },
     { "className": "ZeroAddress" },
 
-    { "className": "ImplicitInit", "modulePath": "/path/to/implicitInit.ts" }
+    { "className": "ImplicitInit", "modulePath": "/path/to/myDetector.ts" }
   ],
   "ignored_projects": [],
   "verbosity": "default"
