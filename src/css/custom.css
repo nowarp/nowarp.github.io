@@ -36,3 +36,20 @@
   gap: 2rem;
   padding: 1rem;
 }
+
+.footer__link-item {
+  color: #34B3F1;
+}
+.footer__link-item:hover,
+.footer__link-item:active {
+  color: #1873C2;
+}
+
+.footer__copyright a {
+  color: #34B3F1;
+}
+.footer__copyright a:hover,
+.footer__copyright a:active {
+  color: #1873C2;
+}
+
