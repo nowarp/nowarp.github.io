@@ -22,5 +22,8 @@ Misti is designed to detect issues in smart contracts efficiently, making it ide
 
 Go ahead and read more about the tool, including its design, to fully leverage its capabilities and integrate it effectively into your workflow.
 
+## Name Origin
+The name "Misti" comes from the Misti volcano in Peru. It was chosen because it's catchy and easy to remember.
+
 ## Funding
 Misti has been [funded](https://github.com/ton-society/grants-and-bounties/issues/436) by [TON Foundation](https://ton.foundation). This support has enabled us to develop and maintain the tool.
