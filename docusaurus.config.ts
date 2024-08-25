@@ -24,6 +24,9 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
         },
+        // blog: {
+        //   routeBasePath: '/blog',
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -42,12 +45,6 @@ const config: Config = {
       items: [
         {
           type: 'docsVersionDropdown',
-          position: 'left',
-        },
-        {to: 'https://nowarp.github.io/tools/misti/api/', label: 'API Reference', position: 'left'},
-        {
-          href: 'https://github.com/nowarp/misti',
-          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -82,6 +79,15 @@ const config: Config = {
             {
               label: 'Roadmap',
               href: 'https://github.com/nowarp/misti/milestones',
+            },
+          ],
+        },
+        {
+          title: 'About',
+          items: [
+            {
+              label: 'Contact us',
+              href: 'https://t.me/jubnzv',
             },
           ],
         },
