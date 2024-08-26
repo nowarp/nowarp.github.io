@@ -24,9 +24,6 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
         },
-        // blog: {
-        //   routeBasePath: '/blog',
-        // },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -79,15 +76,6 @@ const config: Config = {
             {
               label: 'Roadmap',
               href: 'https://github.com/nowarp/misti/milestones',
-            },
-          ],
-        },
-        {
-          title: 'About',
-          items: [
-            {
-              label: 'Contact us',
-              href: 'https://t.me/jubnzv',
             },
           ],
         },
