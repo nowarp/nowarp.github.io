@@ -36,10 +36,10 @@ const config: Config = {
     // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Misti',
-      // logo: {
-      //   alt: 'My Site Logo',
-      //   src: 'img/logo.svg',
-      // },
+      logo: {
+        alt: 'Misti Logo',
+        src: 'img/misti.png',
+      },
       items: [
         {
           type: 'docsVersionDropdown',
