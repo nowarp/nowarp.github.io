@@ -11,6 +11,3 @@ mv ../misti/docs/api static
 # Generate docusaurus docs
 rm -rf ./build
 docusaurus build --out-dir build/tools/misti
-
-# Add index.html for redirection
-cp pages/index.html build/
