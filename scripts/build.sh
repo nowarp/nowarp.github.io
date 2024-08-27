@@ -10,4 +10,4 @@ mv ../misti/docs/api static
 
 # Generate docusaurus docs
 rm -rf ./build
-docusaurus build --out-dir build/tools/misti
+docusaurus build --out-dir build/
