@@ -5,7 +5,7 @@ set -eou pipefail
 pushd ../misti
 yarn docs --customCss ../nowarp.github.io/src/css/typedoc-custom.css
 popd
-rm -rf static/api
+rm -rf static/tools/misti/api
 mkdir -pv static/tools/misti
 mv ../misti/docs/api static/tools/misti/
 
