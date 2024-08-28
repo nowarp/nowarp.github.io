@@ -6,11 +6,11 @@ Misti provides an API to write custom detectors, allowing you to implement your 
 
 Detectors are designed to be dynamically loaded by the Misti driver, and they are present by TypeScript classes that implement the [`Detector`](https://nowarp.github.io/tools/misti/api/classes/detectors_detector.Detector.html) interface.
 
-## Writing a Detector
+## Creating a Detector
 
-You can create a new custom detector by executing Misti with the `--new-detector` option: `npx misti --new-detector myDetector`.
+You can create a new custom detector by executing Misti with the `--new-detector` option: `npx misti --new-detector implicitInit`.
 
-This will create the `myDetector.ts` file, which contains the template code for writing your own custom detector logic leveraging the Misti API.
+This will create the `implicitInit.ts` file, which contains the template code for writing your own custom detector logic leveraging the Misti API.
 
 Here's an example of how to implement a custom detector using Misti API:
 
@@ -27,7 +27,7 @@ import {
  *
  * It reports all the contracts that doesn't have an explicit implementation of the init function.
  */
-export class ImplicitInit extends Detector {
+export class MyDetector extends Detector {
   check(cu: CompilationUnit): MistiTactWarning[] {
     return Array.from(cu.contracts).reduce((foundErrors, [_, contract]) => {
       if (!cu.findMethodCFGByName(contract.name, "init")) {
@@ -44,25 +44,24 @@ export class ImplicitInit extends Detector {
 }
 ```
 
-After creating a detector, you need to specify it in your configuration. Update your Misti configuration file to include the path to your custom detector implementation, e.g.:
+### Testing the detector
+To run Misti with only your new detector, use the `--detectors` option, specifying the path to the detector and the Detector class name: `npx misti path/to/your/tact.config.json --detectors path/to/implicitInit.ts:ImplicitInit`.
+
+That's a good way to test the detector on the first run. You could also use the `--verbose` CLI option and set the environment variable `MISTI_TRACE=1` to facilitate debugging.
+
+### Saving the configuration
+After testing the detector, you can specify it in your configuration to enable it in future runs. Update your Misti configuration file to include the path to your custom detector implementation, e.g.:
 ```
 {
   "detectors": [
-    { "className": "DivideBeforeMultiply" },
-    { "className": "ReadOnlyVariables" },
-    { "className": "NeverAccessedVariables" },
-    { "className": "UnboundLoops" },
-    { "className": "ZeroAddress" },
-
-    { "className": "ImplicitInit", "modulePath": "/path/to/myDetector.ts" }
+    // Other detectors...
+    { "className": "ImplicitInit", "modulePath": "ImplicitInit.ts" }
   ],
-  "ignored_projects": [],
-  "verbosity": "default"
 }
 
 ```
 
-After this, you could run the created detector specifying a path to it: `--config path/to/mistiConfig.json test/projects/simple/tactConfig.json`.
+After this, you could run Misti specifying a path to a custom configuration `npx misti --config path/to/misti.config.json path/to/your/tact.config.json`.
 
 ## Example Detectors
 
