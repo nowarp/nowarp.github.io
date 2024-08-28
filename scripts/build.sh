@@ -6,7 +6,8 @@ pushd ../misti
 yarn docs --customCss ../nowarp.github.io/src/css/typedoc-custom.css
 popd
 rm -rf static/api
-mv ../misti/docs/api static
+mkdir -pv static/tools/misti
+mv ../misti/docs/api static/tools/misti/
 
 # Generate docusaurus docs
 rm -rf ./build
