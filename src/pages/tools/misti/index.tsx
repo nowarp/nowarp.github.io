@@ -43,10 +43,7 @@ export default function Home() {
             <div className="row">
               <div className="col col--12">
                 <p>
-                  💬 <strong>Need more?</strong> Reach me out:&nbsp;
-                  <a href="https://linkedin.com/in/jubnzv" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
-                  <a href="https://github.com/jubnzv" target="_blank" rel="noopener noreferrer">GitHub</a> | 
-                  <a href="https://t.me/jubnzv" target="_blank" rel="noopener noreferrer">Telegram</a>
+                  💬 <strong>Need more?</strong> Reach me out:&nbsp;<a href="https://t.me/jubnzv" target="_blank" rel="noopener noreferrer">@jubnzv</a>
                 </p>
               </div>
             </div>
