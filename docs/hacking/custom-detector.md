@@ -27,8 +27,8 @@ import {
  *
  * It reports all the contracts that doesn't have an explicit implementation of the init function.
  */
-export class MyDetector extends Detector {
-  check(cu: CompilationUnit): MistiTactWarning[] {
+export class ImplicitInit extends Detector {
+  async check(cu: CompilationUnit): Promise<MistiTactWarning[]> {
     return Array.from(cu.contracts).reduce((foundErrors, [_, contract]) => {
       if (!cu.findMethodCFGByName(contract.name, "init")) {
         const err = this.makeError(
