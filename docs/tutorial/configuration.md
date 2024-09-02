@@ -12,6 +12,8 @@ This guide provides an example of the JSON configuration file for Misti, detaili
 
 - **soufflePath** (string, optional): Directory to save generated Soufflé files which is helpful for debugging purposes. If not set, a temporary directory will be used.
 
+- **souffleVerbose** (boolean, optional): If set, generates more readable Soufflé files instead of making the result source code smaller.
+
 - **tactStdlibPath** (string, optional): Path to Tact standard library. If not set, the default stdlib from the actual Tact setup will be used.
 
 - **unusedPrefix** (string, default: "_"): Identifiers starting with this prefix won't be reported as unused by built-in detectors.
