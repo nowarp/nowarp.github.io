@@ -91,6 +91,11 @@ const sidebars: SidebarsConfig = {
           type: "doc",
           id: "detectors/PreferAugmentedAssign",
           label: "Prefer Augmented Assignment"
+        },
+        {
+          type: "doc",
+          id: "detectors/StringReceiversOverlap",
+          label: "String Receivers Overlap"
         }
       ],
     },

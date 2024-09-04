@@ -18,6 +18,7 @@ Here's a list of all the detectors:
 - [`dump` Is Used](./detectors/DumpIsUsed)
 - [Field Initialized Twice](./detectors/FieldDoubleInit)
 - [Prefer Augmented Assignment](./detectors/PreferAugmentedAssign)
+- [String Receivers Overlap](./detectors/StringReceiversOverlap)
 
 Each detector is designed to catch specific issues in your code. Click on any of them to learn more.
 
