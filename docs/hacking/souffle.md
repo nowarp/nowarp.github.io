@@ -10,7 +10,7 @@ Soufflé allows to express static analysis problems declaratively, making it eas
 
 ## Soufflé Integration in Misti
 
-The API for interacting with Soufflé in Misti is detailed [here](https://nowarp.github.io/docs/misti/api/modules/internals_souffle.html).
+The API for interacting with Soufflé in Misti is implemented in the [Souffle.js library](https://github.com/nowarp/souffle.js). See the documentation in the library's repository: https://github.com/nowarp/souffle.js.
 
 ### Creating Soufflé Programs
 
