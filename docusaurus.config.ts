@@ -6,7 +6,7 @@ const config: Config = {
   title: 'Misti',
   tagline: 'TON Static Analyzer',
   favicon: 'img/favicon.png',
-  url: 'https://nowarp.github.io/',
+  url: 'https://nowarp.io/',
   baseUrl: '/',
   organizationName: 'nowarp',
   projectName: 'misti',
@@ -68,7 +68,7 @@ const config: Config = {
           items: [
             {
               label: 'API Reference',
-              href: 'https://nowarp.github.io/tools/misti/api/',
+              href: 'https://nowarp.io/tools/misti/api/',
             },
             {
               label: 'Changelog',
