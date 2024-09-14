@@ -45,6 +45,20 @@ const config: Config = {
           type: 'docsVersionDropdown',
           position: 'right',
         },
+        {
+          label: 'API Reference',
+          position: 'right',
+          items: [
+            {
+              label: 'Misti',
+              to: '/tools/misti/api',
+            },
+            {
+              label: 'Souffle.js',
+              to: '/lib/souffle-js/api',
+            },
+          ],
+        },
       ],
     },
     footer: {
