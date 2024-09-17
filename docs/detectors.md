@@ -8,17 +8,19 @@ sidebar_label: Detectors Overview
 
 Here's a list of all the detectors:
 
-- [Divide before Multiply](./detectors/DivideBeforeMultiply)
-- [Never-accessed Variables](./detectors/NeverAccessedVariables)
-- [Read-only Variables](./detectors/ReadOnlyVariables)
-- [Unbound Loops](./detectors/UnboundLoops)
-- [Zero Address](./detectors/ZeroAddress)
-- [Constant Address](./detectors/ConstantAddress)
-- [Branch Duplicate](./detectors/BranchDuplicate)
-- [`dump` Is Used](./detectors/DumpIsUsed)
-- [Field Initialized Twice](./detectors/FieldDoubleInit)
-- [Prefer Augmented Assignment](./detectors/PreferAugmentedAssign)
-- [String Receivers Overlap](./detectors/StringReceiversOverlap)
+- [Branch Duplicate](./detectors/BranchDuplicate.md)
+- [Constant Address](./detectors/ConstantAddress.md)
+- [Divide before Multiply](./detectors/DivideBeforeMultiply.md) (requires Soufflé)
+- [`dump` Is Used](./detectors/DumpIsUsed.md)
+- [Field Initialized Twice](./detectors/FieldDoubleInit.md)
+- [Never-accessed Variables](./detectors/NeverAccessedVariables.md)
+- [Prefer Augmented Assign](./detectors/PreferAugmentedAssign.md)
+- [Read-only Variables](./detectors/ReadOnlyVariables.md) (requires Soufflé)
+- [String Receivers Overlap](./detectors/StringReceiversOverlap.md)
+- [Unbound Loops](./detectors/UnboundLoops.md) (requires Soufflé)
+- [Zero Address](./detectors/ZeroAddress.md)
+
+Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 
 Each detector is designed to catch specific issues in your code. Click on any of them to learn more.
 
