@@ -5,7 +5,7 @@ This guide will walk you through the steps to install and set up the Misti stati
 Before you begin, ensure you have the following software installed on your system:
 - Git
 - Yarn
-- Node.js
+- Node.js version 22 or higher
 - [Soufflé](https://souffle-lang.github.io/install)
 
 ## Installation
