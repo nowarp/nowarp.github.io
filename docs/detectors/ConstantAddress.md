@@ -1,5 +1,4 @@
-# Constant Address
-
+# ConstantAddress
 An optional detector that highlights all the constant addresses appearing in the source code.
 
 ## Why is it bad?

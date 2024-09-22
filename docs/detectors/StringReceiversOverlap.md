@@ -1,5 +1,4 @@
-# String Receivers Overlap
-
+# StringReceiversOverlap
 A detector that finds overlapping messages between general string receivers and string receivers.
 
 ## Why is it bad?
@@ -22,3 +21,4 @@ contract Test {
   receive("foobar") { throw(1042) }
   receive(msg: String) {}
 }
+```

@@ -1,9 +1,11 @@
-# `dump` Is Used
-
+# DumpIsUsed
 An optional detector that highlights all the `dump` function calls.
 
 ## Why is it bad?
-The `dump` function is a debug print that shouldn't be in the final code. Even though the compiler removes it in production, its presence suggests the developer was debugging something. This can flag areas where issues might exist, so auditors should take a closer look at these parts of the code.
+The `dump` function is a debug print that shouldn't be in the final code.
+Even though the compiler removes it in production, its presence suggests the
+developer was debugging something. This can flag areas where issues might exist,
+so auditors should take a closer look at these parts of the code.
 
 ## Example
 ```tact

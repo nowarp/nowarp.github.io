@@ -1,5 +1,4 @@
-# Never-accessed Variables
-
+# NeverAccessedVariables
 A detector that identifies write-only or unused variables, fields and constants.
 
 ## Why is it bad?
@@ -23,7 +22,7 @@ Use instead:
 const MAX_SUPPLY: Int = 1000;
 
 fun mint(to: Address, amount: Int) {
-  // OK: Fixed after the linter highlighted this warning
+  // OK: Fixed after the analyzer highlighted this warning
   require(totalSupply + amount <= MAX_SUPPLY, "Exceeds max supply");
   balances.set(to, balances.get(to)!! + amount);
   totalSupply += amount;

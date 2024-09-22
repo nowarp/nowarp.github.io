@@ -44,59 +44,79 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
-          id: 'detectors/DivideBeforeMultiply',
-          label: 'Divide before Multiply',
+          id: 'detectors/ArgCopyMutation',
+          label: 'ArgCopyMutation',
         },
         {
           type: 'doc',
-          id: 'detectors/NeverAccessedVariables',
-          label: 'Never-accessed Variables',
-        },
-        {
-          type: 'doc',
-          id: 'detectors/ReadOnlyVariables',
-          label: 'Read-only Variables',
-        },
-        {
-          type: 'doc',
-          id: 'detectors/UnboundLoops',
-          label: 'Unbound Loops',
-        },
-        {
-          type: 'doc',
-          id: 'detectors/ZeroAddress',
-          label: 'Zero Address',
-        },
-        {
-          type: 'doc',
-          id: 'detectors/ConstantAddress',
-          label: 'Constant Address',
+          id: 'detectors/AsmIsUsed',
+          label: 'AsmIsUsed',
         },
         {
           type: 'doc',
           id: 'detectors/BranchDuplicate',
-          label: 'Branch Duplicate',
+          label: 'BranchDuplicate',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/ConstantAddress',
+          label: 'ConstantAddress',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/DivideBeforeMultiply',
+          label: 'DivideBeforeMultiply',
         },
         {
           type: "doc",
           id: "detectors/DumpIsUsed",
-          label: "`dump` Is Used"
+          label: "DumpIsUsed"
         },
         {
           type: "doc",
           id: "detectors/FieldDoubleInit",
-          label: "Field Initialized Twice"
+          label: "FieldDoubleInit"
+        },
+        {
+          type: "doc",
+          id: "detectors/InheritedStateMutation",
+          label: "InheritedStateMutation"
+        },
+        {
+          type: 'doc',
+          id: 'detectors/NeverAccessedVariables',
+          label: 'NeverAccessedVariables',
         },
         {
           type: "doc",
           id: "detectors/PreferAugmentedAssign",
-          label: "Prefer Augmented Assignment"
+          label: "PreferAugmentedAssign"
+        },
+        {
+          type: "doc",
+          id: "detectors/PreferredStdlibApi",
+          label: "PreferredStdlibApi"
+        },
+        {
+          type: 'doc',
+          id: 'detectors/ReadOnlyVariables',
+          label: 'ReadOnlyVariables',
         },
         {
           type: "doc",
           id: "detectors/StringReceiversOverlap",
-          label: "String Receivers Overlap"
-        }
+          label: "StringReceiversOverlap"
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnboundLoops',
+          label: 'UnboundLoops',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/ZeroAddress',
+          label: 'ZeroAddress',
+        },
       ],
     },
     {

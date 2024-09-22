@@ -1,5 +1,4 @@
-# Zero Address
-
+# ZeroAddress
 A detector that identifies uses of the zero address.
 
 ## Why is it bad?
@@ -27,7 +26,7 @@ Use instead:
 contract Proxy {
   to: Address;
   init(to: Address) {
-    // Fixed: Using the input value on initializaiton.
+    // Fixed: Using the input value on initialization.
     self.to = to;
   }
   fun setAddress(to: Address) {

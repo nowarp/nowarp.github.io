@@ -1,5 +1,4 @@
-# Read-only Variables
-
+# ReadOnlyVariables
 A detector that identifies read-only variables and fields.
 
 ## Why is it bad?
@@ -20,7 +19,7 @@ Use instead:
 const DISCOUNT_AMOUNT: Int = 10;
 
 fun calculateFinalPrice(price: Int): Int {
-  // OK: Fixed after the linter highlighted this warning
+  // OK: Fixed after the analyzer highlighted this warning
   return price - DISCOUNT_AMOUNT;
 }
 ```

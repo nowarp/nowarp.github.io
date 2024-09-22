@@ -1,5 +1,4 @@
-# Branch Duplicate
-
+# BranchDuplicate
 Detector that reports duplicated code in conditional branches.
 
 ## Why is it bad?

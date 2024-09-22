@@ -1,5 +1,4 @@
-# Divide before Multiply
-
+# DivideBeforeMultiply
 A detector that identifies and corrects instances of division before multiplication to
 ensure accurate mathematical operations.
 
