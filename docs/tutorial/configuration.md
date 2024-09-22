@@ -44,9 +44,13 @@ By default, Misti enables all built-in detectors. Below is an example of the def
     { "className": "ZeroAddress" },
     { "className": "BranchDuplicate" },
     { "className": "FieldDoubleInit" },
-    { "className": "PreferAugmentedAssign" }
+    { "className": "PreferAugmentedAssign" },
+    { "className": "StringReceiversOverlap" },
+    { "className": "ArgCopyMutation" }
   ],
   "ignoredProjects": [],
+  "soufflePath": "/tmp/misti/souffle",
+  "souffleVerbose": false,
   "unusedPrefix": "_",
   "verbosity": "default"
 }

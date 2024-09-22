@@ -23,6 +23,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'tutorial/cli',
+          label: 'Command-Line Interface',
+        },
+        {
+          type: 'doc',
           id: 'tutorial/configuration',
           label: 'Configuration',
         },
