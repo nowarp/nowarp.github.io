@@ -58,7 +58,6 @@ After testing the detector, you can specify it in your configuration to enable i
     { "className": "ImplicitInit", "modulePath": "ImplicitInit.ts" }
   ],
 }
-
 ```
 
 After this, you could run Misti specifying a path to a custom configuration `npx misti --config path/to/misti.config.json path/to/your/tact.config.json`.
