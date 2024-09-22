@@ -25,7 +25,7 @@ To install the latest development version you should:
 ## Running the analysis
 Run Misti by specifying a Tact project configuration:
 ```
-npx misti test/projects/simple/tactConfig.json
+npx misti path/to/tact.config.json
 ```
 
 This will highlight any warnings the analyzer found.
@@ -35,10 +35,42 @@ You can also add a script to your `package.json` to simplify running the linting
 ```json
 {
   "scripts": {
-    "lint": "npx misti test/projects/simple/tactConfig.json"
+    "lint": "npx misti path/to/tact.config.json"
   }
 }
 ```
+
+## More usage examples
+
+Below are a few usage examples for common scenarios when using [the `misti` CLI](./cli.md).
+
+### Suppressing Specific Detectors
+
+To run `misti` while suppressing specific detectors, such as `ReadOnlyVariables`:
+
+```bash
+npx misti --suppress ReadOnlyVariables path/to/tact.config.json
+```
+
+### Enabling All Detectors
+
+Running `misti` with all available built-in detectors enabled:
+
+```bash
+npx misti --all-detectors path/to/tact.config.json
+```
+
+It is recommended to do that when auditing the project.
+
+### Running in Quiet Mode
+
+To suppress all output while running `misti` getting just a return code:
+
+```bash
+npx misti --quiet path/to/tact.config.json
+```
+
+This might be useful in scripts and CI/CD.
 
 ## Troubleshooting
 If you encounter any issues during the installation process, feel free to [create an issue](https://github.com/nowarp/misti/issues/new) or ask in the [Misti Telegram group](https://t.me/misti_dev).
