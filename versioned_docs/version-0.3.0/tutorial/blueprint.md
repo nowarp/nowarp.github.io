@@ -8,7 +8,7 @@ Misti can be used in Blueprint projects by leveraging the [`blueprint-misti`](ht
 
 Add the plugin and the recent version of Tact to the `package.json` of your Blueprint project by running:
 ```bash
-yarn add tact
+yarn add @tact-lang/compiler
 yarn add @nowarp/blueprint-misti
 ```
 
