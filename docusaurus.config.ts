@@ -52,10 +52,14 @@ const config: Config = {
             {
               label: 'Misti',
               to: '/tools/misti/api',
+              target: '_blank',
+              rel: 'noopener noreferrer',
             },
             {
               label: 'Souffle.js',
               to: '/lib/souffle-js/api',
+              target: '_blank',
+              rel: 'noopener noreferrer',
             },
           ],
         },
