@@ -1,5 +1,5 @@
 # DumpIsUsed
-An optional detector that highlights all the `dump` function calls.
+An optional detector that highlights all the `dump` debug prints.
 
 ## Why is it bad?
 The `dump` function is a debug print that shouldn't be in the final code.

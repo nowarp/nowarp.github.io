@@ -94,6 +94,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "detectors/OptimalMathFunction",
+          label: "OptimalMathFunction"
+        },
+        {
+          type: "doc",
           id: "detectors/PreferAugmentedAssign",
           label: "PreferAugmentedAssign"
         },
