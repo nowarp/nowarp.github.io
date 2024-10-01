@@ -135,6 +135,32 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'doc',
+      id: 'tools',
+      label: 'Tools Overview',
+    },
+    {
+      type: 'category',
+      label: 'Tools',
+      items: [
+        {
+          type: 'doc',
+          id: 'tools/DumpAst',
+          label: 'DumpAst',
+        },
+        {
+          type: 'doc',
+          id: 'tools/DumpCfg',
+          label: 'DumpCfg',
+        },
+        {
+          type: 'doc',
+          id: 'tools/DumpConfig',
+          label: 'DumpConfig',
+        }
+      ]
+    },
+    {
       type: 'category',
       label: 'Hacking',
       items: [
@@ -152,11 +178,6 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'hacking/souffle',
           label: 'Soufflé',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/tools',
-          label: 'Tools',
         },
         {
           type: 'doc',
