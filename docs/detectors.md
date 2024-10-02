@@ -8,25 +8,25 @@ sidebar_label: Detectors Overview
 
 Misti currently supports 17 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices:
 
-| #  | Detector                                                        | Requires Soufflé | Enabled by default |
-|----|-----------------------------------------------------------------|------------------|--------------------|
-| 1  | [ArgCopyMutation](./detectors/ArgCopyMutation.md)               |                  | ✔                  |
-| 2  | [AsmIsUsed](./detectors/AsmIsUsed.md)                           |                  |                    |
-| 3  | [BranchDuplicate](./detectors/BranchDuplicate.md)               |                  | ✔                  |
-| 4  | [ConstantAddress](./detectors/ConstantAddress.md)               |                  |                    |
-| 5  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md)     | ✔                | ✔                  |
-| 6  | [DumpIsUsed](./detectors/DumpIsUsed.md)                         |                  |                    |
-| 7  | [DuplicatedCondition](./detectors/DuplicatedCondition.md)       |                  | ✔                  |
-| 8  | [FieldDoubleInit](./detectors/FieldDoubleInit.md)               |                  | ✔                  |
-| 9  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) |                  |                    |
-| 10 | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) |                  | ✔                  |
-| 11 | [OptimalMathFunction](./detectors/OptimalMathFunction.md)       |                  | ✔                  |
-| 12 | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md)   |                  | ✔                  |
-| 13 | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md)         |                  |                    |
-| 14 | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md)           | ✔                | ✔                  |
-| 15 | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) |                  | ✔                  |
-| 16 | [UnboundLoops](./detectors/UnboundLoops.md)                     | ✔                | ✔                  |
-| 17 | [ZeroAddress](./detectors/ZeroAddress.md)                       |                  | ✔                  |
+| #  | Detector | Severity | Requires Soufflé | Enabled by default |
+|----|-----------|-----------|--------------------|---------------------|
+| 1  | [ArgCopyMutation](./detectors/ArgCopyMutation.md) | High |  | ✔ |
+| 2  | [AsmIsUsed](./detectors/AsmIsUsed.md) | Info |  |  |
+| 3  | [BranchDuplicate](./detectors/BranchDuplicate.md) | High |  | ✔ |
+| 4  | [ConstantAddress](./detectors/ConstantAddress.md) | Info |  |  |
+| 5  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md) | High | ✔ | ✔ |
+| 6  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info |  |  |
+| 7  | [DuplicatedCondition](./detectors/DuplicatedCondition.md) | High |  | ✔ |
+| 8  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
+| 9  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
+| 10  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
+| 11  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
+| 12  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
+| 13  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
+| 14  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
+| 15  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 16  | [UnboundLoops](./detectors/UnboundLoops.md) | High | ✔ | ✔ |
+| 17  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 
