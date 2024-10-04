@@ -6,7 +6,7 @@ sidebar_label: Detectors Overview
 
 # Detectors Overview
 
-Misti currently supports 18 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices:
+Misti currently supports 19 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices:
 
 | #  | Detector | Severity | Requires Soufflé | Enabled by default |
 |----|-----------|-----------|--------------------|---------------------|
@@ -17,17 +17,18 @@ Misti currently supports 18 detectors designed to identify specific code issues,
 | 5  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md) | High | ✔ | ✔ |
 | 6  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info |  |  |
 | 7  | [DuplicatedCondition](./detectors/DuplicatedCondition.md) | High |  | ✔ |
-| 8  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
-| 9  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
-| 10  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
-| 11  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
-| 12  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
-| 13  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
-| 14  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
-| 15  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 16  | [UnboundLoops](./detectors/UnboundLoops.md) | High | ✔ | ✔ |
-| 17  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 18  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 8  | [EnsurePrgSeed](./detectors/EnsurePrgSeed.md) | Medium |  | ✔ |
+| 9  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
+| 10  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
+| 11  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
+| 12  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
+| 13  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
+| 14  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
+| 15  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
+| 16  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 17  | [UnboundLoops](./detectors/UnboundLoops.md) | High | ✔ | ✔ |
+| 18  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 19  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

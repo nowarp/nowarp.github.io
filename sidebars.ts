@@ -84,6 +84,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "detectors/EnsurePrgSeed",
+          label: "EnsurePrgSeed"
+        },
+        {
+          type: "doc",
           id: "detectors/FieldDoubleInit",
           label: "FieldDoubleInit"
         },
