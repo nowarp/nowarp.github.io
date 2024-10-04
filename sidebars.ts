@@ -129,6 +129,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/UnusedOptional',
+          label: 'UnusedOptional',
+        },
+        {
+          type: 'doc',
           id: 'detectors/ZeroAddress',
           label: 'ZeroAddress',
         },

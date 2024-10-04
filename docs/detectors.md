@@ -6,7 +6,7 @@ sidebar_label: Detectors Overview
 
 # Detectors Overview
 
-Misti currently supports 17 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices:
+Misti currently supports 18 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices:
 
 | #  | Detector | Severity | Requires Soufflé | Enabled by default |
 |----|-----------|-----------|--------------------|---------------------|
@@ -26,7 +26,8 @@ Misti currently supports 17 detectors designed to identify specific code issues,
 | 14  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
 | 15  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
 | 16  | [UnboundLoops](./detectors/UnboundLoops.md) | High | ✔ | ✔ |
-| 17  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 17  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 18  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

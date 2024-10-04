@@ -1,6 +1,6 @@
 # ArgCopyMutation
 A detector that highlights cases where function argument mutations are ineffective
-due to call-by-value semantics in Tact.
+due to [call-by-value semantics](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_value) in Tact.
 
 ## Why is it bad?
 In Tact, function arguments are passed by value, meaning that any mutations applied
