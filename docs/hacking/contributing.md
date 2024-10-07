@@ -38,6 +38,8 @@ We welcome contributions to our documentation. If you find areas that need impro
 5. **Add a CHANGELOG entry**
    - Describe your changes in the `CHANGELOG.md` file according to the existing structure.
 
-All guidelines and additional hacking tips are available in the repo. For low-level details not present in the docs, refer to [HACKING.md](https://github.com/nowarp/misti/blob/master/HACKING.md).
+All guidelines and additional hacking tips are available in the repo. For low-level details not present in the docs, refer to [developing-misti.md](nowarp.github.io/docs/hacking/developing-misti.md).
+
+For more detailed instructions on code contributions, please refer to the [Code Contribution Guide](https://nowarp.io/tools/misti/docs/hacking/contributing#code-contribution).
 
 Thank you for your contributions!
