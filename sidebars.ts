@@ -73,29 +73,29 @@ const sidebars: SidebarsConfig = {
           label: 'DivideBeforeMultiply',
         },
         {
-          type: "doc",
-          id: "detectors/DumpIsUsed",
-          label: "DumpIsUsed"
+          type: 'doc',
+          id: 'detectors/DumpIsUsed',
+          label: 'DumpIsUsed',
         },
         {
-          type: "doc",
-          id: "detectors/DuplicatedCondition",
-          label: "DuplicatedCondition"
+          type: 'doc',
+          id: 'detectors/DuplicatedCondition',
+          label: 'DuplicatedCondition',
         },
         {
-          type: "doc",
-          id: "detectors/EnsurePrgSeed",
-          label: "EnsurePrgSeed"
+          type: 'doc',
+          id: 'detectors/EnsurePrgSeed',
+          label: 'EnsurePrgSeed',
         },
         {
-          type: "doc",
-          id: "detectors/FieldDoubleInit",
-          label: "FieldDoubleInit"
+          type: 'doc',
+          id: 'detectors/FieldDoubleInit',
+          label: 'FieldDoubleInit',
         },
         {
-          type: "doc",
-          id: "detectors/InheritedStateMutation",
-          label: "InheritedStateMutation"
+          type: 'doc',
+          id: 'detectors/InheritedStateMutation',
+          label: 'InheritedStateMutation',
         },
         {
           type: 'doc',
@@ -103,19 +103,19 @@ const sidebars: SidebarsConfig = {
           label: 'NeverAccessedVariables',
         },
         {
-          type: "doc",
-          id: "detectors/OptimalMathFunction",
-          label: "OptimalMathFunction"
+          type: 'doc',
+          id: 'detectors/OptimalMathFunction',
+          label: 'OptimalMathFunction',
         },
         {
-          type: "doc",
-          id: "detectors/PreferAugmentedAssign",
-          label: "PreferAugmentedAssign"
+          type: 'doc',
+          id: 'detectors/PreferAugmentedAssign',
+          label: 'PreferAugmentedAssign',
         },
         {
-          type: "doc",
-          id: "detectors/PreferredStdlibApi",
-          label: "PreferredStdlibApi"
+          type: 'doc',
+          id: 'detectors/PreferredStdlibApi',
+          label: 'PreferredStdlibApi',
         },
         {
           type: 'doc',
@@ -123,9 +123,9 @@ const sidebars: SidebarsConfig = {
           label: 'ReadOnlyVariables',
         },
         {
-          type: "doc",
-          id: "detectors/StringReceiversOverlap",
-          label: "StringReceiversOverlap"
+          type: 'doc',
+          id: 'detectors/StringReceiversOverlap',
+          label: 'StringReceiversOverlap',
         },
         {
           type: 'doc',
@@ -167,8 +167,8 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'tools/DumpConfig',
           label: 'DumpConfig',
-        }
-      ]
+        },
+      ],
     },
     {
       type: 'category',
@@ -178,6 +178,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'hacking/contributing',
           label: 'Contributing',
+        },
+        {
+          type: 'doc',
+          id: 'hacking/developing-misti',
+          label: 'Developing Misti',
         },
         {
           type: 'doc',
