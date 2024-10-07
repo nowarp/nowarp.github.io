@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "spell": "cspell --no-progress \"**/*.{md,mdx}\""
+    "spell": "cspell --no-progress \"docs/**/*.{md,mdx}\""
   },
   "dependencies": {
     "@docusaurus/core": "3.4.0",
@@ -28,7 +28,7 @@
     "@docusaurus/module-type-aliases": "3.4.0",
     "@docusaurus/tsconfig": "3.4.0",
     "@docusaurus/types": "3.4.0",
-    "cspell": "^8.12.1",
+    "cspell": "^8.14.4",
     "typescript": "~5.2.2"
   },
   "browserslist": {
