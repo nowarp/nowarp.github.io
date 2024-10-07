@@ -1,8 +1,8 @@
-# Building from Source
+# Developing Misti
 
 ## Prerequisites
 
-Before you begin, please refer to the [Getting Started documentation](https://nowarp.io/tools/misti/docs/next/tutorial/getting-started) for the required system dependencies. This helps avoid maintaining the list of dependencies in multiple places.
+Before you begin, please refer to the [Getting Started documentation](https://nowarp.io/tools/misti/docs/next/tutorial/getting-started) for the required system dependencies.
 
 ## Cloning the Repository
 
@@ -62,6 +62,4 @@ And for another specific test:
 BLESS=1 yarn test test/builtinDetectors.spec.ts test/good/branch-duplicate.tact
 ```
 
-## Additional Resources
 
-For more information on working with Misti internals, refer to [HACKING.md](https://github.com/nowarp/misti/blob/master/HACKING.md).
