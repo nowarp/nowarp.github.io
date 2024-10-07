@@ -39,8 +39,6 @@ We welcome contributions to our documentation. If you find areas that need impro
    - Describe your changes in the `CHANGELOG.md` file according to the existing structure.
 
 
-See [Developing Misti](nowarp.github.io/docs/hacking/developing-misti.md) for information about initializing the environment and additional hacking tips.
-
-For more detailed instructions on code contributions, please refer to the [Code Contribution Guide](https://nowarp.io/tools/misti/docs/hacking/contributing#code-contribution).
+See [Developing Misti](./developing-misti.md) for information about initializing the environment and additional hacking tips.
 
 Thank you for your contributions!
