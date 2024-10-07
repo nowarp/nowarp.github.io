@@ -176,6 +176,16 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
+          id: 'hacking/contributing',
+          label: 'Contributing',
+        },
+        {
+          type: 'doc',
+          id: 'hacking/developing-misti',
+          label: 'Developing Misti',
+        },
+        {
+          type: 'doc',
           id: 'hacking/design',
           label: 'Design Overview',
         },
@@ -188,16 +198,6 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'hacking/custom-detector',
           label: 'Custom Detectors',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/developing-misti',
-          label: 'Developing Misti',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/contributing',
-          label: 'Contributing',
         },
       ],
     },
