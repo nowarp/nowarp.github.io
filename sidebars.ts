@@ -89,6 +89,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/FalseCondition',
+          label: 'FalseCondition',
+        },
+        {
+          type: 'doc',
           id: 'detectors/FieldDoubleInit',
           label: 'FieldDoubleInit',
         },
