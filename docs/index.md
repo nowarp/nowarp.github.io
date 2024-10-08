@@ -26,7 +26,8 @@ Go ahead and read more about the tool, including its design, to fully leverage i
 The name "Misti" comes from the Misti volcano in Peru. It was chosen because it's catchy and easy to remember.
 
 ## Funding
-Misti has been funded by [TON Foundation](https://ton.foundation):
+Misti has been funded by the following [TON Foundation](https://ton.foundation) grants:
 * [TON Static Analyzer · #436](https://github.com/ton-society/grants-and-bounties/issues/436)
 * [Upgrade Misti with Advanced Tact Detectors · #777](https://github.com/ton-society/grants-and-bounties/issues/777)
+
 This support has enabled us to develop and maintain the tool.
