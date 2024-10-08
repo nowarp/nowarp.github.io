@@ -4,21 +4,29 @@ This guide provides an example of the JSON configuration file for Misti, detaili
 
 ### Configuration Options
 
-- **detectors**: List of detectors to run. Each detector can be specified with a `className` and optionally a `modulePath` if it’s a custom detector.
+- **detectors** (array of objects, optional): List of detectors to run. Each detector can be specified with a `className` and optionally a `modulePath` if it’s a custom detector.
   - **className** (string, required): The class name of the detector.
-  - **modulePath** (string, optional): The file path of the detector module.
+  - **modulePath** (string, optional): The file path of the detector module if it's a custom implementation.
+
+- **tools** (array of objects, optional): List of tools to enable, each with its own configuration.
+  - **className** (string, required): The class name of the tool.
+  - **options** (object, optional): Key-value configuration options for the tool.
+
+- **suppressions** (array of objects, optional): A list of suppressions for warnings.
+  - **detector** (string, required): The detector to suppress warnings for.
+  - **position** (string, required): The position in the code where the warning should be suppressed.
 
 - **ignoredProjects** (array of strings, optional): List of Tact projects to ignore during analysis.
 
-- **soufflePath** (string, optional): Directory to save generated Soufflé files which is helpful for debugging purposes. If not set, a temporary directory will be used.
+- **soufflePath** (string, optional): Directory to save generated Soufflé files, useful for debugging purposes. If not set, a temporary directory will be used.
 
-- **souffleVerbose** (boolean, optional): If set, generates more readable Soufflé files instead of making the result source code smaller.
+- **souffleVerbose** (boolean, optional): If set, generates more readable Soufflé files instead of optimizing the output for size.
 
-- **tactStdlibPath** (string, optional): Path to Tact standard library. If not set, the default stdlib from the actual Tact setup will be used.
+- **tactStdlibPath** (string, optional): Path to the Tact standard library. If not set, the default standard library from the active Tact setup will be used.
 
-- **unusedPrefix** (string, default: "_"): Identifiers starting with this prefix won't be reported as unused by built-in detectors.
+- **unusedPrefix** (string, default: "_"): Identifiers starting with this prefix won't be reported as unused by the built-in detectors.
 
-- **verbosity** (string, optional): Verbosity level of the logs. Possible values are `quiet`, `debug`, and `default`.
+- **verbosity** (string, optional, default: "default"): Verbosity level of the logs. Possible values are `quiet`, `debug`, and `default`.
 
 ## Running Misti with Configuration
 
@@ -60,9 +68,9 @@ All the built-in detectors are enabled by default. You can find the complete con
 
 You can always dump the Misti configuration file in use by passing the `--dump-config` option in the CLI:
 ```bash
-npx misti --dump-config test/projects/simple/tactConfig.json
+npx misti --dump-config path/to/your/tact.config.json
 ```
-If there is no Misti config in the `simple` directory, Misti dumps the default config. This can be used to adjust it, e.g., adding or suppressing some detectors.
+If there is no Misti config in the directory, Misti dumps the default config. This can be used to adjust it, such as adding or suppressing some detectors.
 
 ## Getting Help
 
