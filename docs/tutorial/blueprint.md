@@ -1,18 +1,22 @@
 # Using Misti with Blueprint
 
-[Blueprint](https://github.com/ton-org/blueprint) is a development environment for writing, testing, and deploying TON smart contracts.
+[Blueprint](https://github.com/ton-org/blueprint/) is a platform to compile, test, and deploy contracts on the TON blockchain. It is quite similar to Hardhat and Truffle for Ethereum.
 
-Misti can be used in Blueprint projects by leveraging the [`blueprint-misti`](https://github.com/nowarp/blueprint-misti) plugin.
+There is a [blueprint-misti](https://github.com/nowarp/blueprint-misti) plugin that can be added to a Blueprint configuration. It adds the `blueprint misti` command, which runs the static analyzer over the selected Blueprint project.
 
-## Getting started
+This page describes how to use it.
 
-Add the plugin and the recent version of Tact to the `package.json` of your Blueprint project by running:
+## Getting Started
+
+1. [Install Soufflé](https://souffle-lang.github.io/install) to use all detectors provided by Misti.
+
+2. Add this plugin as a dependency of your Blueprint project:
 ```bash
 yarn add @tact-lang/compiler
 yarn add @nowarp/blueprint-misti
 ```
 
-Then, add this configuration to `blueprint.config.ts`:
+3. Add this configuration to `blueprint.config.ts`:
 ```ts
 import { MistiPlugin } from '@nowarp/blueprint-misti';
 export const config = {
@@ -22,10 +26,25 @@ export const config = {
 };
 ```
 
-Now, try to run Misti:
+## Usage
+
+Run the following command:
 ```bash
-yarn blueprint misti ./path/to/tact.config.json
+yarn blueprint misti
 ```
 
-## Resources
-For more information, please refer to the README of the [`blueprint-misti`](https://github.com/nowarp/blueprint-misti) project. If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/misti_dev).
+It will run the analysis of the available project, if there is one, or show an interactive window to select a project:
+
+![img](/img/blueprint-select-project.png)
+
+You could also pass the [supported CLI options](./cli.md) for Misti, for example:
+```bash
+yarn blueprint misti --all-detectors
+```
+
+Or you can even pass the path to the contract directly:
+```bash
+yarn blueprint misti path/to/my/contract.tact
+```
+
+If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/misti_dev).
