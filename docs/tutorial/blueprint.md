@@ -12,7 +12,6 @@ This page describes how to use it.
 
 2. Add this plugin as a dependency of your Blueprint project:
 ```bash
-yarn add @tact-lang/compiler
 yarn add @nowarp/blueprint-misti
 ```
 
