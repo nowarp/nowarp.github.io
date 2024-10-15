@@ -39,13 +39,21 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      'type': 'html',
+      value: '<hr class="sidebars-separator" />',
+    },
+    {
+      'type': 'html',
+      'value': '<span class=\'menu__link\'><b> Detectors </b></span>',
+    },
+    {
       type: 'doc',
       id: 'detectors',
-      label: 'Detectors Overview',
+      label: 'Overview',
     },
     {
       type: 'category',
-      label: 'Detectors',
+      label: 'Built-in Detectors',
       items: [
         {
           type: 'doc',
@@ -150,13 +158,21 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      'type': 'html',
+      value: '<hr class="sidebars-separator" />',
+    },
+    {
+      'type': 'html',
+      'value': '<span class=\'menu__link\'><b> Tools </b></span>',
+    },
+    {
       type: 'doc',
       id: 'tools',
-      label: 'Tools Overview',
+      label: 'Overview',
     },
     {
       type: 'category',
-      label: 'Tools',
+      label: 'Built-in Tools',
       items: [
         {
           type: 'doc',
@@ -176,6 +192,31 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      'type': 'html',
+      value: '<hr class="sidebars-separator" />',
+    },
+    {
+      'type': 'html',
+      'value': '<span class=\'menu__link\'><b> Development </b></span>',
+    },
+    {
+      type: 'category',
+      label: 'Misti Design',
+      items: [
+        {
+          type: 'doc',
+          id: 'hacking/design',
+          label: 'Design Overview',
+        },
+        {
+          type: 'doc',
+          id: 'hacking/souffle',
+          label: 'Soufflé',
+        },
+        ,
+      ],
+    },
+    {
       type: 'category',
       label: 'Hacking',
       items: [
@@ -189,22 +230,12 @@ const sidebars: SidebarsConfig = {
           id: 'hacking/developing-misti',
           label: 'Developing Misti',
         },
-        {
-          type: 'doc',
-          id: 'hacking/design',
-          label: 'Design Overview',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/souffle',
-          label: 'Soufflé',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/custom-detector',
-          label: 'Custom Detectors',
-        },
       ],
+    },
+    {
+      type: 'doc',
+      id: 'hacking/custom-detector',
+      label: 'Writing Custom Detectors',
     },
   ],
 };

@@ -1,7 +1,6 @@
 ---
 id: detectors
 title: Detectors Overview
-sidebar_label: Detectors Overview
 ---
 
 # Detectors Overview

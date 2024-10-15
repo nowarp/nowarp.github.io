@@ -1,7 +1,6 @@
 ---
-id: tools  
-title: Tools Overview  
-sidebar_label: Tools Overview  
+id: tools
+title: Tools Overview
 ---
 
 # Tools Overview

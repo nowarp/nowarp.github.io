@@ -62,3 +62,11 @@
 a.table-of-contents__link--active {
   font-weight: bold;
 }
+
+.sidebars-separator {
+  border: none !important;
+  border-top: 0.5px solid #ccc !important; /* Thin line */
+  height: 0 !important; /* No additional height */
+  margin: 5px 0 !important; /* Small vertical margin */
+  box-sizing: content-box !important;
+}
