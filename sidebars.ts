@@ -72,6 +72,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/CellOverflow',
+          label: 'CellOverflow',
+        },
+        {
+          type: 'doc',
           id: 'detectors/ConstantAddress',
           label: 'ConstantAddress',
         },
@@ -134,6 +139,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/ReadOnlyVariables',
           label: 'ReadOnlyVariables',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/SendInLoop',
+          label: 'SendInLoop',
         },
         {
           type: 'doc',

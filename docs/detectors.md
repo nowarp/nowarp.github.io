@@ -5,7 +5,7 @@ title: Detectors Overview
 
 # Detectors Overview
 
-Misti currently supports 21 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices.
+Misti currently supports 22 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices.
 
 ## Solved Problems
 
@@ -13,6 +13,7 @@ Misti currently supports 21 detectors designed to identify specific code issues,
 There are language-specific patterns in TON and Tact that may lead to unintended behavior if not handled correctly.
 
 Example detectors:
+* [CellOverflow](./detectors/CellOverflow.md)
 * [StringReceiversOverlap](./detectors/StringReceiversOverlap.md)
 * [EnsurePrgSeed](./detectors/EnsurePrgSeed.md)
 
@@ -20,7 +21,7 @@ Example detectors:
 Denial of Service (DoS) and out-of-gas attacks can disrupt the execution of contracts, making them inaccessible or non-functional.
 
 Example detectors:
-* SendInLoop
+* [SendInLoop](./detectors/SendInLoop.md)
 
 ### Arithmetic Errors
 Arithmetic errors in blockchain code can lead to incorrect calculations, potentially causing serious issues such as overflows or underflows.
@@ -49,23 +50,25 @@ Example detectors:
 | 1  | [ArgCopyMutation](./detectors/ArgCopyMutation.md) | High |  | ✔ |
 | 2  | [AsmIsUsed](./detectors/AsmIsUsed.md) | Info |  |  |
 | 3  | [BranchDuplicate](./detectors/BranchDuplicate.md) | High |  | ✔ |
-| 4  | [ConstantAddress](./detectors/ConstantAddress.md) | Info |  |  |
-| 5  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md) | High | ✔ | ✔ |
-| 6  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info |  |  |
-| 7  | [DuplicatedCondition](./detectors/DuplicatedCondition.md) | High |  | ✔ |
-| 8  | [EnsurePrgSeed](./detectors/EnsurePrgSeed.md) | Medium |  | ✔ |
-| 9  | [FalseCondition](./detectors/FalseCondition.md) | Medium |  | ✔ |
-| 10  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
-| 11  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
-| 12  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
-| 13  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
-| 14  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
-| 15  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
-| 16  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
-| 17  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 18  | [UnboundLoops](./detectors/UnboundLoops.md) | High | ✔ | ✔ |
-| 19  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 20  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 4  | [CellOverflow](./detectors/CellOverflow.md) | Critical |  | ✔ |
+| 5  | [ConstantAddress](./detectors/ConstantAddress.md) | Info |  |  |
+| 6  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md) | High | ✔ | ✔ |
+| 7  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info |  |  |
+| 8  | [DuplicatedCondition](./detectors/DuplicatedCondition.md) | High |  | ✔ |
+| 9  | [EnsurePrgSeed](./detectors/EnsurePrgSeed.md) | Medium |  | ✔ |
+| 10  | [FalseCondition](./detectors/FalseCondition.md) | Medium |  | ✔ |
+| 11  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
+| 12  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
+| 13  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
+| 14  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
+| 15  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
+| 16  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
+| 17  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
+| 18  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
+| 19  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 20  | [UnboundLoops](./detectors/UnboundLoops.md) | High | ✔ | ✔ |
+| 21  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 22  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 
