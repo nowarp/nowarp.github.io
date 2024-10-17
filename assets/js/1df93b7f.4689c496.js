@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknowarp_github_io=self.webpackChunknowarp_github_io||[]).push([[4583],{6866:(s,t,u)=>{u.r(t),u.d(t,{default:()=>o});var e=u(6540),n=u(6347);const o=()=>{const s=(0,n.W6)();return(0,e.useEffect)((()=>{s.push("/tools/misti")}),[s]),null}}}]);
