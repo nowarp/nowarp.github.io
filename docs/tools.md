@@ -42,3 +42,4 @@ Below is the complete list of built-in tools. Click on any of them to learn more
 | 1  | [DumpAst](./tools/DumpAst.md)               | Dumps the AST of project modules        |
 | 2  | [DumpCfg](./tools/DumpCfg.md)               | Dumps the CFG of project modules        |
 | 3  | [DumpConfig](./tools/DumpConfig.md)         | Dumps the Misti configuration file in use |
+| 4  | [DumpImports](./tools/DumpImports.md)       | Dumps the graph of imports |

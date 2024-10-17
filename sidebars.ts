@@ -199,6 +199,11 @@ const sidebars: SidebarsConfig = {
           id: 'tools/DumpConfig',
           label: 'DumpConfig',
         },
+        {
+          type: 'doc',
+          id: 'tools/DumpImports',
+          label: 'DumpImports',
+        },
       ],
     },
     {
