@@ -1,5 +1,6 @@
 # Command-Line Interface
 
+## CLI Options
 Below is a list of all available CLI (Command-Line Interface) options for the project, with a brief explanation of each.
 
 ### `-t, --tools <className[:key=value...]>`
@@ -67,3 +68,9 @@ Below is a list of all available CLI (Command-Line Interface) options for the pr
 ### `--new-detector <PATH>`
 - **Description**: Creates a new custom detector at the specified path.
 - **Default**: `undefined`
+
+## Exit Codes
+Misti returns different exit codes depending on the execution result:
+- **0**: Successful execution with no warnings or errors.
+- **1**: Warnings were reported.
+- **2**: Execution failed due to an internal or execution error.
