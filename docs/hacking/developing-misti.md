@@ -31,7 +31,7 @@ yarn misti
 For example, to run it for tests:
 
 ```bash
-yarn misti test/good/never-accessed.tact
+yarn misti test/detectors/NeverAccessedVariables.tact
 ```
 
 ## Adding Backtraces to the Logger
@@ -39,7 +39,7 @@ yarn misti test/good/never-accessed.tact
 To add debug traces to all log messages, set the `MISTI_TRACE` environment variable to `1`:
 
 ```bash
-export MISTI_TRACE=1
+MISTI_TRACE=1 yarn misti test/detectors/NeverAccessedVariables.tact
 ```
 
 ## Updating Expected Outputs of Tests
@@ -53,13 +53,11 @@ BLESS=1 yarn test
 You can also run a single test or update its expected output when working with a specific test file:
 
 ```bash
-BLESS=1 yarn test test/tactIR.spec.ts tests/good/never-accessed.tact
+BLESS=1 yarn test test/tactIR.spec.ts tests/detectors/NeverAccessedVariables.tact
 ```
 
 And for another specific test:
 
 ```bash
-BLESS=1 yarn test test/builtinDetectors.spec.ts test/good/branch-duplicate.tact
+BLESS=1 yarn test test/builtinDetectors.spec.ts test/detectors/BranchDuplicate.tact
 ```
-
-
