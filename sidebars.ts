@@ -162,6 +162,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/UnusedExpressionResult',
+          label: 'UnusedExpressionResult',
+        },
+        {
+          type: 'doc',
           id: 'detectors/UnusedOptional',
           label: 'UnusedOptional',
         },
