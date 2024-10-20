@@ -152,8 +152,13 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
-          id: 'detectors/UnboundLoops',
-          label: 'UnboundLoops',
+          id: 'detectors/UnboundLoop',
+          label: 'UnboundLoop',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnboundMap',
+          label: 'UnboundMap',
         },
         {
           type: 'doc',
