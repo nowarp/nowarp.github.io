@@ -31,13 +31,13 @@ export default function Home() {
             <div className="row">
               <div className="col col--4">
                 <div className={styles.featureBox}>
-                  <h2>🔒 Detect Code Issues</h2>
+                  <h2>🔒 Code Analysis</h2>
                   <p>Identify and fix potential <a href="/tools/misti/docs/detectors">security flaws and code problems</a> early in the development cycle.</p>
                 </div>
               </div>
               <div className="col col--4">
                 <div className={styles.featureBox}>
-                  <h2>⚙️ Streamline Development</h2>
+                  <h2>⚙️ CI/CD Integration</h2>
                   <p><a href="/tools/misti/docs/tutorial/ci-cd">Integrate</a> Misti into your CI/CD pipeline to ensure continuous code quality checks.</p>
                 </div>
               </div>
