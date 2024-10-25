@@ -5,7 +5,7 @@ title: Detectors Overview
 
 # Detectors Overview
 
-Misti currently supports 24 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices.
+Misti currently supports 25 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices.
 
 ## Solved Problems
 
@@ -16,6 +16,7 @@ Example detectors:
 * [CellOverflow](./detectors/CellOverflow.md)
 * [StringReceiversOverlap](./detectors/StringReceiversOverlap.md)
 * [EnsurePrgSeed](./detectors/EnsurePrgSeed.md)
+* [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md)
 
 ### DoS Attacks
 Denial of Service (DoS) and out-of-gas attacks can disrupt the execution of contracts, making them inaccessible or non-functional.
@@ -67,11 +68,12 @@ Example detectors:
 | 17  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
 | 18  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
 | 19  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 20  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
-| 21  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
-| 22  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
-| 23  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 24  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 20  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Medium |  | ✔ |
+| 21  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
+| 22  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
+| 23  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
+| 24  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 25  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

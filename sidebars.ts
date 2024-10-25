@@ -152,6 +152,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/SuspiciousMessageMode',
+          label: 'SuspiciousMessageMode',
+        },
+        {
+          type: 'doc',
           id: 'detectors/UnboundLoop',
           label: 'UnboundLoop',
         },
