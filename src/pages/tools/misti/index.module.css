@@ -5,15 +5,27 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Align text to the left */
-  padding: 0 6rem; /* Add padding for spacing on the left */
-  text-align: left; /* Align text within the container to the left */
+  align-items: flex-start;
+  padding: 0 2rem; /* Default padding for smaller screens */
+  text-align: left;
   background-image: url('/img/background.svg');
   background-size: cover;
   background-position: center;
   color: #072341;
-  margin: 0; /* Ensure no margin */
-  overflow: hidden; /* Prevent any overflow issues */
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .heroBanner {
+    padding: 0 4rem; /* Increase padding for tablets and larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroBanner {
+    padding: 0 6rem; /* Even larger padding for desktops */
+  }
 }
 
 .heroTitle {
