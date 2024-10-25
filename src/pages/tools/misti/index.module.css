@@ -1,23 +1,78 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to the left */
+  padding: 0 6rem; /* Add padding for spacing on the left */
+  text-align: left; /* Align text within the container to the left */
+  background-image: url('/img/background.svg');
+  background-size: cover;
+  background-position: center;
+  color: #072341;
+  margin: 0; /* Ensure no margin */
+  overflow: hidden; /* Prevent any overflow issues */
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroTitle {
+  font-family: 'Nunito', sans-serif; /* Use the chosen font */
+  font-size: 4rem; /* Make it prominent */
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Slight shadow for readability */
+  text-transform: lowercase; /* Ensure it's lowercase */
+}
+
+.heroSubtitle {
+  font-size: 1.5rem; /* Adjust as needed */
+  margin-bottom: 0.5rem; /* Add spacing below subtitle */
+}
+
+.heroSubtitleSmall {
+  font-size: 1.1rem; /* Smaller size for the third paragraph */
+  margin-bottom: 0.5rem; /* Slightly reduced spacing below */
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white for glass effect */
+  border-radius: 10px; /* Rounded corners */
+  padding: 2rem; /* Padding inside the box */
+  backdrop-filter: blur(15px); /* Blurred background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  max-width: 600px; /* Limit width */
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Align buttons to the left */
+  gap: 1rem; /* Add space between buttons if needed */
+}
+
+.sectionPadding {
+  padding-top: 2rem; /* Top padding for breathing room */
+  padding-bottom: 2rem; /* Bottom padding for breathing room */
+}
+
+.featureBox {
+  border-radius: 8px; /* Rounded corners */
+  padding: 1.5rem; /* Inner padding */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  margin-bottom: 2rem; /* Spacing between boxes */
+  height: 100%; /* Make all boxes the same height */
+  display: flex;
+  flex-direction: column;
+}
+
+.featuresTitle {
+  text-align: left; /* Align text to the left */
+  font-size: 1.75rem; /* Smaller font size */
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary-darkest); /* Use theme color */
+  font-weight: 600; /* Slightly lighter weight */
+  padding-left: 1.5rem; /* Align with the padding of the boxes */
 }
