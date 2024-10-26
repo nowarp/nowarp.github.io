@@ -72,6 +72,26 @@ npx misti --dump-config path/to/your/tact.config.json
 ```
 If there is no Misti config in the directory, Misti dumps the default config. This can be used to adjust it, such as adding or suppressing some detectors.
 
+### Environment Variables
+Misti offers advanced configuration through environment variables to control specific options.
+
+## Variables
+
+- **`MISTI_TIMEOUT`**  
+  Sets the timeout for detector execution in milliseconds.  
+  **Default**: `15000`  
+  **Example**: 
+  ```bash
+  export MISTI_TIMEOUT=20000
+  ```
+- **`MISTI_TRACE`**  
+  Enables tracing of the execution. Set to `1` to enable tracing, otherwise it is disabled.  
+  **Default**: `false`  
+  **Example**:
+  ```bash
+  export MISTI_TRACE=1
+  ```
+
 ## Getting Help
 
 If you need assistance or encounter any issues, please create an issue on GitHub at [nowarp/misti](https://github.com/nowarp/misti/issues) or ask in the [Misti Telegram group](https://t.me/misti_dev).
