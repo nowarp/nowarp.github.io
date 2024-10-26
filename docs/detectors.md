@@ -5,47 +5,7 @@ title: Detectors Overview
 
 # Detectors Overview
 
-Misti currently supports 25 detectors designed to identify specific code issues, detect vulnerabilities, and enforce best practices.
-
-## Solved Problems
-
-### TON and Tact Specific
-There are language-specific patterns in TON and Tact that may lead to unintended behavior if not handled correctly.
-
-Example detectors:
-* [CellOverflow](./detectors/CellOverflow.md)
-* [StringReceiversOverlap](./detectors/StringReceiversOverlap.md)
-* [EnsurePrgSeed](./detectors/EnsurePrgSeed.md)
-* [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md)
-
-### DoS Attacks
-Denial of Service (DoS) and out-of-gas attacks can disrupt the execution of contracts, making them inaccessible or non-functional.
-
-Example detectors:
-* [SendInLoop](./detectors/SendInLoop.md)
-* [UnboundMap](./detectors/UnboundMap.md)
-
-### Arithmetic Errors
-Arithmetic errors in blockchain code can lead to incorrect calculations, potentially causing serious issues such as overflows or underflows.
-
-Example detectors:
-* [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md)
-
-### Optimization
-Misti provides various detectors aimed at optimizing code. While these may not identify security vulnerabilities, they help improve project quality by optimizing gas usage and enhancing code readability. These detectors are typically available when running Misti with the `--all-detectors` flag.
-
-Example detectors:
-* [OptimalMathFunction](./detectors/OptimalMathFunction.md)
-* [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md)
-
-### Suspicious Patterns
-There are numerous suspicious patterns in source code that auditors should pay attention to. These detectors are generally disabled by default but can be enabled during audits to provide deeper insights into the code structure and highlight areas for manual review.
-
-Example detectors:
-* [ZeroAddress](./detectors/ZeroAddress.md)
-* [InheritedStateMutation](./detectors/InheritedStateMutation.md)
-
-## List of Built-in detectors
+## Built-in Detectors
 
 | #  | Detector | Severity | Requires Soufflé | Enabled by default |
 |----|-----------|-----------|--------------------|---------------------|
