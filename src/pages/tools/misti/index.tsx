@@ -31,19 +31,19 @@ export default function Home() {
             <div className="row">
               <div className="col col--4">
                 <div className={styles.featureBox}>
-                  <h2>🔒 Code Analysis</h2>
+                  <h3>🔒 Code Analysis</h3>
                   <p>Identify and fix potential <a href="/tools/misti/docs/detectors">security flaws and code problems</a> early in the development cycle.</p>
                 </div>
               </div>
               <div className="col col--4">
                 <div className={styles.featureBox}>
-                  <h2>⚙️ CI/CD Integration</h2>
+                  <h3>⚙️ CI/CD Integration</h3>
                   <p><a href="/tools/misti/docs/tutorial/ci-cd">Integrate</a> Misti into your CI/CD pipeline to ensure continuous code quality checks.</p>
                 </div>
               </div>
               <div className="col col--4">
                 <div className={styles.featureBox}>
-                  <h2>🛠️ Custom Detectors</h2>
+                  <h3>🛠️ Custom Detectors</h3>
                   <p>Create <a href="/tools/misti/docs/hacking/custom-detector">custom detectors</a> to solve specific problems in your code or to provide a thorough security review if you are an auditor.</p>
                 </div>
               </div>
