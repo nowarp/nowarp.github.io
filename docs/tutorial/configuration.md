@@ -72,10 +72,8 @@ npx misti --dump-config path/to/your/tact.config.json
 ```
 If there is no Misti config in the directory, Misti dumps the default config. This can be used to adjust it, such as adding or suppressing some detectors.
 
-### Environment Variables
+## Environment Variables
 Misti offers advanced configuration through environment variables to control specific options.
-
-## Variables
 
 - **`MISTI_TIMEOUT`**  
   Sets the timeout for detector execution in milliseconds.  
