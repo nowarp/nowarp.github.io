@@ -44,9 +44,23 @@ You can also add a script to your `package.json` to simplify running the linting
 
 Below are a few usage examples for common scenarios when using [the `misti` CLI](./cli.md).
 
-### Suppressing Specific Detectors
+### Suppressing Warnings
 
-To run `misti` while suppressing specific detectors, such as `ReadOnlyVariables`:
+If you want to suppress some warnings in specific places of source code, you should use the `@misti:suppress` annotations in the comment on the previous line, for example:
+```tact
+fun test(): Int {
+  // @misti:suppress NeverAccessedVariables
+  let sum: Int = 0; // OK: The warning will be suppressed
+  return 52;
+}
+```
+
+This syntax also enables you to list a few detectors to be suppressed, including the custom ones, for example:
+```tact
+// @misti:suppress NeverAccessedVariables,MyCustomDetector,ReadOnlyVariables
+```
+
+Alternatively, you could run `misti` while entirely suppressing specific detectors:
 
 ```bash
 npx misti --suppress ReadOnlyVariables path/to/tact.config.json
