@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -169,6 +170,23 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className={`${styles.features} ${styles.sectionPadding}`}>
+          <div className="container">
+            <h2 className={styles.featuresTitle}>Request an Audit</h2>
+            <p className={styles.featuresSummary}>
+              Certain types of bugs cannot be caught by automated tools as they demand a deep understanding of the underlying system.<br/>
+              We offer audit services for TON smart contracts, backed by deep security expertise, as our availability allows. If you are interested, reach out to us.
+            </p>
+            <div className={`${styles.buttons} ${styles.centerButton}`}>
+            <a className="button button--primary button--lg" href="https://t.me/jubnzv">
+              <FaTelegramPlane style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+              Contact Us
+            </a>
+            </div>
+          </div>
+        </section>
+
       </main>
     </Layout>
   );
