@@ -7,25 +7,25 @@ Misti provides a feature to dump the **Import Graph** of your Tact code in JSON,
 To dump the Import Graph in Mermaid format, use the following command:
 
 ```bash
-npx misti -t "DumpImports:format=mmd" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpImports:format=mmd" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 To dump the Import Graph in Graphviz DOT format, use the following command:
 
 ```bash
-npx misti -t "DumpImports:format=dot" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpImports:format=dot" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 To dump the Import Graph in JSON format, use the following command:
 
 ```bash
-npx misti -t "DumpImports:format=json" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpImports:format=json" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 You can also include Tact standard library imports in the dump by adding `dumpStdlib=true` to the `DumpImports` options:
 
 ```bash
-npx misti -t "DumpImports:format=dot,dumpStdlib=true" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpImports:format=dot,dumpStdlib=true" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 ## Working with Mermaid and Graphviz
@@ -47,7 +47,7 @@ By utilizing these tools, developers can gain deeper insights into the dependenc
 By default, the Import Graph excludes imports from the standard library. If you want to include standard library imports in your graph, add `dumpStdlib=true` to the command:
 
 ```bash
-npx misti -t "DumpImports:format=mmd,dumpStdlib=true" contracts/main.tact
+misti -t "DumpImports:format=mmd,dumpStdlib=true" contracts/main.tact
 ```
 
 ## Example
@@ -76,7 +76,7 @@ message Msg { a: Bool }
 To dump the Import Graph in Mermaid format, run:
 
 ```bash
-npx misti -t "DumpImports:format=mmd:dumpStdlib=true" contracts/main.tact
+misti -t "DumpImports:format=mmd:dumpStdlib=true" contracts/main.tact
 ```
 
 The output will look like:

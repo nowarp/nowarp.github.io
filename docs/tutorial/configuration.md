@@ -33,7 +33,7 @@ This guide provides an example of the JSON configuration file for Misti, detaili
 To run Misti with the specified configuration file, use the following command:
 
 ```bash
-npx misti --config path/to/mistiConfig.json test/projects/simple/tactConfig.json
+misti --config path/to/mistiConfig.json test/projects/simple/tactConfig.json
 ```
 
 This command tells Misti to use the provided configuration file to analyze the specified Tact project configuration.
@@ -68,7 +68,7 @@ All the built-in detectors are enabled by default. You can find the complete con
 
 You can always dump the Misti configuration file in use by passing the `--dump-config` option in the CLI:
 ```bash
-npx misti --dump-config path/to/your/tact.config.json
+misti --dump-config path/to/your/tact.config.json
 ```
 If there is no Misti config in the directory, Misti dumps the default config. This can be used to adjust it, such as adding or suppressing some detectors.
 

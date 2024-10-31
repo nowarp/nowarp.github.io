@@ -7,19 +7,19 @@ Misti provides a feature to dump the [Control Flow Graph (CFG)](https://en.wikip
 To dump the CFG in Mermaid format, use the following command:
 
 ```bash
-npx misti -t "DumpCfg:format=mmd" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpCfg:format=mmd" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 To dump the CFG in Graphviz DOT format, use the following command:
 
 ```bash
-npx misti -t "DumpCfg:format=dot" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpCfg:format=dot" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 To dump the CFG in JSON format, use the following command:
 
 ```bash
-npx misti -t "DumpCfg:format=json" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpCfg:format=json" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 You could also include Tact standard library functions to the dump adding `dumpStdlib=true` to the `DumpCfg` options.
@@ -33,7 +33,7 @@ To view Mermaid diagrams in Visual Studio Code, you can use the [Markdown Previe
 To dump the CFG in Mermaid format using Misti, run the following command:
 
 ```bash
-npx misti -t "DumpCfg:format=mermaid" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpCfg:format=mermaid" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 The output can be viewed directly in the VS Code plugin or the online editor.
@@ -45,7 +45,7 @@ The output can be viewed directly in the VS Code plugin or the online editor.
 To convert the resulting DOT file to an SVG for visualization, save the generated DOT dump to a file and use [Graphviz](https://graphviz.org) with the following command:
 
 ```bash
-npx misti -t "DumpCfg:format=dot" <TACT_CONFIG_PATH|TACT_FILE_PATH> > output.dot
+misti -t "DumpCfg:format=dot" <TACT_CONFIG_PATH|TACT_FILE_PATH> > output.dot
 dot -Tsvg output.dot -o output.svg
 ```
 

@@ -13,24 +13,24 @@ These tools are particularly useful for auditors, providing additional functiona
 
 List available tools and their options:
 ```bash
-npx misti --list-tools
+misti --list-tools
 ```
 
 To invoke a specific tool, use the following command format:
 ```bash
-npx misti -t "ToolName:option=value,option=value" /path/to/tact.config.json
+misti -t "ToolName:option=value,option=value" /path/to/tact.config.json
 ```
 
 ## Usage Examples
 
 Dump the AST of the project:
 ```
-npx misti -t "DumpAst" my-example.tact
+misti -t "DumpAst" my-example.tact
 ```
 
 Dump the CFGs of the project in [Mermaid](https://mermaid.live) format to the file `/tmp/my-example.DumpCfg.out`:
 ```
-npx misti --output-path "/tmp" -t "DumpCfg:format=mermaid" my-example.tact
+misti --output-path "/tmp" -t "DumpCfg:format=mermaid" my-example.tact
 ```
 
 ## Available Tools

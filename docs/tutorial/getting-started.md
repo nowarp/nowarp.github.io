@@ -9,9 +9,8 @@ Before you begin, ensure you have the following software installed on your syste
 - [Soufflé](https://souffle-lang.github.io/install)
 
 ## Installation
-Misti is distributed via npm and should be added to your Tact project [in the same way](https://github.com/tact-lang/tact?tab=readme-ov-file#installation) as Tact itself:
 ```bash
-yarn add @nowarp/misti
+npm install -g @nowarp/misti
 ```
 
 ### Using Development Version
@@ -25,7 +24,7 @@ To install the latest development version you should:
 ## Running the analysis
 Run Misti by specifying a Tact project configuration:
 ```
-npx misti path/to/tact.config.json
+misti path/to/tact.config.json
 ```
 
 This will highlight any warnings the analyzer found.
@@ -35,7 +34,7 @@ You can also add a script to your `package.json` to simplify running the linting
 ```json
 {
   "scripts": {
-    "lint": "npx misti path/to/tact.config.json"
+    "lint": "misti path/to/tact.config.json"
   }
 }
 ```
@@ -63,7 +62,7 @@ This syntax also enables you to list a few detectors to be suppressed, including
 Alternatively, you could run `misti` while entirely suppressing specific detectors:
 
 ```bash
-npx misti --suppress ReadOnlyVariables path/to/tact.config.json
+misti --suppress ReadOnlyVariables path/to/tact.config.json
 ```
 
 ### Enabling All Detectors
@@ -71,7 +70,7 @@ npx misti --suppress ReadOnlyVariables path/to/tact.config.json
 Running `misti` with all available built-in detectors enabled:
 
 ```bash
-npx misti --all-detectors path/to/tact.config.json
+misti --all-detectors path/to/tact.config.json
 ```
 
 It is recommended to do that when auditing the project.
@@ -81,7 +80,7 @@ It is recommended to do that when auditing the project.
 To suppress all output while running `misti` getting just a return code:
 
 ```bash
-npx misti --quiet path/to/tact.config.json
+misti --quiet path/to/tact.config.json
 ```
 
 This might be useful in scripts and CI/CD.

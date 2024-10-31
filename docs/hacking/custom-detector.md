@@ -8,7 +8,7 @@ Detectors are designed to be dynamically loaded by the Misti driver, and they ar
 
 ## Creating a Detector
 
-You can create a new custom detector by executing Misti with the `--new-detector` option: `npx misti --new-detector implicitInit`.
+You can create a new custom detector by executing Misti with the `--new-detector` option: `misti --new-detector implicitInit`.
 
 This will create the `implicitInit.ts` file, which contains the template code for writing your own custom detector logic leveraging the Misti API.
 
@@ -47,7 +47,7 @@ export class ImplicitInit extends ASTDetector {
 ```
 
 ### Testing the detector
-To run Misti with only your new detector, use the `--detectors` option, specifying the path to the detector and the Detector class name: `npx misti path/to/your/tact.config.json --detectors path/to/implicitInit.ts:ImplicitInit`.
+To run Misti with only your new detector, use the `--detectors` option, specifying the path to the detector and the Detector class name: `misti path/to/your/tact.config.json --detectors path/to/implicitInit.ts:ImplicitInit`.
 
 That's a good way to test the detector on the first run. You could also use the `--verbose` CLI option and set the environment variable `MISTI_TRACE=1` to facilitate debugging.
 
@@ -62,7 +62,7 @@ After testing the detector, you can specify it in your configuration to enable i
 }
 ```
 
-After this, you could run Misti specifying a path to a custom configuration `npx misti --config path/to/misti.config.json path/to/your/tact.config.json`.
+After this, you could run Misti specifying a path to a custom configuration `misti --config path/to/misti.config.json path/to/your/tact.config.json`.
 
 ## Example Detectors
 

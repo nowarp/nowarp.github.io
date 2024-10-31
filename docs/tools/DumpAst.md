@@ -7,13 +7,13 @@ The `DumpAst` tool in Misti enables users to output the [Abstract Syntax Tree (A
 To dump the AST in JSON format, use the following command:
 
 ```bash
-npx misti -t "DumpAst" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpAst" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 If you wish to include the standard library in the dump, set `dumpStdlib` to `true`:
 
 ```bash
-npx misti -t "DumpAst:dumpStdlib=true" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpAst:dumpStdlib=true" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 ## Understanding the Dumps

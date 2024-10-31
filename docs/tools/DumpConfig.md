@@ -7,7 +7,7 @@ The `DumpConfig` tool in Misti allows you to print the current configuration fil
 To dump the configuration file, use the following command:
 
 ```bash
-npx misti -t "DumpConfig" <TACT_CONFIG_PATH|TACT_FILE_PATH>
+misti -t "DumpConfig" <TACT_CONFIG_PATH|TACT_FILE_PATH>
 ```
 
 ## Understanding the Output
