@@ -147,6 +147,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/ShortCircuitCondition',
+          label: 'ShortCircuitCondition',
+        },
+        {
+          type: 'doc',
           id: 'detectors/StringReceiversOverlap',
           label: 'StringReceiversOverlap',
         },

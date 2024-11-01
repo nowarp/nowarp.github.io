@@ -27,13 +27,14 @@ title: Detectors Overview
 | 16  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
 | 17  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
 | 18  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
-| 19  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 20  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Medium |  | ✔ |
-| 21  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
-| 22  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
-| 23  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
-| 24  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 25  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 19  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
+| 20  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 21  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Medium |  | ✔ |
+| 22  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
+| 23  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
+| 24  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
+| 25  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 26  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 
