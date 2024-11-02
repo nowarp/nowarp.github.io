@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -31,9 +31,16 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      ({
+        trackingID: 'G-8VLF6VGHH5',
+        anonymizeIP: true,
+      }),
+    ],
+  ],
   themeConfig: {
-    // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Misti',
       logo: {
