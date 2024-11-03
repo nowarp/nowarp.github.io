@@ -22,7 +22,8 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <section className={`${styles.features} ${styles.sectionPadding}`}>
+        {/* Misti Overview Section */}
+        <section id="misti-overview" className={`${styles.features} ${styles.sectionPadding}`}>
           <div className="container">
             <h2 className={styles.featuresTitle}>Misti Overview</h2>
             <p className={styles.featuresSummary}>
@@ -81,7 +82,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Discover Detectors Section */}
         <section
+          id="discover-detectors"
           className={`${styles.features} ${styles.sectionPadding} ${styles.alternateBackground}`}
         >
           <div className="container">
@@ -171,18 +174,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`${styles.features} ${styles.sectionPadding}`}>
+        {/* Request an Audit Section */}
+        <section id="request-audit" className={`${styles.features} ${styles.sectionPadding}`}>
           <div className="container">
-            <h2 className={styles.featuresTitle}>Request an Audit</h2>
+            <h2 className={styles.featuresTitle}>Request Audit</h2>
             <p className={styles.featuresSummary}>
-              Certain types of bugs cannot be caught by automated tools as they demand a deep understanding of the underlying system.<br/>
-              We offer audit services for TON smart contracts, backed by deep security expertise, as our availability allows. If you are interested, reach out to us.
+              While automated tools like Misti are powerful, they can't catch every vulnerability. Complex bugs require insights that only a <strong>manual audit</strong> or <strong>formal specification and verification</strong> can provide.
+            </p>
+            <p className={styles.featuresSummary}>
+              We offer high-quality audits as our availability allows. With our Web3 security background, we can help keep your project safe. References are available upon request.
             </p>
             <div className={`${styles.buttons} ${styles.centerButton}`}>
-            <a className="button button--primary button--lg" href="https://t.me/jubnzv">
-              <FaTelegramPlane style={{ marginRight: '8px', verticalAlign: 'middle' }} />
-              Contact Us
-            </a>
+              <a className="button button--primary button--lg" href="https://t.me/jubnzv">
+                <FaTelegramPlane style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                Contact Us
+              </a>
             </div>
           </div>
         </section>

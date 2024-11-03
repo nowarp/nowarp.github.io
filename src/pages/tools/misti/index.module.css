@@ -95,3 +95,7 @@
   font-weight: 600; /* Slightly lighter weight */
   padding-left: 1.5rem; /* Align with the padding of the boxes */
 }
+
+.featuresSummary {
+  padding: 0 1rem;  /* Horizontal padding */
+}
