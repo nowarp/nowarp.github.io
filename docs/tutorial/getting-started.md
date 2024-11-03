@@ -22,9 +22,11 @@ To install the latest development version you should:
 3. Use it in your Tact project: `cd /path/to/tact/project && yarn add file:/path/to/misti`
 
 ## Running the analysis
-Run Misti by specifying a Tact project configuration:
-```
-misti path/to/tact.config.json
+3. Run Misti by specifying a Tact contract, project config, or directory to check:
+```bash
+misti path/to/src/contracts
+misti contract.tact
+misti tact.config.json
 ```
 
 This will highlight any warnings the analyzer found.
