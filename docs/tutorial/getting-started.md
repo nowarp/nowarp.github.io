@@ -4,25 +4,28 @@ This guide will walk you through the steps to install and set up the Misti stati
 ## Prerequisites
 Before you begin, ensure you have the following software installed on your system:
 - Git
-- Yarn
 - Node.js version 22 or higher
-- [Soufflé](https://souffle-lang.github.io/install)
+- (*optional*) [Soufflé](https://souffle-lang.github.io/install) – enables more built-in detectors
 
 ## Installation
 ```bash
 npm install -g @nowarp/misti
 ```
 
-### Using Development Version
+<details>
+  <summary>🚧 Using Development Version</summary>
+
 The latest development version may be unstable, yet it includes all the recently added detectors and therefore can provide a more comprehensive analysis.
 
 To install the latest development version you should:
 1. Clone Misti: `git clone https://github.com/nowarp/misti`
-2. Build it: `cd misti && yarn install && yarn build`
+2. Build it: `cd misti && yarn install && yarn gen && yarn build`
 3. Use it in your Tact project: `cd /path/to/tact/project && yarn add file:/path/to/misti`
 
+</details>
+
 ## Running the analysis
-3. Run Misti by specifying a Tact contract, project config, or directory to check:
+Run Misti by specifying a Tact contract, project config, or directory to check:
 ```bash
 misti path/to/src/contracts
 misti contract.tact
@@ -36,12 +39,12 @@ You can also add a script to your `package.json` to simplify running the linting
 ```json
 {
   "scripts": {
-    "lint": "misti path/to/tact.config.json"
+    "lint": "misti path/to/contract"
   }
 }
 ```
 
-## More usage examples
+## Common Usage Scenarios
 
 Below are a few usage examples for common scenarios when using [the `misti` CLI](./cli.md).
 
@@ -67,6 +70,16 @@ Alternatively, you could run `misti` while entirely suppressing specific detecto
 misti --suppress ReadOnlyVariables path/to/tact.config.json
 ```
 
+### Filtering by Severity
+
+You could filter out low-severity warnings to provide a quick analysis of only the critical warnings:
+
+```bash
+misti --min-severity medium path/to/tact.config.json
+```
+
+It is recommended to set the minimum severity level to at least `medium`, or you could choose `high`.
+
 ### Enabling All Detectors
 
 Running `misti` with all available built-in detectors enabled:
@@ -75,7 +88,7 @@ Running `misti` with all available built-in detectors enabled:
 misti --all-detectors path/to/tact.config.json
 ```
 
-It is recommended to do that when auditing the project.
+It enables more detectors to find subtle bugs and optimization issues. It is recommended to use this only when auditing the project; otherwise, it might be too noisy.
 
 ### Running in Quiet Mode
 
