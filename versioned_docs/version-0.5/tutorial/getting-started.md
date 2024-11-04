@@ -1,9 +1,7 @@
 # Getting started
-This guide will walk you through the steps to install and set up the Misti static analyzer.
 
-## Prerequisites
+## System Dependencies
 Before you begin, ensure you have the following software installed on your system:
-- Git
 - Node.js version 22 or higher
 - (*optional*) [Soufflé](https://souffle-lang.github.io/install) – enables more built-in detectors
 
