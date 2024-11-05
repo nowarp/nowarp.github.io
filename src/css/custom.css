@@ -93,3 +93,37 @@ a.table-of-contents__link--active {
   font-weight: bold;
   text-transform: lowercase;
 }
+
+/**
+ * Agolia search
+ */
+.DocSearch-Button {
+  border-radius: 4px !important;
+  width: 200px !important;
+  padding: 0 12px !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
+  transition: all 0.2s ease !important;
+}
+[data-theme='dark'] .DocSearch-Button {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+.DocSearch-Button-Placeholder {
+  color: var(--ifm-color-emphasis-700) !important;
+}
+.DocSearch-Search-Icon {
+  color: var(--ifm-color-emphasis-600) !important;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .DocSearch-Button {
+    width: auto !important;
+    padding: 0 8px !important;
+  }
+  .DocSearch-Button-Placeholder {
+    display: none !important;
+  }
+}
+/* Murder the Ctrl+K badge */
+.DocSearch-Button-Keys {
+  display: none !important;
+}

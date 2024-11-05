@@ -1,6 +1,9 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
+import { config as dotenvConfig } from 'dotenv';
 import type * as Preset from '@docusaurus/preset-classic';
+
+dotenvConfig();
 
 const config: Config = {
   title: 'Misti',
@@ -41,6 +44,12 @@ const config: Config = {
     ],
   ],
   themeConfig: {
+    algolia: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
+      contextualSearch: true,
+    },
     navbar: {
       title: 'Misti',
       logo: {
@@ -48,6 +57,10 @@ const config: Config = {
         src: 'img/misti.svg',
       },
       items: [
+        {
+          type: 'search',
+          position: 'left',
+        },
         {
           type: 'docsVersionDropdown',
           position: 'right',
