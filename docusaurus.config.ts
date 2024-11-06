@@ -7,7 +7,7 @@ dotenvConfig();
 
 const config: Config = {
   title: 'Misti',
-  tagline: 'TON Static Analyzer',
+  tagline: 'TON Security Tool',
   favicon: 'img/misti.svg',
   url: 'https://nowarp.io/',
   baseUrl: '/',

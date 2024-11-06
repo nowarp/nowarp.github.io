@@ -1,11 +1,15 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import styles from './index.module.css';
 import { FaTelegramPlane } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <Layout title="Welcome to Misti" description="The TON Static Analyzer">
+     <Layout description="The TON Static Analyzer">
+      <Head>
+        <title>Misti - TON Security Tool</title>
+      </Head>
       <header className={styles.heroBanner}>
         <div className={styles.textContainer}>
           <h1 className={styles.heroTitle}>Misti</h1>
