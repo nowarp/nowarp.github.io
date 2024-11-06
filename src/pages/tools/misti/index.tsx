@@ -94,7 +94,7 @@ export default function Home() {
           <div className="container">
             <h2 className={styles.featuresTitle}>Discover Detectors</h2>
             <p className={styles.featuresSummary}>
-              Misti supports 26 specialized detectors designed to identify code issues, detect vulnerabilities, and enforce best practices.
+              Misti supports 27 specialized detectors designed to identify code issues, detect vulnerabilities, and enforce best practices.
             </p>
 
             <div className={`${styles.rowWithMargin} row`}>

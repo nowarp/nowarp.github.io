@@ -18,23 +18,24 @@ title: Detectors Overview
 | 7  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info |  |  |
 | 8  | [DuplicatedCondition](./detectors/DuplicatedCondition.md) | High |  | ✔ |
 | 9  | [EnsurePrgSeed](./detectors/EnsurePrgSeed.md) | Medium |  | ✔ |
-| 10  | [FalseCondition](./detectors/FalseCondition.md) | Medium |  | ✔ |
-| 11  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
-| 12  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
-| 13  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
-| 14  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
-| 15  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
-| 16  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
-| 17  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
-| 18  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
-| 19  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
-| 20  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 21  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Medium |  | ✔ |
-| 22  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
-| 23  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
-| 24  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
-| 25  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 26  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 10  | [EtaLikeSimplifications](./detectors/EtaLikeSimplifications.md) | Low |  | ✔ |
+| 11  | [FalseCondition](./detectors/FalseCondition.md) | Medium |  | ✔ |
+| 12  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium |  | ✔ |
+| 13  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low |  |  |
+| 14  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
+| 15  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
+| 16  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
+| 17  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
+| 18  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
+| 19  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
+| 20  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
+| 21  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 22  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Medium |  | ✔ |
+| 23  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
+| 24  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
+| 25  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
+| 26  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 27  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

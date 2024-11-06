@@ -102,6 +102,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/EtaLikeSimplifications',
+          label: 'EtaLikeSimplifications',
+        },
+        {
+          type: 'doc',
           id: 'detectors/FalseCondition',
           label: 'FalseCondition',
         },
