@@ -107,6 +107,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/ExitCodeUsage',
+          label: 'ExitCodeUsage',
+        },
+        {
+          type: 'doc',
           id: 'detectors/FalseCondition',
           label: 'FalseCondition',
         },
