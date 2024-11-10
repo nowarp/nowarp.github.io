@@ -4,13 +4,23 @@
 
 Misti is a static analyzer, a tool that examines code without executing it, identifying potential errors, security vulnerabilities, and code quality issues.
 
-## Souffle Datalog Solver
+## Detector Types
 
-Misti leverages the [Souffle Datalog solver](https://souffle-lang.github.io), an industry-grade and highly efficient Datalog solver designed specifically for program analysis. Souffle provides native parallel execution and is extremely fast, making it an ideal choice for analyzing complex codebases.
+### AST-Based Analyses
 
-## Dataflow Analysis in Misti
+Typically, having only an AST is sufficient to implement simple detectors that can produce findings and highlight dangerous patterns in the source code. Misti provides access to the AST of the contracts through a specialized [`ASTStore`](https://nowarp.io/tools/misti/api/classes/internals_ir_astStore.TactASTStore.html) class that maps unique AST identifiers to their definitions.
 
-Misti offers an interface to describe classic dataflow problems. It includes a lattice interface and provides a mechanism to solve these problems using the worklist algorithm. This allows for efficient and accurate analysis of data flow within the code.
+### Dataflow Analyses Based on the Monotone Framework
+
+Misti offers an interface for describing classic dataflow problems. It includes a lattice interface and provides a mechanism to solve these problems using the worklist algorithm, allowing for efficient and accurate analysis of data flow within the code.
+
+Those interested in the implementation of Dataflow analysis should refer to the API documentation of Misti internals and review the source code of built-in detectors inherited from the [`DataflowDetector`](https://nowarp.io/tools/misti/api/classes/detectors_detector.DataflowDetector.html) class.
+
+### Soufflé-Based Analyses
+
+Misti leverages the [Soufflé Datalog solver](https://souffle-lang.github.io), an industry-grade and highly efficient Datalog solver specifically designed for program analysis. Soufflé provides native parallel execution and is extremely fast, making it an ideal choice for analyzing complex codebases.
+
+Typically, you should implement Soufflé-based analysis if it is simpler to express your problem in Datalog than to write a transfer function for monotone framework.
 
 ## References
 
