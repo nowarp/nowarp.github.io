@@ -39,13 +39,21 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      'type': 'html',
+      value: '<hr class="sidebars-separator" />',
+    },
+    {
+      'type': 'html',
+      'value': '<span class=\'menu__link\'><b> Detectors </b></span>',
+    },
+    {
       type: 'doc',
       id: 'detectors',
-      label: 'Detectors Overview',
+      label: 'Overview',
     },
     {
       type: 'category',
-      label: 'Detectors',
+      label: 'Built-in Detectors',
       items: [
         {
           type: 'doc',
@@ -61,6 +69,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/BranchDuplicate',
           label: 'BranchDuplicate',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/CellOverflow',
+          label: 'CellOverflow',
         },
         {
           type: 'doc',
@@ -86,6 +99,21 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/EnsurePrgSeed',
           label: 'EnsurePrgSeed',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/EtaLikeSimplifications',
+          label: 'EtaLikeSimplifications',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/ExitCodeUsage',
+          label: 'ExitCodeUsage',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/FalseCondition',
+          label: 'FalseCondition',
         },
         {
           type: 'doc',
@@ -124,13 +152,38 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/SendInLoop',
+          label: 'SendInLoop',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/ShortCircuitCondition',
+          label: 'ShortCircuitCondition',
+        },
+        {
+          type: 'doc',
           id: 'detectors/StringReceiversOverlap',
           label: 'StringReceiversOverlap',
         },
         {
           type: 'doc',
-          id: 'detectors/UnboundLoops',
-          label: 'UnboundLoops',
+          id: 'detectors/SuspiciousMessageMode',
+          label: 'SuspiciousMessageMode',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnboundLoop',
+          label: 'UnboundLoop',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnboundMap',
+          label: 'UnboundMap',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnusedExpressionResult',
+          label: 'UnusedExpressionResult',
         },
         {
           type: 'doc',
@@ -145,13 +198,21 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      'type': 'html',
+      value: '<hr class="sidebars-separator" />',
+    },
+    {
+      'type': 'html',
+      'value': '<span class=\'menu__link\'><b> Tools </b></span>',
+    },
+    {
       type: 'doc',
       id: 'tools',
-      label: 'Tools Overview',
+      label: 'Overview',
     },
     {
       type: 'category',
-      label: 'Tools',
+      label: 'Built-in Tools',
       items: [
         {
           type: 'doc',
@@ -168,6 +229,36 @@ const sidebars: SidebarsConfig = {
           id: 'tools/DumpConfig',
           label: 'DumpConfig',
         },
+        {
+          type: 'doc',
+          id: 'tools/DumpImports',
+          label: 'DumpImports',
+        },
+      ],
+    },
+    {
+      'type': 'html',
+      value: '<hr class="sidebars-separator" />',
+    },
+    {
+      'type': 'html',
+      'value': '<span class=\'menu__link\'><b> Development </b></span>',
+    },
+    {
+      type: 'category',
+      label: 'Misti Design',
+      items: [
+        {
+          type: 'doc',
+          id: 'hacking/design',
+          label: 'Design Overview',
+        },
+        {
+          type: 'doc',
+          id: 'hacking/souffle',
+          label: 'Soufflé',
+        },
+        ,
       ],
     },
     {
@@ -184,22 +275,17 @@ const sidebars: SidebarsConfig = {
           id: 'hacking/developing-misti',
           label: 'Developing Misti',
         },
-        {
-          type: 'doc',
-          id: 'hacking/design',
-          label: 'Design Overview',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/souffle',
-          label: 'Soufflé',
-        },
-        {
-          type: 'doc',
-          id: 'hacking/custom-detector',
-          label: 'Custom Detectors',
-        },
       ],
+    },
+    {
+      type: 'doc',
+      id: 'hacking/custom-detector',
+      label: 'Writing Custom Detectors',
+    },
+    {
+      type: 'doc',
+      id: 'hacking/custom-detector',
+      label: 'Writing Custom Detectors',
     },
   ],
 };
