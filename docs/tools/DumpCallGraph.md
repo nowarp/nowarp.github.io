@@ -95,5 +95,4 @@ For real-time visualization of DOT files, you can use [one of the available Grap
 By leveraging the `DumpCallGraph` tool, developers can gain valuable insights into their Tact contracts, leading to better code quality and maintainability.
 
 ---
-
 **Note:** Replace `<TACT_CONFIG_PATH|TACT_FILE_PATH>` with the actual path to your Tact configuration file or Tact contract file when running the commands.
