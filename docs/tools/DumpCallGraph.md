@@ -24,7 +24,7 @@ misti -t "DumpCallGraph:format=json" <TACT_CONFIG_PATH|TACT_FILE_PATH> > callgra
 
 ## Further Information
 
-For detailed instructions on how to work with the generated Mermaid, Graphviz DOT, and JSON files—including how to view, convert, and visualize them—please refer to the [DumpCfg documentation](./DumpCfg.md#working-with-graphviz). The steps and tools used for `DumpCallGraph` outputs are the same as those described for `DumpCfg`
+For detailed instructions on how to work with the generated Mermaid, Graphviz DOT, and JSON files—including how to view, convert, and visualize them—please refer to the [DumpCfg documentation](./DumpCfg.md#working-with-graphviz). The steps and tools used for `DumpCallGraph` outputs are the same as those described for `DumpCfg`.
 
 By utilizing the `DumpCallGraph` tool, developers can gain deeper insights into the function call structure of their contracts and effectively debug and enhance their code.
 
