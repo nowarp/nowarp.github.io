@@ -287,11 +287,6 @@ const sidebars: SidebarsConfig = {
       id: 'hacking/custom-detector',
       label: 'Writing Custom Detectors',
     },
-    {
-      type: 'doc',
-      id: 'hacking/custom-detector',
-      label: 'Writing Custom Detectors',
-    },
   ],
 };
 
