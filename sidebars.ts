@@ -221,6 +221,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'tools/DumpCallGraph',
+          label: 'DumpCallGraph',
+        },
+        {
+          type: 'doc',
           id: 'tools/DumpCfg',
           label: 'DumpCfg',
         },
