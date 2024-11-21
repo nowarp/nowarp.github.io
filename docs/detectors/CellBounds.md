@@ -1,14 +1,19 @@
-# CellOverflow
-A detector that identifies cell overflow problems.
+# CellBounds
+A detector that identifies cell overflow and underflow problems.
 
 ## Why is it bad?
-Cell overflow is an issue specific to the TON blockchain. TON stores data in
-cells, which are low-level data structures used for serialization and deserialization.
+Cell overflow and underflow are issues specific to the TON blockchain. TON
+stores data in cells, which are low-level data structures used for serialization
+and deserialization.
 
 The overflow issue occurs when the user attempts to store more data in a cell
 than it supports. The current limitation is 1023 bits and 4 references to other
 cells. When these limits are exceeded, the contract throws an error with the
 exit code `8` during the compute phase.
+
+The underflow issue occurs when the user attempts to get more data from a
+structure than it supports. cells. When it happens, the contract throws an
+error with the exit code `9` during the compute phase.
 
 ## Example
 ```tact

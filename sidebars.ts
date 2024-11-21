@@ -72,8 +72,8 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
-          id: 'detectors/CellOverflow',
-          label: 'CellOverflow',
+          id: 'detectors/CellBounds',
+          label: 'CellBounds',
         },
         {
           type: 'doc',

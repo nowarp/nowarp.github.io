@@ -12,7 +12,7 @@ title: Detectors Overview
 | 1  | [ArgCopyMutation](./detectors/ArgCopyMutation.md) | High |  | ✔ |
 | 2  | [AsmIsUsed](./detectors/AsmIsUsed.md) | Info |  |  |
 | 3  | [BranchDuplicate](./detectors/BranchDuplicate.md) | High |  | ✔ |
-| 4  | [CellOverflow](./detectors/CellOverflow.md) | Critical |  | ✔ |
+| 4  | [CellBounds](./detectors/CellBounds.md) | Critical |  | ✔ |
 | 5  | [ConstantAddress](./detectors/ConstantAddress.md) | Info |  |  |
 | 6  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md) | High | ✔ | ✔ |
 | 7  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info |  |  |
