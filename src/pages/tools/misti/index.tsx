@@ -6,14 +6,14 @@ import { FaTelegramPlane } from 'react-icons/fa';
 
 export default function Home() {
   return (
-     <Layout description="The TON Static Analyzer">
+     <Layout description="TON Static Analyzer">
       <Head>
-        <title>Misti - TON Security Tool</title>
+        <title>Misti - TON Static Analyzer</title>
       </Head>
       <header className={styles.heroBanner}>
         <div className={styles.textContainer}>
           <h1 className={styles.heroTitle}>Misti</h1>
-          <p className={styles.heroSubtitle}>TON Security Tool</p>
+          <p className={styles.heroSubtitle}>TON Static Analyzer</p>
           <p className={styles.heroSubtitleSmall}>
             Detect security issues in TON smart contracts before they reach
             production
