@@ -17,8 +17,8 @@ This will create the `implicitInit.ts` file, which contains the template code fo
 Here's an example of how to implement a custom detector using Misti API:
 
 ```typescript
-import { ASTDetector } from "@nowarp/misti/dist/detectors/detector";
-import { CompilationUnit } from "@nowarp/misti/dist/internals/ir";
+import { AstDetector } from "@nowarp/misti/dist/detectors/detector";
+import { CompilationUnit, FunctionName } from "@nowarp/misti/dist/internals/ir";
 import {
   MistiTactWarning,
   Severity,
@@ -29,12 +29,12 @@ import {
  *
  * It reports all the contracts that doesn't have an explicit implementation of the init function.
  */
-export class ImplicitInit extends ASTDetector {
+export class ImplicitInit extends AstDetector {
   severity = Severity.INFO;
 
   async check(cu: CompilationUnit): Promise<MistiTactWarning[]> {
     return Array.from(cu.contracts).reduce((foundErrors, [_, contract]) => {
-      if (!cu.findMethodCFGByName(contract.name, "init")) {
+      if (!cu.findMethodCFGByName(contract.name, "init" as FunctionName)) {
         const err = this.makeWarning(
           `Contract ${contract.name} doesn't define an init function`,
           contract.ref,
