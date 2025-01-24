@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
-import styles from './index.module.css';
+import styles from './../../index.module.css';
 import { FaTelegramPlane } from 'react-icons/fa';
 
 export default function Home() {
@@ -183,15 +183,14 @@ export default function Home() {
           <div className="container">
             <h2 className={styles.featuresTitle}>Request Audit</h2>
             <p className={styles.featuresSummary}>
-              While automated tools like Misti are powerful, they can't catch every vulnerability. Complex bugs require insights that only a <strong>manual audit</strong> or <strong>formal specification and verification</strong> can provide.
+              While tools like Misti are valuable supplements to the security process, they are NOT substitutes for proper security analysis. The most critical aspect of smart contract security is thoroughly understanding the contract's specification and business logic - something no automated tool can do.
             </p>
             <p className={styles.featuresSummary}>
-              We offer high-quality audits as our availability allows. With our Web3 security background, we can help keep your project safe. References are available upon request.
+              We provide comprehensive smart contract audits, backed by our technical expertise, as our schedule permits.
             </p>
             <div className={`${styles.buttons} ${styles.centerButton}`}>
-              <a className="button button--primary button--lg" href="https://t.me/jubnzv">
-                <FaTelegramPlane style={{ marginRight: '8px', verticalAlign: 'middle' }} />
-                Contact Us
+              <a className="button button--primary button--lg" href="/#audits">
+                View Our Audit Services
               </a>
             </div>
           </div>
