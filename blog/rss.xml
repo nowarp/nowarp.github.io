@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Misti Blog</title>
+        <link>https://nowarp.io/blog</link>
+        <description>Misti Blog</description>
+        <lastBuildDate>Sun, 26 Jan 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[TON Security Risks: A static analysis perspective]]></title>
+            <link>https://nowarp.io/blog/ton-security-risks</link>
+            <guid>https://nowarp.io/blog/ton-security-risks</guid>
+            <pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://nowarp.io/blog/ton-security-risks#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>Smart contracts are unforgiving. A single bug can vaporize millions of dollars. If you're coming from web development, forget everything you know about "move fast and break things" - here, breaking things means <em>actually breaking things</em>. With money. Real money.</p>
+<p>This is where static analysis comes in. It's a technique that examines your code before deployment to automatically detect potential vulnerabilities. While no automated tool can guarantee perfect security, static analysis can identify many common security issues early in development, when they're cheapest to fix.</p>
+<p>This article will:</p>
+<ul>
+<li>Introduce fundamental concepts of static analysis for smart contract security</li>
+<li>Demonstrate how static analysis tools fit into TON's security landscape</li>
+<li>Present concrete capabilities and limitations of automated security analysis</li>
+<li>Showcase practical applications through Misti</li>
+<li>Give practical security advises</li>
+</ul>
+<p>Understanding static program analysis enables you to add an additional layer of automated security verification to your development process, catching some vulnerabilities before they reach production.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="static-program-analysis-101">Static Program Analysis 101<a href="https://nowarp.io/blog/ton-security-risks#static-program-analysis-101" class="hash-link" aria-label="Direct link to Static Program Analysis 101" title="Direct link to Static Program Analysis 101">​</a></h2>
+<p>Security tooling is an essential part of modern smart contract development, serving as the first line of defense against vulnerabilities. While manual code review remains crucial, automated analysis tools can systematically identify classes of bugs that would be tedious and error-prone to catch by hand.</p>
+<p>Static program analysis operates by examining program code without actually executing it. The fundamental approach involves constructing abstract models of program behavior - typically through control flow graphs (CFGs) and data flow analysis. These models allow us to reason about program properties without running into the undecidability issues that would come with trying to analyze all possible runtime behaviors.</p>
+<p>[TODO: picture: static analysis pipeline]
+[code -&gt; AST -&gt; CFG -&gt; dataflow analysis]</p>
+<p>In essence, the approach is straightforward: we read and analyze the code structure to identify potential security vulnerabilities, without executing the code itself.</p>
+<p>The widely used techniques that will be illustrated in this post include:</p>
+<ul>
+<li>Control flow analysis: Mapping possible execution paths through the program</li>
+<li>Data flow analysis: Tracking how values propagate through variables</li>
+<li>Datalog-based analysis: Uses translation to <a href="https://en.wikipedia.org/wiki/Datalog" target="_blank" rel="noopener noreferrer">Datalog</a> in order to reason about desired security properties</li>
+<li>Taint analysis: Following potentially dangerous input data through the program</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="limitations-of-static-analysis">Limitations of Static Analysis<a href="https://nowarp.io/blog/ton-security-risks#limitations-of-static-analysis" class="hash-link" aria-label="Direct link to Limitations of Static Analysis" title="Direct link to Limitations of Static Analysis">​</a></h3>
+<p>There are also different techniques of analysis exists, which could be used to <a href="https://en.wikipedia.org/wiki/Symbolic_execution" target="_blank" rel="noopener noreferrer">explore concrete paths of execution</a>, <a href="https://en.wikipedia.org/wiki/Model_checking#Symbolic_model_checking" target="_blank" rel="noopener noreferrer">prove some properties on a limited domain of program</a>, <a href="https://en.wikipedia.org/wiki/Abstract_interpretation" target="_blank" rel="noopener noreferrer">prove some properties of the program with more accuracy</a> and so on, but the core issues are always the same: <a href="https://en.wikipedia.org/wiki/Rice%27s_theorem" target="_blank" rel="noopener noreferrer">static undecidability</a>. This fundamental limitation, proven by Rice's theorem, establishes that determining any non-trivial semantic property of programs is undecidable. In practical terms, this means that no static analysis tool, regardless of its sophistication, can guarantee the detection of all potential vulnerabilities or prove their absence. We can approximate, we can detect certain classes of issues, but complete verification remains mathematically impossible. This reality shapes how we approach smart contract security, emphasizing the importance of combining multiple analysis techniques with thorough manual review.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="static-analysis-for-web3-and-ton">Static Analysis for Web3 and TON<a href="https://nowarp.io/blog/ton-security-risks#static-analysis-for-web3-and-ton" class="hash-link" aria-label="Direct link to Static Analysis for Web3 and TON" title="Direct link to Static Analysis for Web3 and TON">​</a></h2>
+<p>Smart contracts are just programs executing in blockchain. They have some differences, but fundamentally the same techniques of classic program analysis might be applied to smart contracts analysis.</p>
+<p>Being a dynamic field, web3 security is currently actively developing, new approaches are testing, but still, that's a wild west: tools impact on actual bug finding is suboptimal [TODO cite yannis]. Despite that, we have a huge set of approaches and commercial/free tools described in papers, we know about past bugs typical for other blockchains, and this could be extrapolated to TON.</p>
+<p>TON creates it's own unique archicecture issues, while most of the generic web3 bugs from the research and practical experience still valid for TON.</p>
+<p>While conventional static analysis techniques (as demonstrated in [1]) have proven valuable in other contexts, TON's architectural peculiarities demand more sophisticated approaches. The symbolic value analysis methodology, though groundbreaking, requires substantial adaptation for TON's computational model.</p>
+<p>[cite machine unadible bugs]</p>
+<p>The most complicated bugs in TON are related to its unique actor model and asynchronous message-passing [2].</p>
+<ul>
+<li>state mutations due to async messages (partial execution)</li>
+<li>man in the middle in message flow</li>
+<li>ANYTHING that require manual audit</li>
+</ul>
+<p>Some of these issues could be mitigated by more advanced techniques, requiring some specification of the communactng contracts. it could be done in other category of tools.</p>
+<p>As the recent research[5] showcases, all the exploitable web3 bugs could be clsasified as machine-auditable (MAB) and machine unauditable (MUB). that's the recent research dwelling into</p>
+<p>here is the grasp: more complicated bugs require understanding of the system. and sometimes the issue is that even developer doesn't fully understand it.</p>
+<p>[TODO picture from the paper w/ bug categories/statistics]</p>
+<p>[concrete issues?]
+For smart contracts specifically, these techniques help identify issues like:</p>
+<ul>
+<li>Unprotected state modifications</li>
+<li>Arithmetic vulnerabilities</li>
+<li>Unauthorized access to critical functions</li>
+<li>Resource exhaustion vectors</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="misti-ton-static-analysis">Misti: TON Static Analysis<a href="https://nowarp.io/blog/ton-security-risks#misti-ton-static-analysis" class="hash-link" aria-label="Direct link to Misti: TON Static Analysis" title="Direct link to Misti: TON Static Analysis">​</a></h3>
+<p>Misti as a source-level analyzer based on monotone framework that works exactly as described above, as well as combining it with Datalog-based analyses. Certantly it has all the limitations typical for this approach. These are esesntial and done by design.</p>
+<p>Misti covers different categories of security and optimization issues:</p>
+<ul>
+<li>cell storage issues (TODO: examples)</li>
+<li>dos</li>
+<li>arithmetic issues</li>
+<li>access control</li>
+<li>code optimization</li>
+<li>generic suspicious patterns (things we learn from web3 security issues in past)</li>
+</ul>
+<p>Let's consider some case-studies of concrete analyses it implements.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="1-cell-bounds">1 Cell bounds<a href="https://nowarp.io/blog/ton-security-risks#1-cell-bounds" class="hash-link" aria-label="Direct link to 1 Cell bounds" title="Direct link to 1 Cell bounds">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="2-divide-before-multiply">2 Divide-before-multiply<a href="https://nowarp.io/blog/ton-security-risks#2-divide-before-multiply" class="hash-link" aria-label="Direct link to 2 Divide-before-multiply" title="Direct link to 2 Divide-before-multiply">​</a></h4>
+<p>A classic bug leading to [millions] of loss [link]</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="3-unprotected-call">3 Unprotected call<a href="https://nowarp.io/blog/ton-security-risks#3-unprotected-call" class="hash-link" aria-label="Direct link to 3 Unprotected call" title="Direct link to 3 Unprotected call">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="4-suspicious-ton-prg-usage">4 Suspicious TON PRG usage<a href="https://nowarp.io/blog/ton-security-risks#4-suspicious-ton-prg-usage" class="hash-link" aria-label="Direct link to 4 Suspicious TON PRG usage" title="Direct link to 4 Suspicious TON PRG usage">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="5-ton-prg-issues">5 TON PRG issues<a href="https://nowarp.io/blog/ton-security-risks#5-ton-prg-issues" class="hash-link" aria-label="Direct link to 5 TON PRG issues" title="Direct link to 5 TON PRG issues">​</a></h4>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="future-directions">Future Directions<a href="https://nowarp.io/blog/ton-security-risks#future-directions" class="hash-link" aria-label="Direct link to Future Directions" title="Direct link to Future Directions">​</a></h3>
+<p>There are many possibilities in TON security automation.</p>
+<p>Our concrete steps in Misti for the future:</p>
+<ul>
+<li>Implementing IFDS with path-sensitivity tracking in order to improve accuracy of interprocdural taint analysis</li>
+<li>Implement more Tact detectors using advanced static analysis techniques</li>
+<li>Improve integrability and API to support third-party developers</li>
+<li>Generic Datalog translation</li>
+<li>Better tooling for auditors to actually understand the structure of contracts</li>
+</ul>
+<p>Overall, Misti still following the development of the Tact language as the most reasonable language in the ecosystem which will become a standard in 2025. Also, there is an ongoing work on a tool capable to analyze both: legacy FunC code and Tact which will use a different approach from Misti. It will be announced later this year.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://nowarp.io/blog/ton-security-risks#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>We've considered the basic information about static program analysis and it's application to the TON security landscape. Now, after reading this, here are some concrete steps to increase security you should be thinking about:</p>
+<ul>
+<li><strong>Integrate security tools:</strong> Smart contracts handle real money and are unforgiving - a single bug can be catastrophic. Use every possibility to make your code secure. Static analysis is a powerful first line of defense, catching common vulnerabilities early and automatically. But it's just one piece of the security puzzle. Use every security tool you can, understand how it works and what can it actually do.</li>
+<li><strong>Apply development practices:</strong> testing, design, formal specification or at least documentation. This develops a separate post and might be highlighted in this blog later. Prefer a safe language.</li>
+<li><strong>Set up processes:</strong> security not only about analysis</li>
+<li><strong>Do security audit:</strong> While static analysis enhances the security process, it cannot replace thorough manual audits. For production contracts, professional security audits remain essential. You could find our contacts on this site or browse security teams collaborating with TF.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="https://nowarp.io/blog/ton-security-risks#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2>
+<ol>
+<li><a href="https://yanniss.github.io/symvalic-oopsla21.pdf" target="_blank" rel="noopener noreferrer">Symbolic Value Analysis for Smart Contracts</a></li>
+<li><a href="https://blog.ton.org/secure-smart-contract-programming-in-func" target="_blank" rel="noopener noreferrer">Secure Smart Contract Programming in FunC</a></li>
+<li>Security Contact Integration Guidelines</li>
+<li><a href="https://github.com/slowmist/Toncoin-Smart-Contract-Security-Best-Practices/blob/main/README.md" target="_blank" rel="noopener noreferrer">TON Smart Contract Security Best Practices</a></li>
+<li>Zhang et al - Demystifying Exploitable Bugs in Smart Contracts (<a href="https://github.com/ZhangZhuoSJTU/Web3Bugs/blob/main/papers/icse23.pdf" target="_blank" rel="noopener noreferrer">pdf</a>)</li>
+<li>spa.pdf book</li>
+</ol>]]></content:encoded>
+            <category>misti</category>
+            <category>ton</category>
+            <category>static analysis</category>
+        </item>
+    </channel>
+</rss>
