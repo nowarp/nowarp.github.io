@@ -8,6 +8,8 @@ lead to subtle bugs. Safer stdlib alternatives should be preferred in the code.
 Supported functions:
 * Use `send` instead of [`nativeSendMessage`](https://docs.tact-lang.org/ref/core-advanced#nativesendmessage)
 * Prefer `randomInt` instead of [`nativeRandom`](https://docs.tact-lang.org/ref/core-advanced#nativerandom)
+* Replace `emptyCell().asSlice()` with `emptySlice()`
+* Replace `beginCell().endCell()` with `emptyCell()`
 
 ## Example
 ```tact

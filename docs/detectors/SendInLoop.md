@@ -1,5 +1,6 @@
 # SendInLoop
-An optional detector that identifies send functions being called inside loops.
+An optional detector that identifies send functions being called inside loops,
+including indirect calls via other functions.
 
 ## Why is it bad?
 Calling send functions inside loops can lead to unintended consequences, such as

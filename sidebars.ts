@@ -167,6 +167,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/SuspiciousLoop',
+          label: 'SuspiciousLoop',
+        },
+        {
+          type: 'doc',
           id: 'detectors/SuspiciousMessageMode',
           label: 'SuspiciousMessageMode',
         },
@@ -179,6 +184,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/UnboundMap',
           label: 'UnboundMap',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnprotectedCall',
+          label: 'UnprotectedCall',
         },
         {
           type: 'doc',
