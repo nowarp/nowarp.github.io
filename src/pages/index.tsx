@@ -43,10 +43,9 @@ const HomePage: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // GET THE ACTUAL COMPUTED COLORS LIKE A SANE PERSON
     const computedStyle = getComputedStyle(document.documentElement);
     const BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
-      ? 'rgba(0, 0, 0, 0.85)'
+      ? getComputedStyle(document.body).backgroundColor
       : computedStyle.getPropertyValue('--ifm-color-white').trim();
     const PARTICLE_COLOR = computedStyle.getPropertyValue('--ifm-color-primary').trim();
 
