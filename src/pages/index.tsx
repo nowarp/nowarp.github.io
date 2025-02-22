@@ -145,8 +145,10 @@ const HomePage: React.FC = () => {
     resizeObserver.observe(document.body);
 
     const draw = () => {
+      // Properly clear the whole damn canvas and set the proper background
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = BACKGROUND_COLOR;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
 
       particles.forEach(particle => {
         particle.x += particle.vx;
@@ -178,7 +180,7 @@ const HomePage: React.FC = () => {
         }
       }
 
-      requestAnimationFrame(draw);
+      animationRef.current = requestAnimationFrame(draw);  // STORE THE REF SO WE CAN CANCEL IT PROPERLY
     };
 
     return () => {
