@@ -5,15 +5,11 @@ slug: /
 sidebar_position: 1
 ---
 
-Misti is a static analysis tool designed for smart contracts on the [TON blockchain](https://ton.org/).
+Misti is a static analysis tool designed for smart contracts on the [TON blockchain](https://ton.org/) written in [Tact](https://tact-lang.org/).
 
 It highlights potentially dangerous and non-optimal patterns in your contract:
 
 ![img](/img/demo-warnings.png)
-
-## Language Support
-- [Tact](https://tact-lang.org/) is supported
-- [FunC](https://docs.ton.org/develop/func/overview) support is [planned](https://github.com/nowarp/misti/issues/56) by the end of the year
 
 ## Features
 - **Code Analysis**: Identify and fix potential [security flaws and code problems](https://nowarp.io/tools/misti/docs/detectors) early in the development cycle.
