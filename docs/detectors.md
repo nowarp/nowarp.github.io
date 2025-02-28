@@ -8,7 +8,7 @@ title: Detectors Overview
 ## Built-in Detectors
 
 | #  | Detector | Severity | Requires Soufflé | Enabled by default |
-|----|-----------|-----------|--------------------|---------------------|
+|----|----------|----------|------------------|--------------------|
 | 1  | [ArgCopyMutation](./detectors/ArgCopyMutation.md) | High |  | ✔ |
 | 2  | [AsmIsUsed](./detectors/AsmIsUsed.md) | Info |  |  |
 | 3  | [BranchDuplicate](./detectors/BranchDuplicate.md) | High |  | ✔ |
@@ -30,15 +30,16 @@ title: Detectors Overview
 | 19  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
 | 20  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
 | 21  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
-| 22  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 23  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium |  | ✔ |
-| 24  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Medium |  | ✔ |
-| 25  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
-| 26  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
-| 27  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High |  | ✔ |
-| 28  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
-| 29  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 30  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 22  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info |  |  |
+| 23  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 24  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium |  | ✔ |
+| 25  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium |  | ✔ |
+| 26  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
+| 27  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
+| 28  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High |  | ✔ |
+| 29  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
+| 30  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 31  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

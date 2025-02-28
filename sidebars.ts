@@ -162,6 +162,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/StateMutationInGetter',
+          label: 'StateMutationInGetter',
+        },
+        {
+          type: 'doc',
           id: 'detectors/StringReceiversOverlap',
           label: 'StringReceiversOverlap',
         },
