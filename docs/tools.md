@@ -37,9 +37,10 @@ misti --output-path "/tmp" -t "DumpCfg:format=mermaid" my-example.tact
 
 Below is the complete list of built-in tools. Click on any of them to learn more.
 
-| #  | Tool                                        | Description                             |
-|----|---------------------------------------------|-----------------------------------------|
-| 1  | [DumpAst](./tools/DumpAst.md)               | Dumps the AST of project modules        |
-| 2  | [DumpCfg](./tools/DumpCfg.md)               | Dumps the CFG of project modules        |
-| 3  | [DumpConfig](./tools/DumpConfig.md)         | Dumps the Misti configuration file in use |
-| 4  | [DumpImports](./tools/DumpImports.md)       | Dumps the graph of imports |
+| #  | Tool                                        | Description                                            |
+|----|---------------------------------------------|--------------------------------------------------------|
+| 1  | [DumpAst](./tools/DumpAst.md)               | Dumps Abstract Syntax Tree (AST) of project modules    |
+| 2  | [DumpCallGraph](./tools/DumpCallGraph.md)   | Dumps CallGraph (CG) of project modules                |
+| 3  | [DumpCfg](./tools/DumpCfg.md)               | Dumps Control Flow Graph (CFG) of project modules      |
+| 4  | [DumpConfig](./tools/DumpConfig.md)         | Dumps Misti configuration file in use                  |
+| 5  | [DumpImports](./tools/DumpImports.md)       | Dumps graph of imports                                 |
