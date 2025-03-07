@@ -17,6 +17,15 @@ It highlights potentially dangerous and non-optimal patterns in your contract:
   [Integrate](https://nowarp.io/tools/misti/docs/tutorial/ci-cd) Misti into your CI/CD pipeline to ensure continuous code quality checks.
 - **Custom Detectors**: Create [custom detectors](https://nowarp.io/tools/misti/docs/hacking/custom-detector) to solve specific problems in your code or to provide a thorough security review if you are an auditor.
 
+## Misti versions
+
+| Misti version | Supported Tact version | Release date |
+|---------------|------------------------|--------------|
+| 0.7           | 1.6.1                  | Mar 5, 2025  |
+| 0.6           | 1.5                    | Dec 22, 2024 |
+| 0.5           | 1.5                    | Oct 31, 2024 |
+| 0.4           | 1.5                    | Oct 8, 2024  |
+
 ## Name Origin
 The name "Misti" comes from the Misti volcano in Peru. It was chosen because it's catchy and easy to remember.
 
