@@ -26,20 +26,21 @@ title: Detectors Overview
 | 15  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
 | 16  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
 | 17  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
-| 18  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
-| 19  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
-| 20  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
-| 21  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
-| 22  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info |  |  |
-| 23  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
-| 24  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium |  | ✔ |
-| 25  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium |  | ✔ |
-| 26  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
-| 27  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
-| 28  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High |  | ✔ |
-| 29  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
-| 30  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
-| 31  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
+| 18  | [PreferDeploy](./detectors/PreferDeploy.md) | Info |  | ✔ |
+| 19  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
+| 20  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
+| 21  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
+| 22  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
+| 23  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info |  |  |
+| 24  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 25  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium |  | ✔ |
+| 26  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium |  | ✔ |
+| 27  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |
+| 28  | [UnboundMap](./detectors/UnboundMap.md) | Low |  |  |
+| 29  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High |  | ✔ |
+| 30  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium |  | ✔ |
+| 31  | [UnusedOptional](./detectors/UnusedOptional.md) | Low |  | ✔ |
+| 32  | [ZeroAddress](./detectors/ZeroAddress.md) | Low |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

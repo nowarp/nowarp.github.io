@@ -142,6 +142,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/PreferDeploy',
+          label: 'PreferDeploy',
+        },
+        {
+          type: 'doc',
           id: 'detectors/PreferredStdlibApi',
           label: 'PreferredStdlibApi',
         },
