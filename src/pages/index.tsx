@@ -219,7 +219,8 @@ const HomePage: React.FC = () => {
           transform: 'translate(-50%, -50%)',
           zIndex: 1,
           textAlign: 'left',
-          color: 'var(--ifm-color-primary-dark)'
+          color: 'var(--ifm-color-primary-dark)',
+          opacity: 0.9
         }}>
           <h1 className={styles.heroTitle}>nowarp</h1>
           <p className={styles.heroSubtitleSmall}>Professional <a href="#audits" className={styles.inlineLink}>contract audits</a> and <a href="#tools" className={styles.inlineLink}>security tooling</a> for TON smart contracts</p>

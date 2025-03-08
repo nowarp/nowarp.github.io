@@ -28,6 +28,16 @@ const config: Config = {
           routeBasePath: 'tools/misti/docs',
           editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
         },
+       blog: {
+          routeBasePath: 'blog',
+          blogTitle: 'Blog',
+          blogDescription: 'Technical blog about TON security and toling',
+          blogSidebarCount: 10,
+          blogSidebarTitle: 'Latest Posts',
+          postsPerPage: 5,
+          showReadingTime: true,
+          editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -51,7 +61,7 @@ const config: Config = {
       contextualSearch: true,
     },
     navbar: {
-      title: 'Misti',
+      title: 'nowarp',
       logo: {
         alt: 'Misti Logo',
         src: 'img/misti.svg',
@@ -59,12 +69,33 @@ const config: Config = {
       },
       items: [
         {
+          to: '/blog',
+          label: 'Blog',
+          position: 'left',
+        },
+        {
+          type: 'dropdown',
+          label: 'Tools',
+          position: 'left',
+          items: [
+            {
+              label: 'Misti',
+              to: '/tools/misti',
+            },
+          ],
+        },
+        {
           type: 'search',
           position: 'left',
         },
         {
           type: 'docsVersionDropdown',
           position: 'right',
+          className: 'navbar-version-dropdown misti-only-dropdown',
+          dropdownActiveClassDisabled: true,
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [],
+          docsPluginId: 'default',
         },
         {
           label: 'API Reference',
