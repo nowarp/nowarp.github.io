@@ -10,17 +10,17 @@ echo 'Generating Misti TypeDoc documentation...'
 pushd "$MISTI_PATH"
 yarn docs --customCss "$CUSTOM_CSS_PATH"
 popd > /dev/null
-rm -rf static/tools/misti/api
-mkdir -pv static/tools/misti
-mv "$MISTI_PATH/docs/api" static/tools/misti/
+rm -rf static/api/misti
+mkdir -pv static/api/misti
+mv "$MISTI_PATH/docs/api" static/api/misti
 
 echo 'Generating Souffle.js TypeDoc documentation...'
 pushd "$SOUFFLE_PATH"
 yarn docs --customCss "$CUSTOM_CSS_PATH"
 popd > /dev/null
-rm -rf static/lib/souffle-js/api
-mkdir -pv static/lib/souffle-js
-mv "$SOUFFLE_PATH/docs/api" static/lib/souffle-js/
+rm -rf static/api/souffle-js/
+mkdir -pv static/api/souffle-js/
+mv "$SOUFFLE_PATH/docs/api" static/api/souffle-js/
 
 echo 'Generating docusaurus documentation...'
 rm -rf ./build

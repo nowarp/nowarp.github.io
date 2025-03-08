@@ -19,6 +19,15 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  stylesheets: [
+    {
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+      type: 'text/css',
+      integrity: 'sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==',
+      crossorigin: 'anonymous',
+      referrerpolicy: 'no-referrer',
+    },
+  ],
   presets: [
     [
       'classic',
@@ -61,11 +70,11 @@ const config: Config = {
       contextualSearch: true,
     },
     navbar: {
-      title: 'nowarp',
+      title: '',
       logo: {
         alt: 'Misti Logo',
         src: 'img/misti.svg',
-        href: '/tools/misti',
+        href: '/',
       },
       items: [
         {
@@ -85,8 +94,19 @@ const config: Config = {
           ],
         },
         {
-          type: 'search',
+          type: 'dropdown',
+          label: 'Developers',
           position: 'left',
+          items: [
+            {
+              label: 'API Reference',
+              to: '/api',
+            },
+          ],
+        },
+        {
+          type: 'search',
+          position: 'right',
         },
         {
           type: 'docsVersionDropdown',
@@ -96,24 +116,6 @@ const config: Config = {
           dropdownItemsBefore: [],
           dropdownItemsAfter: [],
           docsPluginId: 'default',
-        },
-        {
-          label: 'API Reference',
-          position: 'right',
-          items: [
-            {
-              label: 'Misti',
-              to: '/tools/misti/api',
-              target: '_blank',
-              rel: 'noopener noreferrer',
-            },
-            {
-              label: 'Souffle.js',
-              to: '/lib/souffle-js/api',
-              target: '_blank',
-              rel: 'noopener noreferrer',
-            },
-          ],
         },
       ],
     },
@@ -125,7 +127,7 @@ const config: Config = {
           items: [
             {
               label: 'Telegram',
-              href: 'https://t.me/misti_dev',
+              href: 'https://t.me/tonsec_chat',
             },
             {
               label: 'GitHub',
@@ -138,16 +140,16 @@ const config: Config = {
           items: [
             {
               label: 'API Reference',
-              href: 'https://nowarp.io/tools/misti/api/',
+              href: 'https://nowarp.io/api/',
             },
-            {
-              label: 'Changelog',
-              href: 'https://github.com/nowarp/misti/blob/master/CHANGELOG.md',
-            },
-            {
-              label: 'Roadmap',
-              href: 'https://github.com/nowarp/misti/milestones',
-            },
+            // {
+            //   label: 'Changelog',
+            //   href: 'https://github.com/nowarp/misti/blob/master/CHANGELOG.md',
+            // },
+            // {
+            //   label: 'Roadmap',
+            //   href: 'https://github.com/nowarp/misti/milestones',
+            // },
           ],
         },
       ],
