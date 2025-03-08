@@ -37,9 +37,9 @@ const config: Config = {
           routeBasePath: 'tools/misti/docs',
           editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
         },
-       blog: {
+        blog: {
           routeBasePath: 'blog',
-          blogTitle: 'Blog',
+          blogTitle: 'Blog - TON Security',
           blogDescription: 'Technical blog about TON security and toling',
           blogSidebarCount: 10,
           blogSidebarTitle: 'Latest Posts',
@@ -48,7 +48,10 @@ const config: Config = {
           editUrl: 'https://github.com/nowarp/nowarp.github.io/tree/master/',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/navbar-fixes.css',
+          ],
         },
       } satisfies Preset.Options,
     ],
@@ -69,6 +72,10 @@ const config: Config = {
       indexName: process.env.ALGOLIA_INDEX_NAME,
       contextualSearch: true,
     },
+    customCss: [
+      require.resolve('./src/css/custom.css'),
+      require.resolve('./src/css/navbar-fixes.css'),
+    ],
     navbar: {
       title: '',
       logo: {
