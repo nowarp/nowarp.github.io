@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import styles from './index.module.css';
 import { FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
@@ -23,6 +24,8 @@ const HomePage: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
   const location = useLocation();
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [textColor, setTextColor] = useState('var(--ifm-color-primary-dark)');
 
   useEffect(() => {
     if (location.hash) {
@@ -43,11 +46,13 @@ const HomePage: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const computedStyle = getComputedStyle(document.documentElement);
-    const BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
+    let computedStyle = getComputedStyle(document.documentElement);
+    let BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
       ? getComputedStyle(document.body).backgroundColor
       : computedStyle.getPropertyValue('--ifm-color-white').trim();
-    const PARTICLE_COLOR = computedStyle.getPropertyValue('--ifm-color-primary').trim();
+    let PARTICLE_COLOR = document.documentElement.dataset.theme === 'dark'
+      ? computedStyle.getPropertyValue('--ifm-color-white').trim()
+          : computedStyle.getPropertyValue('--ifm-color-primary').trim();
 
     let particles: Particle[] = [];
 
@@ -145,6 +150,15 @@ const HomePage: React.FC = () => {
     resizeObserver.observe(document.body);
 
     const draw = () => {
+      // UPDATE COLORS ON EVERY FRAME TO HANDLE THEME CHANGES
+      computedStyle = getComputedStyle(document.documentElement);
+      BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
+        ? getComputedStyle(document.body).backgroundColor
+        : computedStyle.getPropertyValue('--ifm-color-white').trim();
+      PARTICLE_COLOR = document.documentElement.dataset.theme === 'dark'
+        ? computedStyle.getPropertyValue('--ifm-color-secondary').trim()
+        : computedStyle.getPropertyValue('--ifm-color-primary').trim();
+
       // Properly clear the whole damn canvas and set the proper background
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = BACKGROUND_COLOR;
@@ -183,18 +197,122 @@ const HomePage: React.FC = () => {
       animationRef.current = requestAnimationFrame(draw);  // STORE THE REF SO WE CAN CANCEL IT PROPERLY
     };
 
+    // ALSO LISTEN FOR THEME CHANGES LIKE A PROPER PROGRAMMER
+    const themeObserver = new MutationObserver(() => {
+      computedStyle = getComputedStyle(document.documentElement);
+      BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
+        ? getComputedStyle(document.body).backgroundColor
+        : computedStyle.getPropertyValue('--ifm-color-white').trim();
+      PARTICLE_COLOR = computedStyle.getPropertyValue('--ifm-color-primary').trim();
+    });
+    
+    themeObserver.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['data-theme'] 
+    });
+
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
       resizeObserver.disconnect();
+      themeObserver.disconnect(); // CLEAN UP YOUR GARBAGE
     };
   }, []);
 
+  // DIRECT DOM MANIPULATION TO CONTROL NAVBAR
+  useEffect(() => {
+    // Function to update navbar visibility
+    const updateNavbarVisibility = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const shouldShow = scrollPosition > viewportHeight * 0.7;
+
+      console.log("SCROLL POS:", scrollPosition, "THRESHOLD:", viewportHeight * 0.7, "SHOULD SHOW:", shouldShow);
+
+      // Find navbar and footer elements
+      const navbar = document.querySelector('.navbar');
+      const footer = document.querySelector('.footer');
+
+      if (navbar) {
+        console.log("FOUND NAVBAR, SETTING VISIBILITY:", shouldShow);
+        navbar.style.setProperty('opacity', shouldShow ? '1' : '0', 'important');
+        navbar.style.setProperty('visibility', shouldShow ? 'visible' : 'hidden', 'important');
+        navbar.style.setProperty('transition', 'opacity 0.3s ease, visibility 0.3s ease', 'important');
+      } else {
+        console.log("NAVBAR NOT FOUND!");
+      }
+
+      if (footer) {
+        footer.style.setProperty('opacity', shouldShow ? '1' : '0', 'important');
+        footer.style.setProperty('visibility', shouldShow ? 'visible' : 'hidden', 'important');
+        footer.style.setProperty('transition', 'opacity 0.3s ease, visibility 0.3s ease', 'important');
+      }
+
+      // Update state for React
+      setShowNavbar(shouldShow);
+    };
+
+    // Initial update
+    updateNavbarVisibility();
+
+    // Add scroll listener
+    window.addEventListener('scroll', updateNavbarVisibility);
+
+    // Cleanup
+    return () => window.removeEventListener('scroll', updateNavbarVisibility);
+  }, []);
+
+  useEffect(() => {
+    // OBSERVE THEME CHANGES FOR TEXT COLOR
+    const updateTextColor = () => {
+      const isDarkTheme = document.documentElement.dataset.theme === 'dark';
+      setTextColor(isDarkTheme ? 'var(--ifm-color-secondary)' : 'var(--ifm-color-primary-dark)');
+    };
+
+    // Initial color setting
+    updateTextColor();
+
+    // Listen for theme changes
+    const themeObserver = new MutationObserver(updateTextColor);
+    
+    themeObserver.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['data-theme'] 
+    });
+
+    return () => themeObserver.disconnect();
+  }, []);
+
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <Layout
+      wrapperClassName={showNavbar ? 'show-navbar' : 'hide-navbar'}
+    >
       <Head>
         <title>nowarp - TON Security</title>
+        <style>{`
+          /* CSS to hide/show navbar/footer with proper specificity */
+          .hide-navbar .navbar {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+          }
+          .show-navbar .navbar {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+          }
+          .hide-navbar footer {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+          }
+          .show-navbar footer {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+          }
+        `}</style>
       </Head>
       <div style={{
         position: 'relative',
@@ -219,7 +337,7 @@ const HomePage: React.FC = () => {
           transform: 'translate(-50%, -50%)',
           zIndex: 1,
           textAlign: 'left',
-          color: 'var(--ifm-color-primary-dark)',
+          color: textColor,
           opacity: 0.9
         }}>
           <h1 className={styles.heroTitle}>nowarp</h1>
@@ -376,7 +494,7 @@ const HomePage: React.FC = () => {
                           d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
                         />
                       </svg>
-                      {" "}github.com/nowarp
+                      {" "}nowarp
                     </a>
                   </div>
                 </div>
@@ -385,7 +503,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 };
 
