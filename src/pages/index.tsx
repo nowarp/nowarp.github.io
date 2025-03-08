@@ -53,7 +53,7 @@ const HomePage: React.FC = () => {
 
     const initParticles = (width: number, height: number): Particle[] => {
       const particles: Particle[] = [];
-      
+
       // Keep generating until we have enough PROPERLY CONNECTED particles
       while (particles.length < PARTICLE_COUNT) {
         const particle: Particle = {
@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
           const dx = particle.x - existing.x;
           const dy = particle.y - existing.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          
+
           if (distance < CONNECTION_DISTANCE) {
             connectionCount++;
             existing.connections++;  // Update existing particle's connections
@@ -92,15 +92,15 @@ const HomePage: React.FC = () => {
           while (particle.connections < MIN_CONNECTIONS && attempts < 50) {
             particle.x = Math.random() * width;
             particle.y = Math.random() * height;
-            
+
             particle.connections = 0;
             for (const other of particles) {
               if (other === particle) continue;
-              
+
               const dx = particle.x - other.x;
               const dy = particle.y - other.y;
               const distance = Math.sqrt(dx * dx + dy * dy);
-              
+
               if (distance < CONNECTION_DISTANCE) {
                 particle.connections++;
                 other.connections++;
@@ -236,20 +236,20 @@ const HomePage: React.FC = () => {
               <div className="row">
                 <div className="col col--12">
                   <h3>
-                    <img 
-                      src="/img/misti.svg" 
-                      alt="Misti" 
-                      style={{ 
-                        height: '1em', 
-                        verticalAlign: 'middle', 
-                        marginRight: '0.5em' 
-                      }} 
+                    <img
+                      src="/img/misti.svg"
+                      alt="Misti"
+                      style={{
+                        height: '1em',
+                        verticalAlign: 'middle',
+                        marginRight: '0.5em'
+                      }}
                     />
                     Misti - TON Static Analyzer
                   </h3>
                   <p>
-                    Static analyzer that finds security vulnerabilities, TON-specific pitfalls, 
-                    and optimization opportunities in smart contracts. Fully automatic, open-source, 
+                    Static analyzer that finds security vulnerabilities, TON-specific pitfalls,
+                    and optimization opportunities in smart contracts. Fully automatic, open-source,
                     and extensible for third-party security researchers. <a href="/tools/misti" className={styles.inlineLink}>
                     Learn how it works and try it yourself...</a>
                   </p>
@@ -299,17 +299,17 @@ const HomePage: React.FC = () => {
                   <h4 style={{ marginBottom: '0rem' }}>Public Reports</h4>
                   <div className={styles.reportsGrid} style={{ marginTop: '0.5rem' }}>
                     <div className={styles.reportRow}>
-                      <a href="https://proofofcapital.org/" 
+                      <a href="https://proofofcapital.org/"
                          target="_blank"
                          rel="noopener noreferrer">
-                        <img 
-                          src="/reports/proof-of-capital.jpeg" 
-                          alt="Proof of Capital Logo" 
+                        <img
+                          src="/reports/proof-of-capital.jpeg"
+                          alt="Proof of Capital Logo"
                           className={styles.projectLogo}
                         />
                       </a>
                       <div className={styles.contentColumn}>
-                        <a href="https://proofofcapital.org/" 
+                        <a href="https://proofofcapital.org/"
                            className={styles.projectLink}
                            target="_blank"
                            rel="noopener noreferrer">
@@ -317,9 +317,9 @@ const HomePage: React.FC = () => {
                         </a>
                         <div className={styles.reportLink}>
                           <a href="https://raw.githubusercontent.com/nowarp/public-reports/master/2025-01-proof-of-capital.pdf" className={styles.pdfLink}>
-                            <svg 
-                              className={styles.pdfIcon} 
-                              viewBox="0 0 24 24" 
+                            <svg
+                              className={styles.pdfIcon}
+                              viewBox="0 0 24 24"
                               fill="currentColor"
                               xmlns="http://www.w3.org/2000/svg"
                               style={{ color: '#FF4444', verticalAlign: 'middle' }}
@@ -347,25 +347,25 @@ const HomePage: React.FC = () => {
               <div className="row">
                 <div className="col col--12">
                   <div className={styles.contactLinks}>
-                    <a href="https://t.me/nowarp_io" 
-                       className={styles.contactLink} 
+                    <a href="https://t.me/nowarp_io"
+                       className={styles.contactLink}
                        style={{ marginRight: '1rem' }}
                        target="_blank"
                        rel="noopener noreferrer">
                       <FaTelegramPlane style={{ verticalAlign: 'middle' }} /> @nowarp_io
                     </a>
-                    <a href="https://t.me/tonsec_chat" 
-                       className={styles.contactLink} 
+                    <a href="https://t.me/tonsec_chat"
+                       className={styles.contactLink}
                        style={{ marginRight: '1rem' }}
                        target="_blank"
                        rel="noopener noreferrer">
                       <FaTelegramPlane style={{ verticalAlign: 'middle' }} /> @tonsec_chat
                     </a>
-                    <a href="https://github.com/nowarp" 
+                    <a href="https://github.com/nowarp"
                        className={styles.contactLink}
                        target="_blank"
                        rel="noopener noreferrer">
-                      <svg 
+                      <svg
                         height="1em"
                         width="1em"
                         viewBox="0 0 24 24"

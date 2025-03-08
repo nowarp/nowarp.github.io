@@ -24,7 +24,7 @@ export default function APIReference() {
                 <div className={styles.featureBox}>
                   <h3>Misti</h3>
                   <p>
-                    Detailed API documentation for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/misti" target="_blank" rel="noopener noreferrer">Misti</a>, our TON static analyzer tool for smart contract security.
+                    Detailed API documentation for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/misti" target="_blank" rel="noopener noreferrer">nowarp/misti</a>, our TON static analyzer tool for smart contract security.
                   </p>
                   <div className={styles.buttons}>
                     <a className="button button--primary" href="/api/misti/">
@@ -37,7 +37,7 @@ export default function APIReference() {
                 <div className={styles.featureBox}>
                   <h3>Souffle.js</h3>
                   <p>
-                    Complete API reference for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/souffle.js" target="_blank" rel="noopener noreferrer">Souffle.js</a>, the JavaScript library for <a href="https://souffle-lang.github.io/">Souffle</a> interaction.
+                    Complete API reference for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/souffle.js" target="_blank" rel="noopener noreferrer">nowarp/souffle.js</a>, the JavaScript library for <a href="https://souffle-lang.github.io/">Souffle</a> interaction.
                   </p>
                   <div className={styles.buttons}>
                     <a className="button button--primary" href="/api/souffle-js/">
