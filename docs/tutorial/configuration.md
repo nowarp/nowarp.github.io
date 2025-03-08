@@ -92,4 +92,4 @@ Misti offers advanced configuration through environment variables to control spe
 
 ## Getting Help
 
-If you need assistance or encounter any issues, please create an issue on GitHub at [nowarp/misti](https://github.com/nowarp/misti/issues) or ask in the [Misti Telegram group](https://t.me/misti_dev).
+If you need assistance or encounter any issues, please create an issue on GitHub at [nowarp/misti](https://github.com/nowarp/misti/issues) or ask in the [Misti Telegram group](https://t.me/tonsec_chat).

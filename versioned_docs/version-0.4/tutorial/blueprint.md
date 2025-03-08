@@ -47,4 +47,4 @@ Or you can even pass the path to the contract directly:
 yarn blueprint misti path/to/my/contract.tact
 ```
 
-If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/misti_dev).
+If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/tonsec_chat).

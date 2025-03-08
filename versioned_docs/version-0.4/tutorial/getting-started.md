@@ -73,4 +73,4 @@ npx misti --quiet path/to/tact.config.json
 This might be useful in scripts and CI/CD.
 
 ## Troubleshooting
-If you encounter any issues during the installation process, feel free to [create an issue](https://github.com/nowarp/misti/issues/new) or ask in the [Misti Telegram group](https://t.me/misti_dev).
+If you encounter any issues during the installation process, feel free to [create an issue](https://github.com/nowarp/misti/issues/new) or ask in the [Misti Telegram group](https://t.me/tonsec_chat).
