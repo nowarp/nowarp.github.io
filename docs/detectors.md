@@ -26,13 +26,13 @@ title: Detectors Overview
 | 15  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium |  | ✔ |
 | 16  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low |  | ✔ |
 | 17  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info |  | ✔ |
-| 18  | [PreferDeploy](./detectors/PreferDeploy.md) | Info |  | ✔ |
-| 19  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
-| 20  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
-| 21  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
-| 22  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
-| 23  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info |  |  |
-| 24  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 18  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info |  |  |
+| 19  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | ✔ | ✔ |
+| 20  | [SendInLoop](./detectors/SendInLoop.md) | Medium |  |  |
+| 21  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low |  | ✔ |
+| 22  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info |  |  |
+| 23  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High |  | ✔ |
+| 24  | [SuboptimalSend](./detectors/SuboptimalSend.md) | Medium |  | ✔ |
 | 25  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium |  | ✔ |
 | 26  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium |  | ✔ |
 | 27  | [UnboundLoop](./detectors/UnboundLoop.md) | High | ✔ | ✔ |

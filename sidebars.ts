@@ -142,11 +142,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
-          id: 'detectors/PreferDeploy',
-          label: 'PreferDeploy',
-        },
-        {
-          type: 'doc',
           id: 'detectors/PreferredStdlibApi',
           label: 'PreferredStdlibApi',
         },
@@ -174,6 +169,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/StringReceiversOverlap',
           label: 'StringReceiversOverlap',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/SuboptimalSend',
+          label: 'SuboptimalSend',
         },
         {
           type: 'doc',
