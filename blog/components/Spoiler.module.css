@@ -1,0 +1,27 @@
+.spoilerContainer {
+  margin: 16px 0;
+  font-family: monospace;
+}
+
+.spoilerLine {
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px dotted #0A3D62;
+  color: #0A3D62;
+  font-weight: 500;
+  user-select: none;
+}
+
+.spoilerLine:hover {
+  color: #000;
+  border-bottom: 1px dotted #000;
+}
+
+.spoilerContent {
+  margin-top: 10px;
+  padding: 12px;
+  border-left: 3px solid #0A3D62;
+  background-color: rgba(0, 0, 0, 0.03);
+  display: inline-block;
+  width: 100%;
+}

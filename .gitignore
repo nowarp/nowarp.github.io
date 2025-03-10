@@ -20,6 +20,5 @@ yarn-debug.log*
 yarn-error.log*
 node_modules
 tags
-static/lib
-static/tools
+static/api
 .env
