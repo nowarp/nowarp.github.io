@@ -24,7 +24,6 @@ const HomePage: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
   const location = useLocation();
-  const [showNavbar, setShowNavbar] = useState(false);
   const [textColor, setTextColor] = useState('var(--ifm-color-primary-dark)');
 
   useEffect(() => {
@@ -205,10 +204,10 @@ const HomePage: React.FC = () => {
         : computedStyle.getPropertyValue('--ifm-color-white').trim();
       PARTICLE_COLOR = computedStyle.getPropertyValue('--ifm-color-primary').trim();
     });
-    
-    themeObserver.observe(document.documentElement, { 
-      attributes: true, 
-      attributeFilter: ['data-theme'] 
+
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
     });
 
     return () => {
@@ -218,49 +217,6 @@ const HomePage: React.FC = () => {
       resizeObserver.disconnect();
       themeObserver.disconnect(); // CLEAN UP YOUR GARBAGE
     };
-  }, []);
-
-  // DIRECT DOM MANIPULATION TO CONTROL NAVBAR
-  useEffect(() => {
-    // Function to update navbar visibility
-    const updateNavbarVisibility = () => {
-      const scrollPosition = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      const shouldShow = scrollPosition > viewportHeight * 0.7;
-
-      console.log("SCROLL POS:", scrollPosition, "THRESHOLD:", viewportHeight * 0.7, "SHOULD SHOW:", shouldShow);
-
-      // Find navbar and footer elements
-      const navbar = document.querySelector('.navbar');
-      const footer = document.querySelector('.footer');
-
-      if (navbar) {
-        console.log("FOUND NAVBAR, SETTING VISIBILITY:", shouldShow);
-        navbar.style.setProperty('opacity', shouldShow ? '1' : '0', 'important');
-        navbar.style.setProperty('visibility', shouldShow ? 'visible' : 'hidden', 'important');
-        navbar.style.setProperty('transition', 'opacity 0.3s ease, visibility 0.3s ease', 'important');
-      } else {
-        console.log("NAVBAR NOT FOUND!");
-      }
-
-      if (footer) {
-        footer.style.setProperty('opacity', shouldShow ? '1' : '0', 'important');
-        footer.style.setProperty('visibility', shouldShow ? 'visible' : 'hidden', 'important');
-        footer.style.setProperty('transition', 'opacity 0.3s ease, visibility 0.3s ease', 'important');
-      }
-
-      // Update state for React
-      setShowNavbar(shouldShow);
-    };
-
-    // Initial update
-    updateNavbarVisibility();
-
-    // Add scroll listener
-    window.addEventListener('scroll', updateNavbarVisibility);
-
-    // Cleanup
-    return () => window.removeEventListener('scroll', updateNavbarVisibility);
   }, []);
 
   useEffect(() => {
@@ -275,44 +231,19 @@ const HomePage: React.FC = () => {
 
     // Listen for theme changes
     const themeObserver = new MutationObserver(updateTextColor);
-    
-    themeObserver.observe(document.documentElement, { 
-      attributes: true, 
-      attributeFilter: ['data-theme'] 
+
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
     });
 
     return () => themeObserver.disconnect();
   }, []);
 
   return (
-    <Layout
-      wrapperClassName={showNavbar ? 'show-navbar' : 'hide-navbar'}
-    >
+    <Layout>
       <Head>
         <title>nowarp - TON Security</title>
-        <style>{`
-          /* CSS to hide/show navbar/footer with proper specificity */
-          .hide-navbar .navbar {
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transition: opacity 0.3s ease, visibility 0.3s ease !important;
-          }
-          .show-navbar .navbar {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transition: opacity 0.3s ease, visibility 0.3s ease !important;
-          }
-          .hide-navbar footer {
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transition: opacity 0.3s ease, visibility 0.3s ease !important;
-          }
-          .show-navbar footer {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transition: opacity 0.3s ease, visibility 0.3s ease !important;
-          }
-        `}</style>
       </Head>
       <div style={{
         position: 'relative',
