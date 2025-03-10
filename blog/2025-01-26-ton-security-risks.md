@@ -1,6 +1,6 @@
 ---
 slug: ton-security-risks
-title: "TON Security Risks: A static analysis perspective"
+title: "TON Security Risks: A Static Analysis Perspective"
 authors: GeorgiyKomarov
 tags: [misti, ton, "static analysis"]
 hide_table_of_contents: false
