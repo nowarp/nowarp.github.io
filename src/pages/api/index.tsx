@@ -27,8 +27,8 @@ export default function APIReference() {
                     Detailed API documentation for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/misti" target="_blank" rel="noopener noreferrer">nowarp/misti</a>, our TON static analyzer tool for smart contract security.
                   </p>
                   <div className={styles.buttons}>
-                    <a className="button button--primary" href="/api/misti/">
-                      View Misti API
+                    <a className="button button--primary" href="/api/misti/" target="_blank" rel="noopener noreferrer">
+                      View Misti API <i className="fa fa-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
@@ -40,8 +40,8 @@ export default function APIReference() {
                     Complete API reference for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/souffle.js" target="_blank" rel="noopener noreferrer">nowarp/souffle.js</a>, the JavaScript library for <a href="https://souffle-lang.github.io/">Souffle</a> interaction.
                   </p>
                   <div className={styles.buttons}>
-                    <a className="button button--primary" href="/api/souffle-js/">
-                      View Souffle.js API
+                    <a className="button button--primary" href="/api/souffle-js/" target="_blank" rel="noopener noreferrer">
+                      View Souffle.js API <i className="fa fa-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
