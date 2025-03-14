@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknowarp_github_io=self.webpackChunknowarp_github_io||[]).push([[7472],{5513:s=>{s.exports=JSON.parse('{"title":"Latest Posts","items":[{"title":"TON Security Risks: A Static Analysis Perspective","permalink":"/blog/ton-security-risks","unlisted":false}]}')}}]);
