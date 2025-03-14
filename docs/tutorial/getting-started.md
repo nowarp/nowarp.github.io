@@ -5,6 +5,17 @@ Before you begin, ensure you have the following software installed on your syste
 - Node.js version 22 or higher
 - (*optional*) [Soufflé](https://souffle-lang.github.io/install) – enables more built-in detectors
 
+<details>
+  <summary>
+    Alternative: Use TON Web IDE
+  </summary>
+
+The TON Web IDE integrates the latest release version of Misti, allowing you to try it out on your project or incorporate it into your development process if you use the IDE. Check it out at: [ide.ton.org](https://ide.ton.org).
+
+**Note:** Some features of this Misti version are not available in the Web IDE. To access all functionalities, install it locally or in your CI environment.
+
+</details>
+
 ## Installation
 ```bash
 npm install -g @nowarp/misti
@@ -44,7 +55,7 @@ You can also add a script to your `package.json` to simplify running the linting
 
 ## Common Usage Scenarios
 
-Below are a few usage examples for common scenarios when using [the `misti` CLI](./cli.md).
+Below are a few usage examples for common scenarios when using [the `misti` CLI]./cli.md.
 
 ### Suppressing Warnings
 
