@@ -51,3 +51,27 @@ Some of the detectors require [Soufflé](https://souffle-lang.github.io/install)
 A few detectors are optional and aimed at auditors to help uncover subtle issues in the source code. To enable all detectors, use the `--all-detectors` option. You can find a full list of configuration options on the [configuration page](./tutorial/configuration.md).
 
 Each detector targets a specific type of problem in your code. Click on the detector name to learn more.
+
+## Detector Severities and Categories
+
+### Severity Levels
+
+Findings are classified according to their impact severity:
+
+| Severity | Description |
+|----------|-------------|
+| **Info** | Informational findings that highlight potential improvements |
+| **Low** | Minor issues with limited impact |
+| **Medium** | Significant issues that should be addressed |
+| **High** | Serious vulnerabilities requiring immediate attention |
+| **Critical** | Severe vulnerabilities with catastrophic potential impact |
+
+### Categories
+
+Findings are organized into the following categories:
+
+| Category | Description |
+|----------|-------------|
+| **Security** | Any possible unintended behavior leading to bugs or vulnerabilities |
+| **Optimization** | Code improvements for gas-optimizations |
+| **Best Practices** | General code quality advices |
