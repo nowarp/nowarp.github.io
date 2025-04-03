@@ -122,6 +122,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/ImplicitOpcode',
+          label: 'ImplicitOpcode',
+        },
+        {
+          type: 'doc',
           id: 'detectors/InheritedStateMutation',
           label: 'InheritedStateMutation',
         },
@@ -139,6 +144,16 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/PreferAugmentedAssign',
           label: 'PreferAugmentedAssign',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/PreferBinaryReceiver',
+          label: 'PreferBinaryReceiver',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/PreferSenderFunction',
+          label: 'PreferSenderFunction',
         },
         {
           type: 'doc',
@@ -169,6 +184,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/StringReceiversOverlap',
           label: 'StringReceiversOverlap',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/SuboptimalCellOperation',
+          label: 'SuboptimalCellOperation',
         },
         {
           type: 'doc',

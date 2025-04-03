@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import styles from './../../index.module.css';
-import { FaTelegramPlane } from 'react-icons/fa';
 
 export default function Home() {
   return (

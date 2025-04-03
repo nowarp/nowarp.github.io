@@ -10,6 +10,7 @@ Supported functions:
 * Prefer `randomInt` instead of [`nativeRandom`](https://docs.tact-lang.org/ref/core-advanced#nativerandom)
 * Replace `emptyCell().asSlice()` with `emptySlice()`
 * Replace `beginCell().endCell()` with `emptyCell()`
+* Replace `require` with `throwUnless`
 
 ## Example
 ```tact

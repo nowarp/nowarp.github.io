@@ -2,7 +2,7 @@
 A detector that identifies improper use of exit codes outside the developer-allowed range.
 
 ## Why is it bad?
-In the TON blockchain, exit codes are divided into specific ranges: 0 to 127
+In the TON blockchain, exit codes are divided into specific ranges: 1 to 127
 are reserved for the TVM or FunC, and 128 to 255 are reserved for Tact. This
 structure leaves the range from 256 to 65535 for developers to define custom
 exit codes.
