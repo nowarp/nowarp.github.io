@@ -48,9 +48,7 @@ jobs:
       with:
         args: >-
           --verbose --no-progress
+          --max-concurrency 1
           --exclude "googletagmanager.com" --exclude "algolia.net"
-          './build/tools/misti/docs/next/**/*.html'
           './build/**/*.html'
-          '!./build/tools/misti/docs/**/*.html'
-          './build/tools/misti/docs/next/**/*.html'
         fail: true
