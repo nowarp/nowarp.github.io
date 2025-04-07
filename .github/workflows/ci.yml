@@ -42,3 +42,9 @@ jobs:
     - name: Build
       run: |
         yarn docusaurus build --out-dir build/
+
+    - name: Check for dead links
+      uses: lycheeverse/lychee-action@v1
+      with:
+        args: --verbose --no-progress './build/**/*.html'
+        fail: true
