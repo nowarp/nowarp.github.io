@@ -1,4 +1,6 @@
 # OptimalMathFunction
+**Severity**: Low | **Category**: Optimization
+
 A detector that highlights standard library math function calls that have more gas-efficient alternatives.
 
 ## Why is it bad?

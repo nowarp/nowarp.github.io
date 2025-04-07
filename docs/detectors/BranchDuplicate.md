@@ -1,4 +1,6 @@
 # BranchDuplicate
+**Severity**: High | **Category**: Security
+
 Detector that reports duplicated code in conditional branches.
 
 ## Why is it bad?

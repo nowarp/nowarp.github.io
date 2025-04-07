@@ -1,4 +1,6 @@
 # EnsurePrgSeed
+**Severity**: Medium | **Category**: Security
+
 A detector that identifies all calls to `nativeRandom` and `nativeRandomInterval`
 without a preceding PRG seed initialization.
 

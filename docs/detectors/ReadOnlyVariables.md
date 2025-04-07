@@ -1,4 +1,6 @@
 # ReadOnlyVariables
+**Severity**: Medium | **Category**: Security
+
 A detector that identifies read-only variables and fields.
 
 ## Why is it bad?

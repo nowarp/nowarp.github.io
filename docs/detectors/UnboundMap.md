@@ -1,4 +1,6 @@
 # UnboundMap
+**Severity**: Low | **Category**: Security
+
 An optional detector that highlights cases where a map field allows inserting
 values (e.g., via `.set`) but lacks functionality for removing entries (e.g., via `.del`).
 

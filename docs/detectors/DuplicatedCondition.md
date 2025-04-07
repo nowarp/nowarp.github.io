@@ -1,4 +1,6 @@
 # DuplicatedCondition
+**Severity**: High | **Category**: Security
+
 A detector that finds duplicated conditions appearing in conditional expressions.
 
 ## Why is it bad?

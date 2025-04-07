@@ -1,4 +1,6 @@
 # UnusedOptional
+**Severity**: Low | **Category**: Optimization
+
 A detector variables and fields with unused optional modifier.
 
 ## Why is it bad?

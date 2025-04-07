@@ -1,4 +1,6 @@
 # PreferBinaryReceiver
+**Severity**: Low | **Category**: Optimization
+
 A detector that identifies usage of text receivers that could be replaced
 with binary ones.
 

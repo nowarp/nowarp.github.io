@@ -1,4 +1,6 @@
 # PreferSenderFunction
+**Severity**: Low | **Category**: Optimization
+
 A detector that finds `context().sender` calls that could be replaced with
 more gas-effective `sender()` call.
 

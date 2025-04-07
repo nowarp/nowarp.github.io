@@ -1,4 +1,6 @@
 # UnboundLoop
+**Severity**: High | **Category**: Security
+
 A detector that analyzes loop conditions and control flow to ensure loops have proper termination criteria.
 
 ## Why is it bad?

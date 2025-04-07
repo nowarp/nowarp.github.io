@@ -1,4 +1,6 @@
 # PreferAugmentedAssign
+**Severity**: Info | **Category**: Best Practices
+
 Detects non-idiomatic statements that can be written using augmented assignment
 operators like `+=`, `-=`, etc.
 

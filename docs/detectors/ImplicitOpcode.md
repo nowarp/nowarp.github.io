@@ -1,4 +1,6 @@
 # ImplicitOpcode
+**Severity**: Info | **Category**: Best Practices
+
 An optional detector that highlights messages with implicitly defined opcode.
 
 ## Why is it bad?

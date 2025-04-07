@@ -1,4 +1,6 @@
 # FalseCondition
+**Severity**: Medium | **Category**: Security
+
 A detector that highlights conditions that evaluate to a constant `true` or `false`
 in `if`, `while`, or `until` statements, and zero iterations in `repeat` statements.
 

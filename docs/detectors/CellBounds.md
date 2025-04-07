@@ -1,4 +1,6 @@
 # CellBounds
+**Severity**: Critical | **Category**: Security
+
 A detector that identifies cell overflow and underflow problems.
 
 ## Why is it bad?

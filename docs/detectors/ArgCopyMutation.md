@@ -1,4 +1,6 @@
 # ArgCopyMutation
+**Severity**: High | **Category**: Security
+
 A detector that highlights cases where function argument mutations are ineffective
 due to [call-by-value semantics](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_value) in Tact.
 

@@ -1,4 +1,6 @@
 # SuspiciousLoop
+**Severity**: Medium | **Category**: Security
+
 An optional detector that identifies potentially problematic loops, such as those
 with unbounded conditions or excessive iteration counts.
 

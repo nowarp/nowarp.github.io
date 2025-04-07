@@ -1,4 +1,6 @@
 # SuspiciousMessageMode
+**Severity**: Low—Medium | **Category**: Security
+
 Detects suspicious usage of the `mode` field in `SendParameters` struct instances.
 
 ## Why is it bad?

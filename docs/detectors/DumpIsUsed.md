@@ -1,4 +1,6 @@
 # DumpIsUsed
+**Severity**: Info | **Category**: Security
+
 An optional detector that highlights all the `dump` debug prints.
 
 ## Why is it bad?

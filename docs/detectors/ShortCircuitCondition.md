@@ -1,4 +1,6 @@
 # ShortCircuitCondition
+**Severity**: Low | **Category**: Optimization
+
 A detector that suggests optimizing boolean expressions to leverage short-circuit evaluation.
 
 ## Why is it bad?

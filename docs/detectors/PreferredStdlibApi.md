@@ -1,4 +1,6 @@
 # PreferredStdlibApi
+**Severity**: Info | **Category**: Optimization, Security
+
 An optional detector that flags the use of advanced functions from the standard library.
 
 ## Why is it bad?

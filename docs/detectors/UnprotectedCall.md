@@ -1,4 +1,6 @@
 # UnprotectedCall
+**Severity**: High | **Category**: Security
+
 A detector that identifies unprotected calls or state modifications.
 
 ## Why is it bad?

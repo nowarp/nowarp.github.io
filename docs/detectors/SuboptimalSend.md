@@ -1,4 +1,6 @@
 # SuboptimalSend
+**Severity**: Medium | **Category**: Optimization
+
 A detector that identifies suboptimal message passing functions that could
 be replaced with more gas-effective alternatives.
 

@@ -1,4 +1,6 @@
 # UnusedExpressionResult
+**Severity**: Medium | **Category**: Security
+
 A detector that identifies expression statements whose result is unused.
 
 ## Why is it bad?

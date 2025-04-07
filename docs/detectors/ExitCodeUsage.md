@@ -1,4 +1,6 @@
 # ExitCodeUsage
+**Severity**: High | **Category**: Security
+
 A detector that identifies improper use of exit codes outside the developer-allowed range.
 
 ## Why is it bad?

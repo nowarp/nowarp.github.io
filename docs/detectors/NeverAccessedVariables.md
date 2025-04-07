@@ -1,4 +1,6 @@
 # NeverAccessedVariables
+**Severity**: Medium | **Category**: Security
+
 A detector that identifies write-only or unused variables, fields and constants.
 
 ## Why is it bad?

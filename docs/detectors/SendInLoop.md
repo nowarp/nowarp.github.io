@@ -1,4 +1,6 @@
 # SendInLoop
+**Severity**: Medium | **Category**: Security
+
 An optional detector that identifies send functions being called inside loops,
 including indirect calls via other functions.
 

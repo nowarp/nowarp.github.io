@@ -1,4 +1,6 @@
 # EtaLikeSimplifications
+**Severity**: Low | **Category**: Optimization
+
 Detects opportunities for simplifying code by eliminating redundant boolean expressions and statements.
 
 ## Why is it bad?

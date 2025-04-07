@@ -1,4 +1,6 @@
 # ZeroAddress
+**Severity**: Low | **Category**: Security
+
 A detector that identifies uses of the zero address.
 
 ## Why is it bad?

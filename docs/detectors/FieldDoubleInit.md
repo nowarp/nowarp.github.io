@@ -1,4 +1,6 @@
 # FieldDoubleInit
+**Severity**: Medium | **Category**: Optimization
+
 A detector that highlights cases where a field is initialized both in the
 `init` function and at the point of definition.
 

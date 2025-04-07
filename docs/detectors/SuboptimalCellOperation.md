@@ -1,4 +1,6 @@
 # SuboptimalCellOperation
+**Severity**: Medium | **Category**: Optimization
+
 A detector that highlights `Cell` operations that could be optimized with
 more gas-effective calls.
 

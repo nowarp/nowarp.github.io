@@ -1,4 +1,6 @@
 # StateMutationInGetter
+**Severity**: Info | **Category**: Security
+
 An optional detector that identifies cases where a state-mutating function is called within a getter method.
 
 ## Why is it important?

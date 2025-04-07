@@ -1,4 +1,6 @@
 # InheritedStateMutation
+**Severity**: Low | **Category**: Best Practices
+
 An optional detector that highlights all instances where inherited trait variables
 are directly modified.
 

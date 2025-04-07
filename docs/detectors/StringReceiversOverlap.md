@@ -1,4 +1,6 @@
 # StringReceiversOverlap
+**Severity**: High | **Category**: Security
+
 A detector that finds overlapping messages between general string receivers and string receivers.
 
 ## Why is it bad?

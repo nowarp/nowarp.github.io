@@ -1,4 +1,6 @@
 # AsmIsUsed
+**Severity**: Info | **Category**: Security
+
 An optional detector that highlights all the `asm` functions.
 
 ## Why is it bad?
