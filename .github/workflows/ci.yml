@@ -48,7 +48,7 @@ jobs:
       with:
         args: >-
           --verbose --no-progress
-          --max-concurrency 1
+          --max-concurrency 4
           --exclude "googletagmanager.com" --exclude "algolia.net"
           './build/**/*.html'
         fail: true
