@@ -75,16 +75,16 @@ If there is no Misti config in the directory, Misti dumps the default config. Th
 ## Environment Variables
 Misti offers advanced configuration through environment variables to control specific options.
 
-- **`MISTI_TIMEOUT`**  
-  Sets the timeout for detector execution in milliseconds.  
-  **Default**: `15000`  
-  **Example**: 
+- **`MISTI_TIMEOUT`**
+  Sets the timeout for detector execution in milliseconds.
+  **Default**: `15000`
+  **Example**:
   ```bash
   export MISTI_TIMEOUT=20000
   ```
-- **`MISTI_TRACE`**  
-  Enables tracing of the execution. Set to `1` to enable tracing, otherwise it is disabled.  
-  **Default**: `false`  
+- **`MISTI_TRACE`**
+  Enables tracing of the execution. Set to `1` to enable tracing, otherwise it is disabled.
+  **Default**: `false`
   **Example**:
   ```bash
   export MISTI_TRACE=1

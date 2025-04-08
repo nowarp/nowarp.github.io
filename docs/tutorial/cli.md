@@ -65,10 +65,6 @@ Below is a list of all available CLI (Command-Line Interface) options for the pr
 ### `-c, --config <PATH>`
 - **Description**: Specifies the path to the Misti configuration file.
 
-### `--new-detector <PATH>`
-- **Description**: Creates a new custom detector at the specified path.
-- **Default**: `undefined`
-
 ## Exit Codes
 Misti returns different exit codes depending on the execution result:
 - **0**: Successful execution with no warnings or errors.
