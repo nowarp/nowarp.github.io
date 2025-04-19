@@ -21,8 +21,9 @@ It highlights potentially dangerous and non-optimal patterns in your contract:
 
 | Misti version | Supported Tact version | Release date |
 |---------------|------------------------|--------------|
-| 0.8           | 1.6.2                  | Apr 8, 2025  |
-| 0.7           | 1.6.2                  | Mar 5, 2025  |
+| 0.8.1         | 1.6.6                  | Apr 19, 2025 |
+| 0.8           | 1.6.2 - 1.6.5          | Apr 8, 2025  |
+| 0.7           | 1.6.2 - 1.6.5          | Mar 5, 2025  |
 | 0.6           | 1.5                    | Dec 22, 2024 |
 | 0.5           | 1.5                    | Oct 31, 2024 |
 | 0.4           | 1.5                    | Oct 8, 2024  |

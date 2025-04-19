@@ -26,10 +26,10 @@ title: Detectors Overview
 | 15  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low | Best Practices |  |  |
 | 16  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium | Security |  | ✔ |
 | 17  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low | Optimization |  | ✔ |
-| 18  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info | Best Practices |  | ✔ |
+| 18  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info | Best Practices |  |  |
 | 19  | [PreferBinaryReceiver](./detectors/PreferBinaryReceiver.md) | Low | Optimization |  | ✔ |
 | 20  | [PreferSenderFunction](./detectors/PreferSenderFunction.md) | Low | Optimization |  | ✔ |
-| 21  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info | Optimization, Security |  |  |
+| 21  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info—Low | Optimization, Security |  | ✔ |
 | 22  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | Security | ✔ | ✔ |
 | 23  | [SendInLoop](./detectors/SendInLoop.md) | Medium | Security |  |  |
 | 24  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low | Optimization |  | ✔ |
