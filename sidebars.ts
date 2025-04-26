@@ -97,6 +97,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/DuplicatedImport',
+          label: 'DuplicatedImport',
+        },
+        {
+          type: 'doc',
           id: 'detectors/EnsurePrgSeed',
           label: 'EnsurePrgSeed',
         },

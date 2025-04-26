@@ -17,34 +17,35 @@ title: Detectors Overview
 | 6  | [DivideBeforeMultiply](./detectors/DivideBeforeMultiply.md) | High | Security | ✔ | ✔ |
 | 7  | [DumpIsUsed](./detectors/DumpIsUsed.md) | Info | Security |  |  |
 | 8  | [DuplicatedCondition](./detectors/DuplicatedCondition.md) | High | Security |  | ✔ |
-| 9  | [EnsurePrgSeed](./detectors/EnsurePrgSeed.md) | Medium | Security |  | ✔ |
-| 10  | [EtaLikeSimplifications](./detectors/EtaLikeSimplifications.md) | Low | Optimization |  | ✔ |
-| 11  | [ExitCodeUsage](./detectors/ExitCodeUsage.md) | High | Security |  | ✔ |
-| 12  | [FalseCondition](./detectors/FalseCondition.md) | Medium | Security |  | ✔ |
-| 13  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium | Optimization |  | ✔ |
-| 14  | [ImplicitOpcode](./detectors/ImplicitOpcode.md) | Info | Best Practices |  |  |
-| 15  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low | Best Practices |  |  |
-| 16  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium | Security |  | ✔ |
-| 17  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low | Optimization |  | ✔ |
-| 18  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info | Best Practices |  | ✔ |
-| 19  | [PreferBinaryReceiver](./detectors/PreferBinaryReceiver.md) | Low | Optimization |  | ✔ |
-| 20  | [PreferSenderFunction](./detectors/PreferSenderFunction.md) | Low | Optimization |  | ✔ |
-| 21  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info | Optimization, Security |  |  |
-| 22  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | Security | ✔ | ✔ |
-| 23  | [SendInLoop](./detectors/SendInLoop.md) | Medium | Security |  |  |
-| 24  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low | Optimization |  | ✔ |
-| 25  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info | Security |  |  |
-| 26  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High | Security |  | ✔ |
-| 27  | [SuboptimalCellOperation](./detectors/SuboptimalCellOperation.md) | Medium | Optimization |  | ✔ |
-| 28  | [SuboptimalSend](./detectors/SuboptimalSend.md) | Medium | Optimization |  | ✔ |
-| 29  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium | Security |  | ✔ |
-| 30  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium | Security |  | ✔ |
-| 31  | [UnboundLoop](./detectors/UnboundLoop.md) | High | Security | ✔ | ✔ |
-| 32  | [UnboundMap](./detectors/UnboundMap.md) | Low | Security |  |  |
-| 33  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High | Security |  | ✔ |
-| 34  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium | Security |  | ✔ |
-| 35  | [UnusedOptional](./detectors/UnusedOptional.md) | Low | Optimization |  | ✔ |
-| 36  | [ZeroAddress](./detectors/ZeroAddress.md) | Low | Security |  | ✔ |
+| 9  | [DuplicatedImport](./detectors/DuplicatedImport.md) | Medium | Optimization |  | ✔ |
+| 10  | [EnsurePrgSeed](./detectors/EnsurePrgSeed.md) | Medium | Security |  | ✔ |
+| 11  | [EtaLikeSimplifications](./detectors/EtaLikeSimplifications.md) | Low | Optimization |  | ✔ |
+| 12  | [ExitCodeUsage](./detectors/ExitCodeUsage.md) | High | Security |  | ✔ |
+| 13  | [FalseCondition](./detectors/FalseCondition.md) | Medium | Security |  | ✔ |
+| 14  | [FieldDoubleInit](./detectors/FieldDoubleInit.md) | Medium | Optimization |  | ✔ |
+| 15  | [ImplicitOpcode](./detectors/ImplicitOpcode.md) | Info | Best Practices |  |  |
+| 16  | [InheritedStateMutation](./detectors/InheritedStateMutation.md) | Low | Best Practices |  |  |
+| 17  | [NeverAccessedVariables](./detectors/NeverAccessedVariables.md) | Medium | Security |  | ✔ |
+| 18  | [OptimalMathFunction](./detectors/OptimalMathFunction.md) | Low | Optimization |  | ✔ |
+| 19  | [PreferAugmentedAssign](./detectors/PreferAugmentedAssign.md) | Info | Best Practices |  |  |
+| 20  | [PreferBinaryReceiver](./detectors/PreferBinaryReceiver.md) | Low | Optimization |  | ✔ |
+| 21  | [PreferSenderFunction](./detectors/PreferSenderFunction.md) | Low | Optimization |  | ✔ |
+| 22  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info—Low | Optimization, Security |  | ✔ |
+| 23  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | Security | ✔ | ✔ |
+| 24  | [SendInLoop](./detectors/SendInLoop.md) | Medium | Security |  |  |
+| 25  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low | Optimization |  | ✔ |
+| 26  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info | Security |  |  |
+| 27  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High | Security |  | ✔ |
+| 28  | [SuboptimalCellOperation](./detectors/SuboptimalCellOperation.md) | Medium | Optimization |  | ✔ |
+| 29  | [SuboptimalSend](./detectors/SuboptimalSend.md) | Medium | Optimization |  | ✔ |
+| 30  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium | Security |  | ✔ |
+| 31  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium | Security |  | ✔ |
+| 32  | [UnboundLoop](./detectors/UnboundLoop.md) | High | Security | ✔ | ✔ |
+| 33  | [UnboundMap](./detectors/UnboundMap.md) | Low | Security |  |  |
+| 34  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High | Security |  | ✔ |
+| 35  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium | Security |  | ✔ |
+| 36  | [UnusedOptional](./detectors/UnusedOptional.md) | Low | Optimization |  | ✔ |
+| 37  | [ZeroAddress](./detectors/ZeroAddress.md) | Low | Security |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

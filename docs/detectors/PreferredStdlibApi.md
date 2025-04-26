@@ -1,5 +1,5 @@
 # PreferredStdlibApi
-**Severity**: Info | **Category**: Optimization, Security
+**Severity**: Info—Low | **Category**: Optimization, Security
 
 An optional detector that flags the use of advanced functions from the standard library.
 
