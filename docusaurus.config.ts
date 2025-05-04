@@ -27,6 +27,10 @@ const config: Config = {
       crossorigin: 'anonymous',
       referrerpolicy: 'no-referrer',
     },
+    {
+      href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css',
+      type: 'text/css',
+    },
   ],
   presets: [
     [

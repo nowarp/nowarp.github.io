@@ -22,7 +22,10 @@ export default function APIReference() {
             <div className={`${styles.rowWithMargin} row`}>
               <div className="col col--6">
                 <div className={styles.featureBox}>
-                  <h3>Misti</h3>
+                  <h3>
+                    <i className="devicon-typescript-plain" style={{ marginRight: '5px', color: '#3178C6', position: 'relative', top: '2px', fontSize: '20px' }}></i>
+                    Misti
+                  </h3>
                   <p>
                     Detailed API documentation for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/misti" target="_blank" rel="noopener noreferrer">nowarp/misti</a>, our TON static analyzer tool for smart contract security. Build custom detectors to implement additional security checks.
                   </p>
@@ -35,7 +38,10 @@ export default function APIReference() {
               </div>
               <div className="col col--6">
                 <div className={styles.featureBox}>
-                  <h3>Souffle.js</h3>
+                  <h3>
+                    <i className="devicon-typescript-plain" style={{ marginRight: '5px', color: '#3178C6', position: 'relative', top: '2px', fontSize: '20px' }}></i>
+                    Souffle.js
+                  </h3>
                   <p>
                     Complete API reference for <i className="fab fa-github"></i> <a href="https://github.com/nowarp/souffle.js" target="_blank" rel="noopener noreferrer">nowarp/souffle.js</a>, the JavaScript library for <a href="https://souffle-lang.github.io/">Souffle</a> interaction.
                   </p>
@@ -60,7 +66,10 @@ export default function APIReference() {
             <div className={`${styles.rowWithMargin} row`}>
               <div className="col col--6">
                 <div className={styles.featureBox}>
-                  <h3>OCaml FunC</h3>
+                  <h3>
+                    <i className="devicon-ocaml-plain" style={{ marginRight: '5px', color: '#EC6813', position: 'relative', top: '2px', fontSize: '20px' }}></i>
+                    OCaml FunC
+                  </h3>
                   <p>
                     <i className="fab fa-github"></i> <a href="https://github.com/nowarp/ocaml-func" target="_blank" rel="noopener noreferrer">nowarp/ocaml-func</a> is an OCaml library providing AST and parser for FunC.
                   </p>
