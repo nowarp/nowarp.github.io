@@ -212,6 +212,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/TransitiveImport',
+          label: 'TransitiveImport',
+        },
+        {
+          type: 'doc',
           id: 'detectors/UnboundLoop',
           label: 'UnboundLoop',
         },

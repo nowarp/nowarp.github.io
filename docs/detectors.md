@@ -40,12 +40,13 @@ title: Detectors Overview
 | 29  | [SuboptimalSend](./detectors/SuboptimalSend.md) | Medium | Optimization |  | ✔ |
 | 30  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium | Security |  | ✔ |
 | 31  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium | Security |  | ✔ |
-| 32  | [UnboundLoop](./detectors/UnboundLoop.md) | High | Security | ✔ | ✔ |
-| 33  | [UnboundMap](./detectors/UnboundMap.md) | Low | Security |  |  |
-| 34  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High | Security |  | ✔ |
-| 35  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium | Security |  | ✔ |
-| 36  | [UnusedOptional](./detectors/UnusedOptional.md) | Low | Optimization |  | ✔ |
-| 37  | [ZeroAddress](./detectors/ZeroAddress.md) | Low | Security |  | ✔ |
+| 32  | [TransitiveImport](./detectors/TransitiveImport.md) | Medium | Best Practices |  | ✔ |
+| 33  | [UnboundLoop](./detectors/UnboundLoop.md) | High | Security | ✔ | ✔ |
+| 34  | [UnboundMap](./detectors/UnboundMap.md) | Low | Security |  |  |
+| 35  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High | Security |  | ✔ |
+| 36  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium | Security |  | ✔ |
+| 37  | [UnusedOptional](./detectors/UnusedOptional.md) | Low | Optimization |  | ✔ |
+| 38  | [ZeroAddress](./detectors/ZeroAddress.md) | Low | Security |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 
