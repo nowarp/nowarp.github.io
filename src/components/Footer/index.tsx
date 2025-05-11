@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTelegram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faTelegram, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import styles from './styles.module.css';
 
 function Footer(): JSX.Element {
@@ -41,9 +41,9 @@ function Footer(): JSX.Element {
             nowarp_io
           </Link>
           <span className={styles.linkSeparator}>/</span>
-          <Link to="https://t.me/tonsec_chat" className={styles.footerLink}>
-            <FontAwesomeIcon icon={faTelegram} className={styles.icon} />
-            tonsec_chat
+          <Link to="https://x.com/nowarp_io" className={styles.footerLink}>
+            <FontAwesomeIcon icon={faXTwitter} className={styles.icon} />
+            nowarp_io
           </Link>
           <span className={styles.linkSeparator}>/</span>
           <Link to="https://github.com/nowarp/" className={styles.footerLink}>
