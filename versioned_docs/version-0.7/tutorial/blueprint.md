@@ -1,8 +1,8 @@
 # Using Misti with Blueprint
 
-[Blueprint](https://github.com/ton-org/blueprint/) is a platform to compile, test, and deploy contracts on the TON blockchain. It is quite similar to Hardhat and Truffle for Ethereum.
+[Blueprint](https://github.com/ton-org/blueprint/) is a platform for compiling, testing, and deploying contracts on the TON blockchain. It is similar to Hardhat and Truffle for Ethereum.
 
-There is a [blueprint-misti](https://github.com/nowarp/blueprint-misti) plugin that can be added to a Blueprint configuration. It adds the `blueprint misti` command, which runs the static analyzer over the selected Blueprint project.
+The [blueprint-misti](https://github.com/nowarp/blueprint-misti) plugin can be added to your Blueprint configuration. It adds the `blueprint misti` command, which runs the static analyzer over your selected Blueprint project.
 
 This page describes how to use it.
 
@@ -10,7 +10,7 @@ This page describes how to use it.
 
 1. [Install Soufflé](https://souffle-lang.github.io/install) to use all detectors provided by Misti.
 
-2. Add this plugin as a dependency of your Blueprint project:
+2. Add this plugin as a dependency to your Blueprint project:
 ```bash
 yarn add @nowarp/blueprint-misti
 ```
@@ -32,28 +32,30 @@ Run the following command:
 yarn blueprint misti
 ```
 
-It will run the analysis of the available project, if there is one, or show an interactive window to select a project:
+This will run the analysis of the available project, if one exists, or display an interactive window to select a project:
 
 ![img](/img/blueprint-select-project.png)
 
-You could also pass the [supported CLI options](./cli.md) for Misti, for example:
+You can also pass the [supported CLI options](./cli.md) for Misti, for example:
 ```bash
 yarn blueprint misti --all-detectors /path/to/contracts
 ```
 
-Or you can run analysis of a specific contract:
+Or you can run analysis on a specific contract:
 ```bash
 yarn blueprint misti path/to/my/contract.tact
 ```
 
 ## CI Integration
 
-You could integrate `blueprint-misti` into Github Actions by following the installation steps above and adding the following lines to your workflow configuration:
+You can integrate `blueprint-misti` into GitHub Actions by following the installation steps above and adding the following lines to your workflow configuration:
 ```yml
 - name: Run Misti
   run: yarn blueprint misti /path/to/contracts
 ```
 
-See: [Integrating Misti into CI/CD](./ci-cd.md) for more information.
+For more information, see: [Integrating Misti into CI/CD](./ci-cd.md).
 
-If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/tonsec_chat) or [create an issue](https://github.com/nowarp/blueprint-misti).
+## Getting Help
+
+If you encounter any issues, feel free to reach out to us in the [Misti discussion group](https://t.me/tonsec_chat) or [create an issue](https://github.com/nowarp/blueprint-misti).
