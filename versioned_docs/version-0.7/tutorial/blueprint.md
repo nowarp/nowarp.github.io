@@ -38,12 +38,22 @@ It will run the analysis of the available project, if there is one, or show an i
 
 You could also pass the [supported CLI options](./cli.md) for Misti, for example:
 ```bash
-yarn blueprint misti --all-detectors
+yarn blueprint misti --all-detectors /path/to/contracts
 ```
 
-Or you can even pass the path to the contract directly:
+Or you can run analysis of a specific contract:
 ```bash
 yarn blueprint misti path/to/my/contract.tact
 ```
 
-If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/tonsec_chat).
+## CI Integration
+
+You could integrate `blueprint-misti` into Github Actions by following the installation steps above and adding the following lines to your workflow configuration:
+```yml
+- name: Run Misti
+  run: yarn blueprint misti /path/to/contracts
+```
+
+See: [Integrating Misti into CI/CD](./ci-cd.md) for more information.
+
+If you have any problems, feel free to reach out to us in the [Misti discussion group](https://t.me/tonsec_chat) or [create an issue](https://github.com/nowarp/blueprint-misti).
