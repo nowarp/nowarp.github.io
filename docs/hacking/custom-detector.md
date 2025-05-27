@@ -10,9 +10,7 @@ Detectors are designed to be dynamically loaded by the Misti driver, and they ar
 
 ### Example implementation
 
-You can create a new custom detector by executing Misti with the `--new-detector` option: `misti --new-detector implicitInit`.
-
-This will create the `implicitInit.ts` file, which contains the template code for writing your own custom detector logic leveraging the Misti API.
+You can find example of custom detectors in [the `examples` directory](https://github.com/nowarp/misti/tree/master/examples), which contains the template code for writing your own custom detector logic leveraging the Misti API.
 
 Here's an example of how to implement a custom detector using Misti API ([source code](https://github.com/nowarp/misti/tree/master/examples/implicit-init)):
 
