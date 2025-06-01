@@ -32,21 +32,23 @@ title: Detectors Overview
 | 21  | [PreferSenderFunction](./detectors/PreferSenderFunction.md) | Low | Optimization |  | ✔ |
 | 22  | [PreferredStdlibApi](./detectors/PreferredStdlibApi.md) | Info—Low | Optimization, Security |  | ✔ |
 | 23  | [ReadOnlyVariables](./detectors/ReadOnlyVariables.md) | Medium | Security | ✔ | ✔ |
-| 24  | [SendInLoop](./detectors/SendInLoop.md) | Medium | Security |  |  |
-| 25  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low | Optimization |  | ✔ |
-| 26  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info | Security |  |  |
-| 27  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High | Security |  | ✔ |
-| 28  | [SuboptimalCellOperation](./detectors/SuboptimalCellOperation.md) | Medium | Optimization |  | ✔ |
-| 29  | [SuboptimalSend](./detectors/SuboptimalSend.md) | Medium | Optimization |  | ✔ |
-| 30  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium | Security |  | ✔ |
-| 31  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium | Security |  | ✔ |
-| 32  | [TransitiveImport](./detectors/TransitiveImport.md) | Medium | Best Practices |  | ✔ |
-| 33  | [UnboundLoop](./detectors/UnboundLoop.md) | High | Security | ✔ | ✔ |
-| 34  | [UnboundMap](./detectors/UnboundMap.md) | Low | Security |  |  |
-| 35  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High | Security |  | ✔ |
-| 36  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium | Security |  | ✔ |
-| 37  | [UnusedOptional](./detectors/UnusedOptional.md) | Low | Optimization |  | ✔ |
-| 38  | [ZeroAddress](./detectors/ZeroAddress.md) | Low | Security |  | ✔ |
+| 24  | [RedundantBooleanExpression](./detectors/RedundantBooleanExpression.md) | Medium | Security |  | ✔ |
+| 25  | [SendInLoop](./detectors/SendInLoop.md) | Medium | Security |  |  |
+| 26  | [ShortCircuitCondition](./detectors/ShortCircuitCondition.md) | Low | Optimization |  | ✔ |
+| 27  | [StateMutationInGetter](./detectors/StateMutationInGetter.md) | Info | Security |  |  |
+| 28  | [StringReceiversOverlap](./detectors/StringReceiversOverlap.md) | High | Security |  | ✔ |
+| 29  | [SuboptimalCellOperation](./detectors/SuboptimalCellOperation.md) | Medium | Optimization |  | ✔ |
+| 30  | [SuboptimalSend](./detectors/SuboptimalSend.md) | Medium | Optimization |  | ✔ |
+| 31  | [SuspiciousLoop](./detectors/SuspiciousLoop.md) | Medium | Security |  | ✔ |
+| 32  | [SuspiciousMessageMode](./detectors/SuspiciousMessageMode.md) | Low—Medium | Security |  | ✔ |
+| 33  | [TransitiveImport](./detectors/TransitiveImport.md) | Medium | Best Practices |  | ✔ |
+| 34  | [UnboundLoop](./detectors/UnboundLoop.md) | High | Security | ✔ | ✔ |
+| 35  | [UnboundMap](./detectors/UnboundMap.md) | Low | Security |  |  |
+| 36  | [UnprotectedCall](./detectors/UnprotectedCall.md) | High | Security |  | ✔ |
+| 37  | [UnusedExpressionResult](./detectors/UnusedExpressionResult.md) | Medium | Security |  | ✔ |
+| 38  | [UnusedMethodArgument](./detectors/UnusedMethodArgument.md) | Low | Optimization |  | ✔ |
+| 39  | [UnusedOptional](./detectors/UnusedOptional.md) | Low | Optimization |  | ✔ |
+| 40  | [ZeroAddress](./detectors/ZeroAddress.md) | Low | Security |  | ✔ |
 
 Some of the detectors require [Soufflé](https://souffle-lang.github.io/install) to be installed. If no Soufflé installation is found, these detectors won't be executed.
 

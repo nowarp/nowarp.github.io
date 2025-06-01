@@ -172,6 +172,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/RedundantBooleanExpression',
+          label: 'RedundantBooleanExpression',
+        },
+        {
+          type: 'doc',
           id: 'detectors/SendInLoop',
           label: 'SendInLoop',
         },
@@ -234,6 +239,11 @@ const sidebars: SidebarsConfig = {
           type: 'doc',
           id: 'detectors/UnusedExpressionResult',
           label: 'UnusedExpressionResult',
+        },
+        {
+          type: 'doc',
+          id: 'detectors/UnusedMethodArgument',
+          label: 'UnusedMethodArgument',
         },
         {
           type: 'doc',
