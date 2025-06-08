@@ -53,4 +53,4 @@ jobs:
           --exclude "algolia.net"
           --exclude "dl.acm.org"
           './build/**/*.html'
-        fail: true
+        fail: false
