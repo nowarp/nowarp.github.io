@@ -345,7 +345,12 @@ const sidebars: SidebarsConfig = {
     {
       type: 'doc',
       id: 'hacking/custom-detector',
-      label: 'Writing Custom Detectors',
+      label: 'Custom Detectors',
+    },
+    {
+      type: 'doc',
+      id: 'hacking/custom-tool',
+      label: 'Custom Tools',
     },
     {
       type: 'doc',

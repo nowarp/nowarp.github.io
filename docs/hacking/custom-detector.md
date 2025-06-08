@@ -1,8 +1,8 @@
-# Custom Detector Guide
+# Writing Custom Detectors
 
 ## Introduction
 
-Misti provides an API to write custom detectors, allowing you to implement your own linting rules. These custom detectors enable you to identify specific issues in your codebase, much like other static analysis tools. The API reference can be found here: [Misti API Reference](https://nowarp.io/api/misti/).
+Misti provides an API to write custom [detectors](./docs/detectors.md), allowing you to implement your own linting rules. These custom detectors enable you to identify specific issues in your codebase, much like other static analysis tools. The API reference can be found here: [Misti API Reference](https://nowarp.io/api/misti/).
 
 Detectors are designed to be dynamically loaded by the Misti driver, and they are present by TypeScript classes that implement the [`Detector`](https://nowarp.io/api/misti/classes/detectors_detector.Detector.html) interface.
 
