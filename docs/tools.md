@@ -9,7 +9,7 @@ Misti Tools are additional modules designed to work alongside detectors, enablin
 
 These tools are particularly useful for auditors, providing additional functionalities to assist in manual code reviews.
 
-Misti comes with several built-in tools for common tasks and provides an [API for creating custom tools](./docs/hacking/custom-tool.md).
+Misti comes with several built-in tools for common tasks and provides an [API for creating custom tools](./hacking/custom-tool.md).
 
 ## Usage
 
