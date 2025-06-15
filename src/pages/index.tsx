@@ -294,13 +294,40 @@ const HomePage: React.FC = () => {
                         marginRight: '0.5em'
                       }}
                     />
-                    Misti - TON Static Analyzer
+                    Misti
                   </h3>
                   <p>
                     Static analyzer that finds security vulnerabilities, TON-specific pitfalls,
                     and optimization opportunities in smart contracts. Fully automatic, open-source,
                     and extensible for third-party security researchers. <a href="/tools/misti" className={styles.inlineLink}>
                     Learn how it works and try it yourself...</a>
+                  </p>
+                </div>
+              </div>
+              <div className="row" style={{ marginTop: '0rem' }}>
+                <div className="col col--12">
+                  <h3>
+                    <img
+                      src="/img/scan.svg"
+                      alt="Scanner"
+                      style={{
+                        height: '1em',
+                        verticalAlign: 'middle',
+                        marginRight: '0.5em'
+                      }}
+                    />
+                    Scanner
+                  </h3>
+                  <p>
+                    Web-interface to the demo version of mass-scan that runs code analysis over contracts publicly available on{' '}
+                    <a href="https://verifier.ton.org" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                      verifier.ton.org
+                    </a> and{' '}
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                      GitHub
+                    </a>. Only a couple of these contracts are displayed - manually verified projects that 
+                    don't contain any vulnerabilities. <a href="/tools/scanner" className={styles.inlineLink}>
+                    Try the scanner...</a>
                   </p>
                 </div>
               </div>

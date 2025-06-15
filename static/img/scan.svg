@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:v="https://svgstorm.com"
+viewBox = "0 0 1600 1600"
+width="1600"
+height="1600">
+
+<!-- Background -->
+<g fill="None" fill-opacity="0.0" stroke="#F7FDFD" stroke-opacity="1.00" stroke-width="0.3">
+<path d="M 0.00 1600.00 L 1600.00 1600.00 L 1600.00 0.00 L 0.00 0.00 L 0.00 1600.00"/>
+</g>
+
+<!-- Magnifying glass lens - outer ring -->
+<g fill="none" stroke="#0D6AC6" stroke-width="80" stroke-opacity="1.00">
+<circle cx="600" cy="600" r="350"/>
+</g>
+
+<!-- Magnifying glass lens - inner fill -->
+<g fill="#B3E0F9" fill-opacity="0.3" stroke="none">
+<circle cx="600" cy="600" r="290"/>
+</g>
+
+<!-- Magnifying glass handle -->
+<g fill="none" stroke="#0D6AC6" stroke-width="120" stroke-linecap="round">
+<line x1="850" y1="850" x2="1200" y2="1200"/>
+</g>
+
+<!-- Handle grip -->
+<g fill="#39A6F9" stroke="none">
+<circle cx="1200" cy="1200" r="80"/>
+</g>
+
+<!-- Lens reflection/shine -->
+<g fill="#F7FDFD" fill-opacity="0.4" stroke="none">
+<ellipse cx="550" cy="550" rx="80" ry="120" transform="rotate(-30 550 550)"/>
+</g>
+
+<!-- Unicode gem text as backup/overlay -->
+<text x="800" y="400" font-family="serif" font-size="120" fill="#39A6F9" opacity="0.6">💎</text>
+
+</svg>
