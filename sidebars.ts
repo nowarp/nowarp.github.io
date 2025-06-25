@@ -157,6 +157,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/PreferGlobalFunction',
+          label: 'PreferGlobalFunction',
+        },
+        {
+          type: 'doc',
           id: 'detectors/PreferSenderFunction',
           label: 'PreferSenderFunction',
         },
