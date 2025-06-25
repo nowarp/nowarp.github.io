@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknowarp_github_io=self.webpackChunknowarp_github_io||[]).push([[8121],{8070:a=>{a.exports=JSON.parse('{"tags":[{"label":"misti","permalink":"/blog/tags/misti","count":1},{"label":"ton","permalink":"/blog/tags/ton","count":1},{"label":"static analysis","permalink":"/blog/tags/static-analysis","count":1}]}')}}]);

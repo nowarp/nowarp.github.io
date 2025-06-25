@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknowarp_github_io=self.webpackChunknowarp_github_io||[]).push([[8146],{9328:t=>{t.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":5,"totalPages":1,"totalCount":1,"blogDescription":"Technical blog about TON security and toling","blogTitle":"Blog - TON Security"}}')}}]);
