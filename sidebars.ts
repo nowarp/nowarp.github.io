@@ -222,6 +222,11 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'doc',
+          id: 'detectors/SuspiciousUnary',
+          label: 'SuspiciousUnary',
+        },
+        {
+          type: 'doc',
           id: 'detectors/TransitiveImport',
           label: 'TransitiveImport',
         },
