@@ -243,7 +243,7 @@ const HomePage: React.FC = () => {
   return (
     <Layout>
       <Head>
-        <title>nowarp - TON Security</title>
+        <title>nowarp - Web3 Security</title>
       </Head>
       <div style={{
         position: 'relative',
@@ -272,7 +272,7 @@ const HomePage: React.FC = () => {
           opacity: 0.9
         }}>
           <h1 className={styles.heroTitle}>nowarp</h1>
-          <p className={styles.heroSubtitleSmall}>Professional <a href="#audits" className={styles.inlineLink}>contract audits</a> and <a href="#tools" className={styles.inlineLink}>security tooling</a> for TON smart contracts</p>
+          <p className={styles.heroSubtitleSmall}>Professional smart contracts <a href="#audits" className={styles.inlineLink}>audits</a> and <a href="#tools" className={styles.inlineLink}>security tooling</a></p>
         </div>
       </div>
 
@@ -297,7 +297,7 @@ const HomePage: React.FC = () => {
                     Misti
                   </h3>
                   <p>
-                    Static analyzer that finds security vulnerabilities, TON-specific pitfalls,
+                    Static analyzer that finds security vulnerabilities, <a href="https://ton.org">TON</a>-specific pitfalls,
                     and optimization opportunities in smart contracts. Fully automatic, open-source,
                     and extensible for third-party security researchers. <a href="/tools/misti" className={styles.inlineLink}>
                     Learn how it works and try it yourself...</a>
@@ -341,7 +341,7 @@ const HomePage: React.FC = () => {
             <section id="audits" className={styles.features}>
               <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Smart Contract Audits</h2>
               <p className={styles.featuresSummary}>
-                Professional security assessment for TON smart contracts through rigorous manual review and formal specification/verification when needed.
+                Professional smart contracts security assessment through rigorous manual review and formal specification/verification when needed.
               </p>
 
               <div className="row">
@@ -358,6 +358,12 @@ const HomePage: React.FC = () => {
 
               <div className="row" style={{ marginTop: '1rem' }}>
                 <div className="col col--12">
+                  <p style={{ marginTop: '0.5rem' }}>References available upon request.</p>
+                </div>
+              </div>
+
+              <div className="row" style={{ marginTop: '1rem' }}>
+                <div className="col col--12">
                   <h4 style={{ marginBottom: '0rem' }}>Contacts</h4>
                   <div className={styles.contactLinks}>
                     <a href="https://t.me/jubnzv" className={styles.contactLink} style={{ marginRight: '1rem' }}>
@@ -369,48 +375,6 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="row" style={{ marginTop: '1rem' }}>
-                <div className="col col--12">
-                  <h4 style={{ marginBottom: '0rem' }}>Public Reports</h4>
-                  <div className={styles.reportsGrid} style={{ marginTop: '0.5rem' }}>
-                    <div className={styles.reportRow}>
-                      <a href="https://proofofcapital.org/"
-                         target="_blank"
-                         rel="noopener noreferrer">
-                        <img
-                          src="/reports/proof-of-capital.jpeg"
-                          alt="Proof of Capital Logo"
-                          className={styles.projectLogo}
-                        />
-                      </a>
-                      <div className={styles.contentColumn}>
-                        <a href="https://proofofcapital.org/"
-                           className={styles.projectLink}
-                           target="_blank"
-                           rel="noopener noreferrer">
-                          Proof of Capital
-                        </a>
-                        <div className={styles.reportLink}>
-                          <a href="https://raw.githubusercontent.com/nowarp/public-reports/master/2025-01-proof-of-capital.pdf" className={styles.pdfLink}>
-                            <svg
-                              className={styles.pdfIcon}
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                              xmlns="http://www.w3.org/2000/svg"
-                              style={{ color: '#FF4444', verticalAlign: 'middle' }}
-                            >
-                              <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/>
-                            </svg>
-                            report
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </section>
           </div>
         </div>

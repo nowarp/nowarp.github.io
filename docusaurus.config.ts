@@ -6,8 +6,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 dotenvConfig();
 
 const config: Config = {
-  title: 'Misti',
-  tagline: 'TON Static Analyzer',
+  title: 'nowarp',
+  tagline: 'Web3 Security',
   favicon: 'img/misti.svg',
   url: 'https://nowarp.io/',
   baseUrl: '/',
@@ -43,8 +43,8 @@ const config: Config = {
         },
         blog: {
           routeBasePath: 'blog',
-          blogTitle: 'Blog - TON Security',
-          blogDescription: 'Technical blog about TON security and toling',
+          blogTitle: 'Blog - Web3 Security',
+          blogDescription: 'Technical blog about Web3 security and toling',
           blogSidebarCount: 10,
           blogSidebarTitle: 'Latest Posts',
           postsPerPage: 5,
@@ -140,6 +140,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.oneDark,
+      additionalLanguages: ['clojure', 'json'],
     },
   } satisfies Preset.ThemeConfig,
 };

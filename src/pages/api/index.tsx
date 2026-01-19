@@ -7,7 +7,7 @@ export default function APIReference() {
   return (
     <Layout description="API Reference Documentation">
       <Head>
-        <title>API Reference - TON Developer Tools</title>
+        <title>API Reference - Developer Tools</title>
       </Head>
       <main>
         {/* Misti Section */}
