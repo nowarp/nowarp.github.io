@@ -6,6 +6,37 @@ import { FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
 
+import compilerTestingCover from '@site/blog/img/2026-04-17-metamut-scheme.png';
+import skryCover from '@site/blog/img/2026-01-17-pipeline.png';
+import tonSecurityCover from '@site/blog/img/2025-01-26-pipeline.png';
+
+const LATEST_POSTS = [
+  {
+    href: '/blog/compiler-testing-part-1',
+    cover: compilerTestingCover,
+    tag: 'Fuzzing · Compilers',
+    title: 'Compiler Testing — Part 1: Coverage-Guided Fuzzing with Grammars and LLMs',
+    excerpt:
+      'How coverage-guided fuzzing and LLM-assisted mutators adapt to smart-contract compilers. 100+ bugs found across Sui Move, Cairo, Solang, Solidity, and Leo.',
+  },
+  {
+    href: '/blog/skry',
+    cover: skryCover,
+    tag: 'Static Analysis · LLM',
+    title: 'Skry: Hybrid LLM Static Analysis for Sui Move',
+    excerpt:
+      'A hybrid static analysis + LLM security tool for Sui Move, focused on access control, governance, and centralization issues.',
+  },
+  {
+    href: '/blog/ton-security-risks',
+    cover: tonSecurityCover,
+    tag: 'Static Analysis · TON',
+    title: 'TON Security Risks: A Static Analysis Perspective',
+    excerpt:
+      'Exploring static analysis capabilities and limitations for TON smart contracts security through Misti.',
+  },
+];
+
 interface Particle {
   x: number;
   y: number;
@@ -374,6 +405,35 @@ const HomePage: React.FC = () => {
                     </a>
                   </div>
                 </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        {/* Container 3: Latest blog posts */}
+        <div className="container" style={{ marginBottom: '3rem' }}>
+          <div className={styles.featureBox}>
+            <section id="blog" className={styles.features}>
+              <div className={styles.blogHeader}>
+                <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: 0 }}>Latest Posts</h2>
+                <a href="/blog" className={styles.blogAllLink}>All posts →</a>
+              </div>
+              <div className={styles.blogGrid}>
+                {LATEST_POSTS.map((post) => (
+                  <a key={post.href} href={post.href} className={styles.blogCard}>
+                    <div
+                      className={styles.blogCardImage}
+                      style={{ backgroundImage: `url(${post.cover})` }}
+                      role="img"
+                      aria-label={post.title}
+                    />
+                    <div className={styles.blogCardContent}>
+                      <span className={styles.blogCardTag}>{post.tag}</span>
+                      <h3 className={styles.blogCardTitle}>{post.title}</h3>
+                      <p className={styles.blogCardExcerpt}>{post.excerpt}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
             </section>
           </div>
