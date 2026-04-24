@@ -142,3 +142,15 @@ pre.wrap-code {
   overflow-wrap: anywhere;
   word-break: break-all;
 }
+
+/* Smaller titles on the blog listing page (h2 only; individual post page uses h1) */
+article > header > h2[class*='title'] {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+  article > header > h2[class*='title'] {
+    font-size: 1.5rem;
+  }
+}
