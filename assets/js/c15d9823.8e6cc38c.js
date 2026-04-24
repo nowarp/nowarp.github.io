@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknowarp_github_io=self.webpackChunknowarp_github_io||[]).push([[8146],{9328:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":5,"totalPages":1,"totalCount":2,"blogDescription":"Technical blog about Web3 security and toling","blogTitle":"Blog - Web3 Security"}}')}}]);
