@@ -16,13 +16,13 @@ Smart contracts are unforgiving. A single bug can vaporize millions of dollars. 
 
 This is where static analysis comes in. It's a technique that examines your code before deployment to automatically detect potential vulnerabilities. While no automated tool can guarantee security, static analysis can identify common pitfalls early in development.
 
+<!-- truncate -->
+
 This post:
 - Explores static analysis capabilities and limitations for smart contracts security.
 - Shows how this fits into [TON](https://ton.org/) security landscape through [Misti](https://nowarp.io/tools/misti/).
 
 Understanding static program analysis enables you to add an additional layer of automated security verification to your development process, catching some vulnerabilities before they reach production.
-
-<!-- truncate -->
 
 ## Static Analysis for Web3 and TON
 
