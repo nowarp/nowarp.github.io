@@ -4,7 +4,7 @@ import Title from '@theme-original/BlogPostItem/Header/Title';
 import type TitleType from '@theme/BlogPostItem/Header/Title';
 import type {WrapperProps} from '@docusaurus/types';
 import Link from '@docusaurus/Link';
-import {useBlogPost} from '@docusaurus/theme-common/internal';
+import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import styles from './styles.module.css';
 
 type Props = WrapperProps<typeof TitleType>;
