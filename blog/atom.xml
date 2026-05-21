@@ -12,7 +12,7 @@
         <id>https://nowarp.io/blog/compiler-testing-part-1</id>
         <link href="https://nowarp.io/blog/compiler-testing-part-1"/>
         <updated>2026-04-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Compiler fuzzing for small languages is a specific problem — few optimization passes, tiny corpora, thin docs. This post covers how coverage-guided fuzzing and LLM-assisted tooling adapt to smart-contract compilers, including a literature overview, related projects, and evaluation results. Found 100+ compiler bugs across Sui Move, Cairo, Solang, Solidity, and Leo. These are not lexer or parser crashes on malformed input — every bug was triggered by structurally valid programs against mature, audited, production compilers.]]></summary>
+        <summary type="html"><![CDATA[Coverage-guided grammar-aware fuzzing of smart-contract compilers — 100+ ICE bugs found in Sui Move, Cairo, Solang, Solidity, and Leo using AFL++ and LLMs.]]></summary>
         <content type="html"><![CDATA[<p>Compiler fuzzing for small languages is a specific problem — few optimization passes, tiny corpora, thin docs. This post covers how coverage-guided fuzzing and LLM-assisted tooling adapt to smart-contract compilers, including a literature overview, related projects, and evaluation results. Found <strong>100+ compiler bugs</strong> across <a href="https://github.com/MystenLabs/sui/issues?q=is%3Aissue%20author%3Ajubnzv" target="_blank" rel="noopener noreferrer" class="">Sui Move</a>, <a href="https://github.com/starkware-libs/cairo/issues?q=is%3Aissue%20author%3Ajubnzv" target="_blank" rel="noopener noreferrer" class="">Cairo</a>, <a href="https://github.com/hyperledger-solang/solang/issues?q=is%3Aissue%20author%3Ajubnzv" target="_blank" rel="noopener noreferrer" class="">Solang</a>, <a href="https://github.com/argotorg/solidity/issues?q=is%3Aissue%20author%3Ajubnzv" target="_blank" rel="noopener noreferrer" class="">Solidity</a>, and <a href="https://github.com/ProvableHQ/leo/issues?q=is%3Aissue%20author%3Ajubnzv" target="_blank" rel="noopener noreferrer" class="">Leo</a>. These are not lexer or parser crashes on malformed input — every bug was triggered by structurally valid programs against mature, audited, production compilers.</p>
 <p>This post may be useful to you if you:</p>
 <ul>
@@ -387,7 +387,7 @@
         <id>https://nowarp.io/blog/skry</id>
         <link href="https://nowarp.io/blog/skry"/>
         <updated>2026-01-17T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A hybrid static analysis + LLM security tool for Sui Move, focused on access control, governance, and centralization issues.]]></summary>
+        <summary type="html"><![CDATA[Hybrid static analysis and LLM-based security tool for Sui Move — detects access control, governance, and centralization vulnerabilities in smart contracts.]]></summary>
         <content type="html"><![CDATA[<p>This is an overview of a new hybrid static analysis + LLM security tool for Sui Move, focused on access control, governance, and centralization issues. Skry uses static analysis to narrow candidates, then applies targeted LLM classification, then calls interprocedural and cross-module taint propagation and uses static analysis to detect the issues. This avoids most LLM hallucinations and reaches bugs pure static analysis can't. Proof-of-concept source code <a href="https://github.com/nowarp/skry" target="_blank" rel="noopener noreferrer" class="">is available</a>.</p>
 <p>The blog post contains the following sections:</p>
 <ol>
@@ -650,7 +650,7 @@ Configuration parameters may be either:</p>
         <id>https://nowarp.io/blog/ton-security-risks</id>
         <link href="https://nowarp.io/blog/ton-security-risks"/>
         <updated>2025-01-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Exploring static analysis capabilities and limitations for TON smart contracts security through Misti.]]></summary>
+        <summary type="html"><![CDATA[Static analysis for TON blockchain smart contract security via Misti — capabilities, limitations, common vulnerability patterns, and detector design.]]></summary>
         <content type="html"><![CDATA[<p>Smart contracts are unforgiving. A single bug can vaporize millions of dollars. If you're coming from web development, forget everything you know about "move fast and break things" - here, breaking things means <em>actually breaking things</em>. With money. Real money.</p>
 <p>This is where static analysis comes in. It's a technique that examines your code before deployment to automatically detect potential vulnerabilities. While no automated tool can guarantee security, static analysis can identify common pitfalls early in development.</p>
 <p>This post:</p>
