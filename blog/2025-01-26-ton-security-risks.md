@@ -1,7 +1,7 @@
 ---
 slug: ton-security-risks
 title: "TON Security Risks: A Static Analysis Perspective"
-description: "Exploring static analysis capabilities and limitations for TON smart contracts security through Misti."
+description: "Static analysis for TON blockchain smart contract security via Misti — capabilities, limitations, common vulnerability patterns, and detector design."
 authors: GeorgiyKomarov
 tags: [misti, ton, "static analysis"]
 hide_table_of_contents: false

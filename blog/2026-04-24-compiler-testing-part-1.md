@@ -1,6 +1,7 @@
 ---
 slug: compiler-testing-part-1
 title: "Compiler Testing — Part 1: Coverage-Guided Fuzzing with Grammars and LLMs"
+description: "Coverage-guided grammar-aware fuzzing of smart-contract compilers — 100+ ICE bugs found in Sui Move, Cairo, Solang, Solidity, and Leo using AFL++ and LLMs."
 authors: GeorgiyKomarov
 tags: [fuzzing, compilers, llm, sui, move, ethereum, compilers-testing]
 hide_table_of_contents: false
