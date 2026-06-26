@@ -27,6 +27,8 @@ export default function prismIncludeLanguages(
   require('./prism-tact');
   // eslint-disable-next-line global-require
   require('./prism-func');
+  // eslint-disable-next-line global-require
+  require('./prism-lean');
 
   delete (globalThis as Optional<typeof globalThis, 'Prism'>).Prism;
 }
