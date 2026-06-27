@@ -4,6 +4,8 @@ title: "TON Security Risks: A Static Analysis Perspective"
 description: "Static analysis for TON blockchain smart contract security via Misti — capabilities, limitations, common vulnerability patterns, and detector design."
 authors: GeorgiyKomarov
 tags: [misti, ton, "static analysis"]
+announce_linkedin: https://www.linkedin.com/posts/jubnzv_ton-security-risks-a-static-analysis-perspective-share-7305928335778316289-Lamy/
+announce_telegram: https://t.me/nowarp_io/16
 hide_table_of_contents: false
 ---
 
