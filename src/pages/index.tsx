@@ -6,11 +6,19 @@ import { FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
 
+import compilerTestingPart2Cover from '@site/blog/img/2026-05-01-lean-den.png';
 import compilerTestingCover from '@site/blog/img/2026-04-17-metamut-scheme.png';
 import skryCover from '@site/blog/img/2026-01-17-pipeline.png';
-import tonSecurityCover from '@site/blog/img/2025-01-26-pipeline.png';
 
 const LATEST_POSTS = [
+  {
+    href: '/blog/compiler-testing-part-2',
+    cover: compilerTestingPart2Cover,
+    tag: 'Compilers · Metamorphic Testing',
+    title: 'Compiler Testing — Part 2: Metamorphic Testing with Verified Identities',
+    excerpt:
+      'Hunting compiler miscompilations with differential and metamorphic testing, using mutations proven equivalence-preserving in Lean4. Real-world findings, some rewarded with bug bounties.',
+  },
   {
     href: '/blog/compiler-testing-part-1',
     cover: compilerTestingCover,
@@ -26,14 +34,6 @@ const LATEST_POSTS = [
     title: 'Skry: Hybrid LLM Static Analysis for Sui Move',
     excerpt:
       'A hybrid static analysis + LLM security tool for Sui Move, focused on access control, governance, and centralization issues.',
-  },
-  {
-    href: '/blog/ton-security-risks',
-    cover: tonSecurityCover,
-    tag: 'Static Analysis · TON',
-    title: 'TON Security Risks: A Static Analysis Perspective',
-    excerpt:
-      'Exploring static analysis capabilities and limitations for TON smart contracts security through Misti.',
   },
 ];
 
