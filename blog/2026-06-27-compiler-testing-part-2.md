@@ -5,6 +5,9 @@ description: "Hunting compiler miscompilations on smart-contract platforms with 
 image: ./img/og/compiler-testing-part-2.png
 authors: GeorgiyKomarov
 tags: [compilers, compilers-testing, fuzzing, lean4, ethereum, polkadot, metamorphic-testing, differential-testing]
+announce_x: https://x.com/nowarp_io/status/2070864260360769657
+announce_linkedin: https://www.linkedin.com/posts/jubnzv_fuzzing-compilers-smartcontracts-activity-7476629086463815680-9x-X
+announce_telegram: https://t.me/nowarp_io/33
 hide_table_of_contents: false
 ---
 
