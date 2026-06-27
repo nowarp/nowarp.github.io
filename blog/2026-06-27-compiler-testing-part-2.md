@@ -2,6 +2,7 @@
 slug: compiler-testing-part-2
 title: "Compiler Testing — Part 2: Metamorphic Testing with Verified Identities"
 description: "Hunting compiler miscompilations on smart-contract platforms with differential and metamorphic testing, using mutations proven equivalence-preserving in Lean4 — including real-world findings, some rewarded with bug bounties."
+image: ./img/og/compiler-testing-part-2.png
 authors: GeorgiyKomarov
 tags: [compilers, compilers-testing, fuzzing, lean4, ethereum, polkadot, metamorphic-testing, differential-testing]
 hide_table_of_contents: false
