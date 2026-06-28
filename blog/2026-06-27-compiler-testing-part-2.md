@@ -39,10 +39,10 @@ The post is organized as follows:
 6. **[Conclusion](#conclusion)** — summary and further work
 
 If you're experienced, here's the whole approach in essence; dive into the interesting parts later:
-> 1. Build a Lean4 eDSL implementing a subset of the target language's semantics
-> 2. Hand-write textbook identities and prove them sound in that semantics — we will consider arithmetic over the 256-bit word ring, linear/poly MBA, some QF_BV, and ad-hoc identities that hit common cryptographic builtins and peephole optimizers
-> 3. Use the executable semantics to synthesize more sound mutations (bounded, with ad-hoc filters)
-> 4. Run the fuzzing pipeline, leveraging both differential and metamorphic testing
+> 1. Build a Lean4 eDSL implementing a subset of the target language's semantics.
+> 2. Hand-write textbook identities and prove them sound in that semantics — we will consider arithmetic over the 256-bit word ring, linear/poly MBA, some QF_BV, and ad-hoc identities that hit common cryptographic builtins and peephole optimizers.
+> 3. Use the executable semantics to synthesize more sound mutations (bounded, with ad-hoc filters): generator + bottom-up search + Lean kernel as an oracle — simpler than counterexample-based approaches.
+> 4. Run the fuzzing pipeline, leveraging both differential and metamorphic testing.
 
 It is not that hard to build, and — implemented properly — it does find bugs in corner cases that other fuzz-testing tools miss.
 
@@ -54,7 +54,7 @@ This part targets more tricky bugs: semantic drifts and miscompilations. This me
 ### Miscompilation bugs
 The most popular early article on incorrect compilation is "Reflections on Trusting Trust" by Ken Thompson in 1984 [[1]](#references). While the whole idea has been known for years, these bugs are better known nowadays in Web3, where they can easily affect smart contracts with real money.
 
-Miscompilations are invisible to smart-contract auditors, because the source code is correct, but the actual implementation diverges because of the bug in the trusted base. Worse, they affect *all* the contracts uploaded on-chain — any contract containing the specific pattern may misbehave or just [imply some interesting behavior](https://dedaub.com/blog/i-see-dead-code/).
+Miscompilations are invisible to smart-contract auditors – the source code is correct, but the actual implementation diverges because of the bug in the trusted base. Worse, they affect *all* the contracts uploaded on-chain — any contract containing the specific pattern may misbehave or just [imply some interesting behavior](https://dedaub.com/blog/i-see-dead-code/).
 
 The only exploited bugs so far are the [Vyper non-reentrancy hack](https://hackmd.io/@vyperlang/HJUgNMhs2) ($69.3M) and the Cetus hack ($213M) – not in the compiler but related to unexpected semantics in the math library. Other bugs could have caused losses but were fixed before being exploited, such as the [TSTORE-poison codegen bug](https://hexens.io/research/solidity-compiler-bug-tstore-poison) in solc and the [billion-dollar Move verifier bug](https://www.zellic.io/blog/the-billion-dollar-move-bug/).
 
@@ -63,7 +63,7 @@ That's why compiler bugs are worth hunting.
 ### Oracles
 The main problem when hunting miscompilations is how to detect when the program miscompiles. When [working with ICE](https://nowarp.io/blog/compiler-testing-part-1), you get the oracle for free: if the compiler panicked, you got a bug. With miscompilations you have to understand how the compiled program should behave and what the correct behavior is.
 
-In fuzzing, this problem is solved by the oracle. There are different approaches, but we will consider the ones we use: differential testing and metamorphic testing.
+In fuzzing, this problem is solved by the oracle: a part of the tool that decides whether a program's output is correct. There are different approaches, but we will consider the ones we use: differential testing and metamorphic testing.
 
 #### Differential testing
 The key idea of differential testing: execute another implementation of [SUT](https://en.wikipedia.org/wiki/System_under_test) with the same inputs and compare the results.
@@ -86,6 +86,8 @@ Differential testing is simple and does not require any elaboration. It is free 
 #### Metamorphic testing
 Metamorphic testing relies on a metamorphic relation (MR): a rule for how changing the input should change the output, so you can catch a bug without knowing the expected result.
 
+Metamorphic testing, then, is testing through MR: run the program on MR-related inputs and flag a bug if the outputs violate the relation. For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.
+
 For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.
 
 <div align="center"><img src={ImgMutatedRevive} style={{width: '75%'}}/></div>
@@ -103,8 +105,8 @@ Now consider how we can define semantics and build the mutations over it, becaus
 
 ## Verified mutations
 The main component of the tool is a framework in Lean that implements:
-* executable semantics – generic enough to be extended to a specific language's semantics
-* a library of hand-written mutations
+* Executable semantics – generic enough to be extended to a specific language's semantics.
+* A library of hand-written mutations.
 
 ### Lean4
 While similar approaches have been implemented in different works, people usually prefer SMT for similar projects.
@@ -392,7 +394,7 @@ Solang's sema-stage constant folder evaluates `<<`/`>>` with unbounded precision
 
 <div align="center"><img src={ImgSolangMiscompile} style={{width: '100%'}}/></div>
 
-<div align="center"><em>Valid miscompile found in the Solidity compiler [Solang](http://github.com/hyperledger-solang/solang)</em></div><br/>
+<div align="center"><em>Valid miscompile found in the Solidity compiler [Solang](http://github.com/hyperledger-solang/solang) ([solang#1926](https://github.com/hyperledger-solang/solang/issues/1926))</em></div><br/>
 
 Additionally, the tool highlighted a number of ICEs, including interesting findings like [allocation of 10 TiB RAM on compilation](https://github.com/hyperledger-solang/solang/issues/1905), which were not found in the [coverage-guided fuzzing campaign](https://nowarp.io/blog/compiler-testing-part-1).
 
@@ -434,7 +436,7 @@ The hand-written mutations library enables us to write rules that trigger specif
 Some real-world findings were demonstrated to prove the feasibility of the approach implemented that way.
 
 ### Further work
-We did not consider high-level language constructs such as control flow, storage operations on mappings/arrays/structs, and anything beyond arithmetic and constants, to keep the scope minimal.
+We did not consider high-level language constructs such as control flow, storage operations on mappings/arrays/structs, and anything beyond arithmetic and constants, to keep the scope minimal. Other things like overflow semantics and type widths are generalized by the tool leveraging Lean [polymorphism](https://leanprover.github.io/functional_programming_in_lean/getting-to-know/polymorphism.html).
 
 There are a couple of approaches to program generation and mutation which work well with the current work:
 1. Some control flow semantics could be integrated into the described pipeline (with known limitations). The easy wins are core Lean's `ite` and let-bindings; others are Moggi monads to express statement-level mutation.
