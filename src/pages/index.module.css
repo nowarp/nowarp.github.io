@@ -113,6 +113,92 @@
     border-bottom: 1px solid var(--ifm-color-primary);
 }
 
+.toolEntry {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.toolEntry:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.toolHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.toolTitle {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.toolIcon {
+  display: inline-flex;
+  align-items: center;
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  color: var(--ifm-color-primary);
+}
+
+.licenseBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}
+
+.licenseBadge svg {
+  flex-shrink: 0;
+}
+
+.toolExpandRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toolTagline {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.toolToggleIcon {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--ifm-color-primary);
+  transition: transform 0.2s ease;
+}
+
+.toolToggleIconOpen {
+  transform: rotate(180deg);
+}
+
+.toolExpandRow:hover .toolTagline {
+  color: var(--ifm-color-primary-dark);
+}
+
+.toolExpandRow:hover .toolToggleIcon {
+  color: var(--ifm-color-primary-dark);
+}
+
+.collapsibleContent {
+  margin-top: 0.6rem;
+}
+
 .reportsGrid {
   width: fit-content;
   display: inline-block;

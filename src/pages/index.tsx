@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import styles from './index.module.css';
-import { FaTelegramPlane, FaEnvelope } from 'react-icons/fa';
+import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown, FaShieldAlt, FaSearch, FaBug } from 'react-icons/fa';
+import { SiOpensourceinitiative } from 'react-icons/si';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
 
@@ -36,6 +37,114 @@ const LATEST_POSTS = [
       'A hybrid static analysis + LLM security tool for Sui Move, focused on access control, governance, and centralization issues.',
   },
 ];
+
+type ToolLicense = 'open' | 'closed';
+
+interface Tool {
+  icon: React.ReactNode;
+  name: string;
+  tagline: string;
+  license: ToolLicense;
+  details: React.ReactNode;
+}
+
+const TOOLS: Tool[] = [
+  {
+    icon: <FaShieldAlt />,
+    name: 'Misti',
+    tagline: 'Static analyzer for TON smart contracts',
+    license: 'open',
+    details: (
+      <>
+        Static analyzer that finds security vulnerabilities, <a href="https://ton.org">TON</a>-specific pitfalls,
+        and optimization opportunities in smart contracts. Fully automatic, open-source,
+        and extensible for third-party security researchers.{' '}
+        <a href="/tools/misti" className={styles.inlineLink}>Learn how it works and try it yourself.</a>
+      </>
+    ),
+  },
+  {
+    icon: <FaSearch />,
+    name: 'TON Scanner',
+    tagline: 'Mass-scaner over verified TON contracts',
+    license: 'closed',
+    details: (
+      <>
+        Web-interface to the demo version of mass-scan that runs code analysis over contracts publicly available on{' '}
+        <a href="https://verifier.ton.org" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+          verifier.ton.org
+        </a> and{' '}
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+          GitHub
+        </a>. Only a couple of these contracts are displayed - manually verified projects that
+        don't contain any vulnerabilities.{' '}
+        <a href="/tools/scanner" className={styles.inlineLink}>Try the scanner.</a>
+      </>
+    ),
+  },
+  {
+    icon: <FaBug />,
+    name: 'Laron',
+    tagline: 'Metamorphic compiler fuzzer with Lean4-verified mutations',
+    license: 'closed',
+    details: (
+      <>
+        Differential and metamorphic testing framework for smart-contract compilers, built around mutations
+        proven equivalence-preserving in Lean4. Over 1600 verified identities stack together to reach
+        miscompilation corner cases other fuzzers miss, with real-world findings.{' '}
+        <a href="https://nowarp.io/blog/compiler-testing-part-2/" className={styles.inlineLink}>
+          Read the approach overview.
+        </a>
+      </>
+    ),
+  },
+];
+
+const LicenseBadge: React.FC<{ license: ToolLicense }> = ({ license }) =>
+  license === 'open' ? (
+    <span className={styles.licenseBadge} title="Open source">
+      <SiOpensourceinitiative /> Open source
+    </span>
+  ) : (
+    <span className={styles.licenseBadge} title="Proprietary">
+      <FaLock /> Proprietary
+    </span>
+  );
+
+// Expand modeled on blog/components/Spoiler.js
+const ToolEntry: React.FC<{ tool: Tool }> = ({ tool }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={styles.toolEntry}>
+      <div className={styles.toolHeader}>
+        <h3 className={styles.toolTitle}>
+          <span className={styles.toolIcon} aria-hidden="true">{tool.icon}</span>
+          {tool.name}
+        </h3>
+        <LicenseBadge license={tool.license} />
+      </div>
+      <div
+        className={styles.toolExpandRow}
+        onClick={() => setOpen(!open)}
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setOpen(!open);
+          }
+        }}
+      >
+        <span className={styles.toolTagline}>{tool.tagline}</span>
+        <FaChevronDown
+          className={open ? `${styles.toolToggleIcon} ${styles.toolToggleIconOpen}` : styles.toolToggleIcon}
+        />
+      </div>
+      {open && <div className={styles.collapsibleContent}>{tool.details}</div>}
+    </div>
+  );
+};
 
 interface Particle {
   x: number;
@@ -313,55 +422,9 @@ const HomePage: React.FC = () => {
           <div className={styles.featureBox}>
             <section id="tools" className={styles.features}>
               <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Tools</h2>
-              <div className="row">
-                <div className="col col--12">
-                  <h3>
-                    <img
-                      src="/img/misti.svg"
-                      alt="Misti"
-                      style={{
-                        height: '1em',
-                        verticalAlign: 'middle',
-                        marginRight: '0.5em'
-                      }}
-                    />
-                    Misti
-                  </h3>
-                  <p>
-                    Static analyzer that finds security vulnerabilities, <a href="https://ton.org">TON</a>-specific pitfalls,
-                    and optimization opportunities in smart contracts. Fully automatic, open-source,
-                    and extensible for third-party security researchers. <a href="/tools/misti" className={styles.inlineLink}>
-                    Learn how it works and try it yourself...</a>
-                  </p>
-                </div>
-              </div>
-              <div className="row" style={{ marginTop: '0rem' }}>
-                <div className="col col--12">
-                  <h3>
-                    <img
-                      src="/img/scan.svg"
-                      alt="Scanner"
-                      style={{
-                        height: '1em',
-                        verticalAlign: 'middle',
-                        marginRight: '0.5em'
-                      }}
-                    />
-                    Scanner
-                  </h3>
-                  <p>
-                    Web-interface to the demo version of mass-scan that runs code analysis over contracts publicly available on{' '}
-                    <a href="https://verifier.ton.org" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
-                      verifier.ton.org
-                    </a> and{' '}
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
-                      GitHub
-                    </a>. Only a couple of these contracts are displayed - manually verified projects that 
-                    don't contain any vulnerabilities. <a href="/tools/scanner" className={styles.inlineLink}>
-                    Try the scanner...</a>
-                  </p>
-                </div>
-              </div>
+              {TOOLS.map((tool) => (
+                <ToolEntry key={tool.name} tool={tool} />
+              ))}
             </section>
           </div>
         </div>
