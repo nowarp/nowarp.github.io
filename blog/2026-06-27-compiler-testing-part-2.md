@@ -88,8 +88,6 @@ Metamorphic testing relies on a metamorphic relation (MR): a rule for how changi
 
 Metamorphic testing, then, is testing through MR: run the program on MR-related inputs and flag a bug if the outputs violate the relation. For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.
 
-For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.
-
 <div align="center"><img src={ImgMutatedRevive} style={{width: '75%'}}/></div>
 
 <div align="center"><em>Found by metamorphic testing: a miscompilation in [Polkadot Revive](https://github.com/paritytech/revive/) – both programs implement the same `return x` identity but return a different result ([revive#524](https://github.com/paritytech/revive/issues/524))</em></div><br/>
