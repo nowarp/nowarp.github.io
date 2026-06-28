@@ -71,7 +71,6 @@
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="metamorphic-testing">Metamorphic testing<a href="https://nowarp.io/blog/compiler-testing-part-2#metamorphic-testing" class="hash-link" aria-label="Direct link to Metamorphic testing" title="Direct link to Metamorphic testing" translate="no">​</a></h4>
 <p>Metamorphic testing relies on a metamorphic relation (MR): a rule for how changing the input should change the output, so you can catch a bug without knowing the expected result.</p>
 <p>Metamorphic testing, then, is testing through MR: run the program on MR-related inputs and flag a bug if the outputs violate the relation. For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.</p>
-<p>For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.</p>
 <div align="center"><img src="https://nowarp.io/assets/images/2026-05-01-mutated-revive-ea275a538681aa8f7c77bcc84e997447.png" style="width:75%"></div>
 <div align="center"><em>Found by metamorphic testing: a miscompilation in <a href="https://github.com/paritytech/revive/" target="_blank" rel="noopener noreferrer" class="">Polkadot Revive</a> – both programs implement the same <code>return x</code> identity but return a different result (<a href="https://github.com/paritytech/revive/issues/524" target="_blank" rel="noopener noreferrer" class="">revive#524</a>)</em></div>
 <br>
