@@ -143,6 +143,11 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Index page only: offset anchor scrolling for the sticky navbar (class toggled in src/pages/index.tsx) */
+html.index-snap {
+  scroll-padding-top: var(--ifm-navbar-height);
+}
+
 /* Hide version dropdown by default */
 .misti-only-dropdown {
   display: none !important;

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import styles from './index.module.css';
-import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown, FaShieldAlt, FaSearch, FaBug } from 'react-icons/fa';
+import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown, FaShieldAlt, FaSearch, FaBug, FaArrowUp } from 'react-icons/fa';
 import { SiOpensourceinitiative } from 'react-icons/si';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
@@ -146,25 +146,10 @@ const ToolEntry: React.FC<{ tool: Tool }> = ({ tool }) => {
   );
 };
 
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  radius: number;
-  connections: number;
-}
-
-const PARTICLE_COUNT = 50;
-const MAX_SPEED = 0.5;
-const CONNECTION_DISTANCE = 150;
-const MIN_CONNECTIONS = 2;
-
 const HomePage: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
   const location = useLocation();
-  const [textColor, setTextColor] = useState('var(--ifm-color-primary-dark)');
+  const [showTop, setShowTop] = useState(false);
+  const scrollTopRef = useRef<() => void>(() => {});
 
   useEffect(() => {
     if (location.hash) {
@@ -178,206 +163,76 @@ const HomePage: React.FC = () => {
     }
   }, [location]);
 
+  // Snap the hero <-> content boundary (index page only). JS drives both wheel
+  // and keys so it actually fires in Firefox; one gesture = full commit, no half
+  // state. Deep in the content it does nothing -> free native scroll.
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const content = document.getElementById('content-start');
+    if (!content) return;
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    document.documentElement.classList.add('index-snap');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const navH = () => {
+      const n = document.querySelector('.navbar');
+      return n ? n.getBoundingClientRect().height : 60;
+    };
+    // land just below the sticky navbar, with a little breathing room
+    const contentTop = () => content.getBoundingClientRect().top + window.scrollY - navH() - 16;
 
-    let computedStyle = getComputedStyle(document.documentElement);
-    let BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
-      ? getComputedStyle(document.body).backgroundColor
-      : computedStyle.getPropertyValue('--ifm-color-white').trim();
-    let PARTICLE_COLOR = document.documentElement.dataset.theme === 'dark'
-      ? computedStyle.getPropertyValue('--ifm-color-white').trim()
-          : computedStyle.getPropertyValue('--ifm-color-primary').trim();
-
-    let particles: Particle[] = [];
-
-    const initParticles = (width: number, height: number): Particle[] => {
-      const particles: Particle[] = [];
-
-      // Keep generating until we have enough PROPERLY CONNECTED particles
-      while (particles.length < PARTICLE_COUNT) {
-        const particle: Particle = {
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * MAX_SPEED,
-          vy: (Math.random() - 0.5) * MAX_SPEED,
-          radius: 2,
-          connections: 0
-        };
-
-        // Check connections with existing particles
-        let connectionCount = 0;
-        for (const existing of particles) {
-          const dx = particle.x - existing.x;
-          const dy = particle.y - existing.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < CONNECTION_DISTANCE) {
-            connectionCount++;
-            existing.connections++;  // Update existing particle's connections
-          }
-        }
-
-        // Only add if it has enough connections or we're desperate
-        if (connectionCount >= MIN_CONNECTIONS || particles.length < PARTICLE_COUNT/2) {
-          particle.connections = connectionCount;
-          particles.push(particle);
-        }
-      }
-
-      // ENSURE MINIMUM CONNECTIONS BY ADJUSTING POSITIONS IF NEEDED
-      for (const particle of particles) {
-        if (particle.connections < MIN_CONNECTIONS) {
-          let attempts = 0;
-          while (particle.connections < MIN_CONNECTIONS && attempts < 50) {
-            particle.x = Math.random() * width;
-            particle.y = Math.random() * height;
-
-            particle.connections = 0;
-            for (const other of particles) {
-              if (other === particle) continue;
-
-              const dx = particle.x - other.x;
-              const dy = particle.y - other.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-
-              if (distance < CONNECTION_DISTANCE) {
-                particle.connections++;
-                other.connections++;
-              }
-            }
-            attempts++;
-          }
-        }
-      }
-
-      return particles;
+    let locked = false;
+    let rafId = 0;
+    // rAF tween: animates even in Firefox with smooth-scroll turned off
+    // (scrollTo's "smooth" obeys that setting; painting scrollTop ourselves bypasses it).
+    const go = (to: number) => {
+      cancelAnimationFrame(rafId);
+      if (reduce) { window.scrollTo(0, to); return; } // honor prefers-reduced-motion
+      locked = true;
+      const from = window.scrollY;
+      const dist = to - from;
+      const ease = (t: number) => 1 - Math.pow(1 - t, 3); // easeOutCubic
+      let t0 = 0;
+      const step = (ts: number) => {
+        if (!t0) t0 = ts;
+        const p = Math.min((ts - t0) / 500, 1);
+        window.scrollTo(0, from + dist * ease(p));
+        if (p < 1) rafId = requestAnimationFrame(step);
+        else locked = false;
+      };
+      rafId = requestAnimationFrame(step);
     };
 
-    const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
-      const displayWidth = window.innerWidth;
-      const displayHeight = window.innerHeight;
-
-      canvas.width = displayWidth * dpr;
-      canvas.height = displayHeight * dpr;
-      canvas.style.width = `${displayWidth}px`;
-      canvas.style.height = `${displayHeight}px`;
-
-      ctx.scale(dpr, dpr);
-
-      // Reinitialize particles for new dimensions
-      particles = initParticles(displayWidth, displayHeight);
+    const onWheel = (e: WheelEvent) => {
+      if (locked) { e.preventDefault(); return; }
+      const y = window.scrollY;
+      const cTop = contentTop();
+      if (e.deltaY > 0 && y < cTop - 5) { e.preventDefault(); go(cTop); }
+      else if (e.deltaY < 0 && y > 5 && y <= cTop + 5) { e.preventDefault(); go(0); }
     };
 
-    // INITIALIZE WITH PROPER DIMENSIONS
-    resizeCanvas();
-
-    // HANDLE RESIZE LIKE A PROPER OPERATING SYSTEM
-    const resizeObserver = new ResizeObserver(() => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-      resizeCanvas();
-      animationRef.current = requestAnimationFrame(draw);
-    });
-
-    resizeObserver.observe(document.body);
-
-    const draw = () => {
-      // UPDATE COLORS ON EVERY FRAME TO HANDLE THEME CHANGES
-      computedStyle = getComputedStyle(document.documentElement);
-      BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
-        ? getComputedStyle(document.body).backgroundColor
-        : computedStyle.getPropertyValue('--ifm-color-white').trim();
-      PARTICLE_COLOR = document.documentElement.dataset.theme === 'dark'
-        ? computedStyle.getPropertyValue('--ifm-color-secondary').trim()
-        : computedStyle.getPropertyValue('--ifm-color-primary').trim();
-
-      // Properly clear the whole damn canvas and set the proper background
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = BACKGROUND_COLOR;
-      ctx.fillRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
-
-      particles.forEach(particle => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `${PARTICLE_COLOR}80`;
-        ctx.fill();
-      });
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < CONNECTION_DISTANCE) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            const opacity = 0.2 * (1 - distance/CONNECTION_DISTANCE);
-            ctx.strokeStyle = `${PARTICLE_COLOR}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
-            ctx.stroke();
-          }
-        }
-      }
-
-      animationRef.current = requestAnimationFrame(draw);  // STORE THE REF SO WE CAN CANCEL IT PROPERLY
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (locked || e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
+      const el = e.target as HTMLElement | null;
+      if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable)) return;
+      const y = window.scrollY;
+      const cTop = contentTop();
+      if ((e.key === 'ArrowDown' || e.key === 'PageDown') && y < cTop - 5) { e.preventDefault(); go(cTop); }
+      else if ((e.key === 'ArrowUp' || e.key === 'PageUp') && y > 5 && y <= cTop + 5) { e.preventDefault(); go(0); }
     };
 
-    // ALSO LISTEN FOR THEME CHANGES LIKE A PROPER PROGRAMMER
-    const themeObserver = new MutationObserver(() => {
-      computedStyle = getComputedStyle(document.documentElement);
-      BACKGROUND_COLOR = document.documentElement.dataset.theme === 'dark'
-        ? getComputedStyle(document.body).backgroundColor
-        : computedStyle.getPropertyValue('--ifm-color-white').trim();
-      PARTICLE_COLOR = computedStyle.getPropertyValue('--ifm-color-primary').trim();
-    });
+    const onScroll = () => setShowTop(window.scrollY > window.innerHeight * 0.5);
+    onScroll();
+    scrollTopRef.current = () => go(0);
 
-    themeObserver.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme']
-    });
-
+    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-      resizeObserver.disconnect();
-      themeObserver.disconnect(); // CLEAN UP YOUR GARBAGE
+      cancelAnimationFrame(rafId);
+      document.documentElement.classList.remove('index-snap');
+      window.removeEventListener('wheel', onWheel);
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('scroll', onScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    // OBSERVE THEME CHANGES FOR TEXT COLOR
-    const updateTextColor = () => {
-      const isDarkTheme = document.documentElement.dataset.theme === 'dark';
-      setTextColor(isDarkTheme ? 'var(--ifm-color-secondary)' : 'var(--ifm-color-primary-dark)');
-    };
-
-    // Initial color setting
-    updateTextColor();
-
-    // Listen for theme changes
-    const themeObserver = new MutationObserver(updateTextColor);
-
-    themeObserver.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme']
-    });
-
-    return () => themeObserver.disconnect();
   }, []);
 
   return (
@@ -385,38 +240,45 @@ const HomePage: React.FC = () => {
       <Head>
         <title>nowarp - Web3 Security</title>
       </Head>
-      <div style={{
-        position: 'relative',
-        width: '100%',
-        height: '100vh',
-      }}>
-        <canvas
-          ref={canvasRef}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: 0
-          }}
-        />
-        <div className={styles.textContainer} style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 1,
-          textAlign: 'left',
-          color: textColor,
-          opacity: 0.9
-        }}>
-          <h1 className={styles.heroTitle}>nowarp</h1>
-          <p className={styles.heroSubtitleSmall}>Professional <a href="#audits" className={styles.inlineLink}>security audits</a> and <a href="#tools" className={styles.inlineLink}>security tooling</a></p>
-        </div>
-      </div>
 
-      <main style={{ marginTop: '1rem' }}>
+      {showTop && (
+        <button
+          type="button"
+          aria-label="Scroll to top"
+          className={styles.toTop}
+          onClick={() => scrollTopRef.current()}
+        >
+          <FaArrowUp aria-hidden="true" />
+        </button>
+      )}
+
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <h1 className={styles.heroWordmark}>no&nbsp;warp<span className={styles.heroAccent}>.</span></h1>
+          <div className={styles.heroTagline}>What you write is what runs.</div>
+          <p className={styles.heroLede}>A holistic approach to protocol security — we audit your contracts and everything they rely on, across Ethereum, Move, and TON.</p>
+          <div className={styles.heroCtas}>
+            <a href="#audits" className={styles.heroBtnPrimary}>Request an audit</a>
+            <a href="#tools" className={styles.heroBtnSecondary}>Explore the tools</a>
+          </div>
+          <div className={styles.heroCols}>
+            <a href="#tools" className={styles.heroCol}>
+              <div className={styles.heroColTitle}>Tooling</div>
+              <div className={styles.heroColDesc}>Static analysis, fuzzing, compiler testing, AI.</div>
+            </a>
+            <a href="#audits" className={styles.heroCol}>
+              <div className={styles.heroColTitle}>Audits</div>
+              <div className={styles.heroColDesc}>Protocols, end to end.</div>
+            </a>
+            <a href="#blog" className={styles.heroCol}>
+              <div className={styles.heroColTitle}>Research</div>
+              <div className={styles.heroColDesc}>Approaches, insights, findings.</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <main id="content-start" style={{ marginTop: '1rem' }}>
         {/* Container 1: Tools */}
         <div className="container" style={{ marginBottom: '3rem' }}>
           <div className={styles.featureBox}>
