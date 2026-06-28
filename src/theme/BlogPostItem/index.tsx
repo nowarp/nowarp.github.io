@@ -24,7 +24,7 @@ export default function BlogPostItemWrapper(props: Props): JSX.Element {
             categoryId="DIC_kwDOMZh17c4C6Ktw"
             mapping="pathname"
             strict="1"
-            reactionsEnabled="1"
+            reactionsEnabled="0"
             emitMetadata="0"
             inputPosition="bottom"
             theme={colorMode === 'dark' ? 'dark_tritanopia' : 'light'}
