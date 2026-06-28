@@ -34,10 +34,10 @@
 <p>If you're experienced, here's the whole approach in essence; dive into the interesting parts later:</p>
 <blockquote>
 <ol>
-<li class="">Build a Lean4 eDSL implementing a subset of the target language's semantics</li>
-<li class="">Hand-write textbook identities and prove them sound in that semantics — we will consider arithmetic over the 256-bit word ring, linear/poly MBA, some QF_BV, and ad-hoc identities that hit common cryptographic builtins and peephole optimizers</li>
-<li class="">Use the executable semantics to synthesize more sound mutations (bounded, with ad-hoc filters)</li>
-<li class="">Run the fuzzing pipeline, leveraging both differential and metamorphic testing</li>
+<li class="">Build a Lean4 eDSL implementing a subset of the target language's semantics.</li>
+<li class="">Hand-write textbook identities and prove them sound in that semantics — we will consider arithmetic over the 256-bit word ring, linear/poly MBA, some QF_BV, and ad-hoc identities that hit common cryptographic builtins and peephole optimizers.</li>
+<li class="">Use the executable semantics to synthesize more sound mutations (bounded, with ad-hoc filters): generator + bottom-up search + Lean kernel as an oracle — simpler than counterexample-based approaches.</li>
+<li class="">Run the fuzzing pipeline, leveraging both differential and metamorphic testing.</li>
 </ol>
 </blockquote>
 <p>It is not that hard to build, and — implemented properly — it does find bugs in corner cases that other fuzz-testing tools miss.</p>
@@ -46,12 +46,12 @@
 <p>This part targets more tricky bugs: semantic drifts and miscompilations. This means that the implementation of the smart-contract/program is correct and matches the specification, but because of the bug in the compiler, the actual implementation behaves differently. The targeted bugs may be located in the compiler, corresponding tooling like linkers and the runtime environment.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="miscompilation-bugs">Miscompilation bugs<a href="https://nowarp.io/blog/compiler-testing-part-2#miscompilation-bugs" class="hash-link" aria-label="Direct link to Miscompilation bugs" title="Direct link to Miscompilation bugs" translate="no">​</a></h3>
 <p>The most popular early article on incorrect compilation is "Reflections on Trusting Trust" by Ken Thompson in 1984 <a href="https://nowarp.io/blog/compiler-testing-part-2#references" class="">[1]</a>. While the whole idea has been known for years, these bugs are better known nowadays in Web3, where they can easily affect smart contracts with real money.</p>
-<p>Miscompilations are invisible to smart-contract auditors, because the source code is correct, but the actual implementation diverges because of the bug in the trusted base. Worse, they affect <em>all</em> the contracts uploaded on-chain — any contract containing the specific pattern may misbehave or just <a href="https://dedaub.com/blog/i-see-dead-code/" target="_blank" rel="noopener noreferrer" class="">imply some interesting behavior</a>.</p>
+<p>Miscompilations are invisible to smart-contract auditors – the source code is correct, but the actual implementation diverges because of the bug in the trusted base. Worse, they affect <em>all</em> the contracts uploaded on-chain — any contract containing the specific pattern may misbehave or just <a href="https://dedaub.com/blog/i-see-dead-code/" target="_blank" rel="noopener noreferrer" class="">imply some interesting behavior</a>.</p>
 <p>The only exploited bugs so far are the <a href="https://hackmd.io/@vyperlang/HJUgNMhs2" target="_blank" rel="noopener noreferrer" class="">Vyper non-reentrancy hack</a> ($69.3M) and the Cetus hack ($213M) – not in the compiler but related to unexpected semantics in the math library. Other bugs could have caused losses but were fixed before being exploited, such as the <a href="https://hexens.io/research/solidity-compiler-bug-tstore-poison" target="_blank" rel="noopener noreferrer" class="">TSTORE-poison codegen bug</a> in solc and the <a href="https://www.zellic.io/blog/the-billion-dollar-move-bug/" target="_blank" rel="noopener noreferrer" class="">billion-dollar Move verifier bug</a>.</p>
 <p>That's why compiler bugs are worth hunting.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="oracles">Oracles<a href="https://nowarp.io/blog/compiler-testing-part-2#oracles" class="hash-link" aria-label="Direct link to Oracles" title="Direct link to Oracles" translate="no">​</a></h3>
 <p>The main problem when hunting miscompilations is how to detect when the program miscompiles. When <a href="https://nowarp.io/blog/compiler-testing-part-1" target="_blank" rel="noopener noreferrer" class="">working with ICE</a>, you get the oracle for free: if the compiler panicked, you got a bug. With miscompilations you have to understand how the compiled program should behave and what the correct behavior is.</p>
-<p>In fuzzing, this problem is solved by the oracle. There are different approaches, but we will consider the ones we use: differential testing and metamorphic testing.</p>
+<p>In fuzzing, this problem is solved by the oracle: a part of the tool that decides whether a program's output is correct. There are different approaches, but we will consider the ones we use: differential testing and metamorphic testing.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="differential-testing">Differential testing<a href="https://nowarp.io/blog/compiler-testing-part-2#differential-testing" class="hash-link" aria-label="Direct link to Differential testing" title="Direct link to Differential testing" translate="no">​</a></h4>
 <p>The key idea of differential testing: execute another implementation of <a href="https://en.wikipedia.org/wiki/System_under_test" target="_blank" rel="noopener noreferrer" class="">SUT</a> with the same inputs and compare the results.</p>
 <p>For compiler testing we could use different strategies, to name some:</p>
@@ -70,6 +70,7 @@
 <p>Differential testing is simple and does not require any elaboration. It is free when you already have a second implementation meant to share the same semantics. But the question is how to generate meaningful and diverse enough programs to find bugs. This is a part of what the metamorphic relation brings to us.</p>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="metamorphic-testing">Metamorphic testing<a href="https://nowarp.io/blog/compiler-testing-part-2#metamorphic-testing" class="hash-link" aria-label="Direct link to Metamorphic testing" title="Direct link to Metamorphic testing" translate="no">​</a></h4>
 <p>Metamorphic testing relies on a metamorphic relation (MR): a rule for how changing the input should change the output, so you can catch a bug without knowing the expected result.</p>
+<p>Metamorphic testing, then, is testing through MR: run the program on MR-related inputs and flag a bug if the outputs violate the relation. For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.</p>
 <p>For compiler testing this means: apply some mutations that create a program with the same observable behavior, but with different code.</p>
 <div align="center"><img src="https://nowarp.io/assets/images/2026-05-01-mutated-revive-ea275a538681aa8f7c77bcc84e997447.png" style="width:75%"></div>
 <div align="center"><em>Found by metamorphic testing: a miscompilation in <a href="https://github.com/paritytech/revive/" target="_blank" rel="noopener noreferrer" class="">Polkadot Revive</a> – both programs implement the same <code>return x</code> identity but return a different result (<a href="https://github.com/paritytech/revive/issues/524" target="_blank" rel="noopener noreferrer" class="">revive#524</a>)</em></div>
@@ -85,8 +86,8 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="verified-mutations">Verified mutations<a href="https://nowarp.io/blog/compiler-testing-part-2#verified-mutations" class="hash-link" aria-label="Direct link to Verified mutations" title="Direct link to Verified mutations" translate="no">​</a></h2>
 <p>The main component of the tool is a framework in Lean that implements:</p>
 <ul>
-<li class="">executable semantics – generic enough to be extended to a specific language's semantics</li>
-<li class="">a library of hand-written mutations</li>
+<li class="">Executable semantics – generic enough to be extended to a specific language's semantics.</li>
+<li class="">A library of hand-written mutations.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lean4">Lean4<a href="https://nowarp.io/blog/compiler-testing-part-2#lean4" class="hash-link" aria-label="Direct link to Lean4" title="Direct link to Lean4" translate="no">​</a></h3>
 <p>While similar approaches have been implemented in different works, people usually prefer SMT for similar projects.</p>
@@ -211,7 +212,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="solang-constant-fold--miscompile">Solang: Constant fold <code>&lt;&lt;</code> miscompile<a href="https://nowarp.io/blog/compiler-testing-part-2#solang-constant-fold--miscompile" class="hash-link" aria-label="Direct link to solang-constant-fold--miscompile" title="Direct link to solang-constant-fold--miscompile" translate="no">​</a></h3>
 <p>Solang's sema-stage constant folder evaluates <code>&lt;&lt;</code>/<code>&gt;&gt;</code> with unbounded precision and narrows to the type width only at the <em>end</em> of the expression, while solc masks after every step. So <code>(uint16(0xffff) &lt;&lt; 8) &gt;&gt; 8</code> folds to <code>65535</code> instead of <code>255</code>: when such a constant gates a check, a <code>require</code> that passes on solc/EVM silently reverts on Solang — no diagnostic, every target affected (Polkadot, Solana, Stellar).</p>
 <div align="center"><img src="https://nowarp.io/assets/images/2026-05-01-solang-miscompile-c3bbe53e4d353ce09615cbd1787c7ced.png" style="width:100%"></div>
-<div align="center"><em>Valid miscompile found in the Solidity compiler <a href="http://github.com/hyperledger-solang/solang" target="_blank" rel="noopener noreferrer" class="">Solang</a></em></div>
+<div align="center"><em>Valid miscompile found in the Solidity compiler <a href="http://github.com/hyperledger-solang/solang" target="_blank" rel="noopener noreferrer" class="">Solang</a> (<a href="https://github.com/hyperledger-solang/solang/issues/1926" target="_blank" rel="noopener noreferrer" class="">solang#1926</a>)</em></div>
 <br>
 <p>Additionally, the tool highlighted a number of ICEs, including interesting findings like <a href="https://github.com/hyperledger-solang/solang/issues/1905" target="_blank" rel="noopener noreferrer" class="">allocation of 10 TiB RAM on compilation</a>, which were not found in the <a href="https://nowarp.io/blog/compiler-testing-part-1" target="_blank" rel="noopener noreferrer" class="">coverage-guided fuzzing campaign</a>.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ton-miscompile-in-the-shape-of-a-20-year-old-jdk-bug">TON: Miscompile in the shape of a 20-year-old JDK bug<a href="https://nowarp.io/blog/compiler-testing-part-2#ton-miscompile-in-the-shape-of-a-20-year-old-jdk-bug" class="hash-link" aria-label="Direct link to TON: Miscompile in the shape of a 20-year-old JDK bug" title="Direct link to TON: Miscompile in the shape of a 20-year-old JDK bug" translate="no">​</a></h3>
@@ -239,7 +240,7 @@
 <p>The hand-written mutations library enables us to write rules that trigger specific compiler cases and scale to other platforms when applicable. Mutation synthesis with filters and bounds lets us extend the library for free, using only the executable semantics.</p>
 <p>Some real-world findings were demonstrated to prove the feasibility of the approach implemented that way.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-work">Further work<a href="https://nowarp.io/blog/compiler-testing-part-2#further-work" class="hash-link" aria-label="Direct link to Further work" title="Direct link to Further work" translate="no">​</a></h3>
-<p>We did not consider high-level language constructs such as control flow, storage operations on mappings/arrays/structs, and anything beyond arithmetic and constants, to keep the scope minimal.</p>
+<p>We did not consider high-level language constructs such as control flow, storage operations on mappings/arrays/structs, and anything beyond arithmetic and constants, to keep the scope minimal. Other things like overflow semantics and type widths are generalized by the tool leveraging Lean <a href="https://leanprover.github.io/functional_programming_in_lean/getting-to-know/polymorphism.html" target="_blank" rel="noopener noreferrer" class="">polymorphism</a>.</p>
 <p>There are a couple of approaches to program generation and mutation which work well with the current work:</p>
 <ol>
 <li class="">Some control flow semantics could be integrated into the described pipeline (with known limitations). The easy wins are core Lean's <code>ite</code> and let-bindings; others are Moggi monads to express statement-level mutation.</li>
