@@ -412,7 +412,7 @@ const HomePage: React.FC = () => {
           opacity: 0.9
         }}>
           <h1 className={styles.heroTitle}>nowarp</h1>
-          <p className={styles.heroSubtitleSmall}>Professional smart contracts <a href="#audits" className={styles.inlineLink}>audits</a> and <a href="#tools" className={styles.inlineLink}>security tooling</a></p>
+          <p className={styles.heroSubtitleSmall}>Professional <a href="#audits" className={styles.inlineLink}>security audits</a> and <a href="#tools" className={styles.inlineLink}>security tooling</a></p>
         </div>
       </div>
 
@@ -433,32 +433,29 @@ const HomePage: React.FC = () => {
         <div className="container" style={{ marginBottom: '3rem' }}>
           <div className={styles.featureBox}>
             <section id="audits" className={styles.features}>
-              <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Smart Contract Audits</h2>
-              <p className={styles.featuresSummary}>
-                Professional smart contracts security assessment through rigorous manual review and formal specification/verification when needed.
-              </p>
+              <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Audits</h2>
 
               <div className="row">
                 <div className="col col--12">
-                  <h4 style={{ marginBottom: '0rem' }}>Approach</h4>
-                  <ul className={styles.auditPoints} style={{ marginBottom: 0 }}>
-                    <li>Small experienced technical team</li>
-                    <li>Clear communication and formalized processes</li>
-                    <li>We only accept projects we can thoroughly verify</li>
-                    <li>Once engaged, we support you through all stages</li>
+                  <ul className={styles.auditList}>
+                    <li>
+                      Smart contracts
+                      <span className={styles.auditItemDesc}>Across TON, Sui (Move) and Ethereum (Solidity). Non-trivial protocols only.</span>
+                    </li>
+                    <li>
+                      Compiler / toolchain / runtime
+                      <span className={styles.auditItemDesc}>Security across the layers beneath the contract.</span>
+                    </li>
                   </ul>
+                  <p className={styles.auditProse} style={{ marginBottom: 0 }}>
+                    The <a href="#tools" className={styles.inlineLink}>tools we've built</a> and the{' '}
+                    <a href="/blog" className={styles.inlineLink}>blog</a> carry our findings and insights. Previous audit reports on request.
+                  </p>
                 </div>
               </div>
 
               <div className="row" style={{ marginTop: '1rem' }}>
                 <div className="col col--12">
-                  <p style={{ marginTop: '0.5rem' }}>References available upon request.</p>
-                </div>
-              </div>
-
-              <div className="row" style={{ marginTop: '1rem' }}>
-                <div className="col col--12">
-                  <h4 style={{ marginBottom: '0rem' }}>Contacts</h4>
                   <div className={styles.contactLinks}>
                     <a href="https://t.me/jubnzv" className={styles.contactLink} style={{ marginRight: '1rem' }}>
                       <FaTelegramPlane style={{ verticalAlign: 'middle' }} /> @jubnzv
