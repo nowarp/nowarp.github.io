@@ -302,7 +302,7 @@ const HomePage: React.FC = () => {
                   <ul className={styles.auditList}>
                     <li>
                       Smart contracts
-                      <span className={styles.auditItemDesc}>Across TON, Sui (Move) and Ethereum (Solidity). Non-trivial protocols only.</span>
+                      <span className={styles.auditItemDesc}>Across Ethereum, Move and TON. Non-trivial protocols only.</span>
                     </li>
                     <li>
                       Compiler / toolchain / runtime
