@@ -70,6 +70,10 @@ const config: Config = {
     ],
   ],
   themeConfig: {
+    image: 'img/og-image.png',
+    metadata: [
+      { name: 'twitter:card', content: 'summary_large_image' },
+    ],
     algolia: {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
