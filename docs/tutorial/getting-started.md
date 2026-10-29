@@ -10,7 +10,7 @@ Before you begin, ensure you have the following software installed on your syste
     Alternative: Use TON Web IDE
   </summary>
 
-The TON Web IDE integrates the latest release version of Misti, allowing you to try it out on your project or incorporate it into your development process if you use the IDE. Check it out at: [ide.ton.org](https://ide.ton.org).
+The TON Web IDE integrates the latest release version of Misti, allowing you to try it out on your project or incorporate it into your development process if you use the IDE. Check it out at: [github.com/tact-lang/web-ide](https://github.com/tact-lang/web-ide).
 
 **Note:** Some features of this Misti version are not available in the Web IDE. To access all functionalities, install it locally or in your CI environment.
 
