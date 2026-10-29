@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import styles from './index.module.css';
-import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown, FaShieldAlt, FaSearch, FaBug, FaArrowUp } from 'react-icons/fa';
+import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown, FaShieldAlt, FaSearch, FaBug } from 'react-icons/fa';
 import { SiOpensourceinitiative } from 'react-icons/si';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
@@ -66,7 +67,7 @@ const TOOLS: Tool[] = [
   {
     icon: <FaSearch />,
     name: 'TON Scanner',
-    tagline: 'Mass-scaner over verified TON contracts',
+    tagline: 'Mass-scanner over verified TON contracts',
     license: 'closed',
     details: (
       <>
@@ -111,7 +112,6 @@ const LicenseBadge: React.FC<{ license: ToolLicense }> = ({ license }) =>
     </span>
   );
 
-// Expand modeled on blog/components/Spoiler.js
 const ToolEntry: React.FC<{ tool: Tool }> = ({ tool }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -146,10 +146,179 @@ const ToolEntry: React.FC<{ tool: Tool }> = ({ tool }) => {
   );
 };
 
+type Tok = [string, 'p' | 's' | 'n' | 'm' | 'f'];
+
+const C = [110, 111, 119, 97, 114, 112];
+
+const E: Tok[][] = [
+  [['"no"', 's'], [' ^ ', 'p'], ['"warp"', 's'], [';;', 'p']],
+  [
+    ['[', 'p'],
+    ...C.flatMap((c, j): Tok[] => [[String(c), 'n'], [j < C.length - 1 ? '; ' : ']', 'p']]),
+    [' |> ', 'p'], ['List', 'm'], ['.map ', 'f'], ['Char', 'm'], ['.chr', 'f'],
+    [' |> ', 'p'], ['List', 'm'], ['.to_seq', 'f'],
+    [' |> ', 'p'], ['String', 'm'], ['.of_seq', 'f'], [';;', 'p'],
+  ],
+  [['String', 'm'], ['.concat ', 'f'], ['""', 's'], [' [', 'p'], ['"no"', 's'], ['; ', 'p'], ['"warp"', 's'], ['];;', 'p']],
+  [['String', 'm'], ['.lowercase_ascii ', 'f'], ['"NOWARP"', 's'], [';;', 'p']],
+  [['Printf', 'm'], ['.sprintf ', 'f'], ['"%s%s"', 's'], [' ', 'p'], ['"no"', 's'], [' ', 'p'], ['"warp"', 's'], [';;', 'p']],
+];
+
+const X: Tok[] = [['let ', 'm'], ['s', 'f'], [' = ', 'p'], ['Marshal', 'm'], ['.to_string ', 'f'], ['"nowarp"', 's'], [' []', 'p'], [';;', 'p']];
+
+const D: Tok[] = [['$ ', 'p']];
+const B: Tok[] = [['(gdb) ', 'p']];
+const Z: Tok[] = [];
+
+const G: [Tok[], Tok[], number][] = [
+  [[['val ', 'm'], ['s', 'f'], [' : ', 'p'], ['string', 'm'], [' =', 'p']], Z, 150],
+  [[['  "����\\000\\000\\000\\007\\000\\000\\000\\001\\000\\000\\000\\003\\000\\000\\000\\002&nowarp"', 's']], Z, 1400],
+  [[['# ', 'p']], [['(', 'p'], ['Marshal', 'm'], ['.from_string ', 'f'], ['s ', 'f'], ['0', 'n'], [' : ', 'p'], ['string array', 'm'], [');;', 'p']], 350],
+  [[['Segmentation fault (core dumped)', 'f']], Z, 1400],
+  [D, [['ocaml -version', 'f']], 300],
+  [[['The OCaml toplevel, version 5.4.1', 'f']], Z, 1400],
+  [D, [['gdb -q $(which ocamlrun) core.957329', 'f']], 900],
+  [[['Program terminated with signal SIGSEGV, Segmentation fault.', 'f']], Z, 400],
+  [[['#0  ', 'p'], ['Hd_val', 'f'], [' (val=', 'p'], ['72181230601727854', 'n'], [') at ', 'p'], ['runtime/caml/mlvalues.h:190', 'm']], Z, 1700],
+  [B, [['up', 'f']], 300],
+  [[['#1  ', 'p'], ['caml_ml_string_length', 'f'], [' (s=', 'p'], ['72181230601727854', 'n'], [') at ', 'p'], ['runtime/str.c:43', 'm']], Z, 1700],
+  [B, [['x/i $pc', 'f']], 300],
+  [[['=> ', 'p'], ['0x55b09b2add70', 'n'], [' <caml_ml_string_length>:\t', 'p'], ['mov    rax,QWORD PTR [rdi-0x8]', 'f']], Z, 2000],
+  [B, [['p/x $rdi', 'f']], 300],
+  [[['$1 = ', 'p'], ['0x100707261776f6e', 'n']], Z, 1500],
+  [B, [['p (char[8])$rdi', 'f']], 300],
+  [[['$2 = ', 'p'], ['"nowarp\\000\\001"', 's']], Z, 2600],
+  [B, [['q', 'f']], 300],
+  [D, [['ocaml', 'f']], 400],
+  [[['OCaml version 5.4.1', 'p']], Z, 1500],
+];
+
+const len = (e: Tok[]) => e.reduce((a, [s]) => a + s.length, 0);
+
+const sl = (e: Tok[], n: number) => {
+  const r: Tok[] = [];
+  for (const [s, k] of e) {
+    if (n <= 0) break;
+    r.push([s.slice(0, n), k]);
+    n -= s.length;
+  }
+  return r;
+};
+
+const cut = (e: Tok[], n: number) => sl(e, n).map(([s, k], j) => <span key={j} className={styles[k]}>{s}</span>);
+
+const Repl: React.FC = () => {
+  const [e, setE] = useState(E[0]);
+  const [n, setN] = useState(len(E[0]));
+  const [o, setO] = useState(true);
+  const [m, setM] = useState(-1);
+  const [g, setG] = useState<[Tok[], Tok[], boolean] | null>(null);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let d = false;
+    let t: ReturnType<typeof setTimeout>;
+    const w = (ms: number) => new Promise<void>((r) => { t = setTimeout(r, ms); });
+    const y = async (v: Tok[]) => {
+      setE(v);
+      setO(false);
+      await w(400);
+      for (let j = 1; j <= len(v) && !d; j++) { setN(j); await w(30 + Math.random() * 45); }
+      await w(350);
+    };
+    (async () => {
+      let k = 0;
+      let c = 0;
+      await w(2500);
+      while (!d) {
+        for (let j = len(E[k]); j >= 0 && !d; j--) { setN(j); await w(10); }
+        if (++c > 20 && Math.random() < 0.1) {
+          await y(X);
+          let a: Tok[] = [['# ', 'p'], ...X];
+          for (const [p, s, h] of G) {
+            if (d) break;
+            let b = p;
+            if (s.length) {
+              for (let j = 0; j <= len(s) && !d; j++) {
+                b = [...p, ...sl(s, j)];
+                setG([a, b, true]);
+                await w(j ? 40 + Math.random() * 60 : 500);
+              }
+            } else {
+              setG([a, b, false]);
+            }
+            a = b;
+            await w(h);
+          }
+          setN(0);
+          setG(null);
+        }
+        k = (k + 1) % E.length;
+        await y(E[k]);
+        setO(true);
+        if (k === 1) {
+          setM(0);
+          await w(900);
+          for (let j = 1; j <= C.length && !d; j++) { setM(j); await w(170); }
+          await w(250);
+          setM(-1);
+        }
+        await w(3200);
+      }
+    })();
+    return () => { d = true; clearTimeout(t); };
+  }, []);
+
+  const q = (b: string) => (
+    <span className={styles.slot}>
+      <span className={clsx(styles.p, m >= 0 && styles.on)}>{m >= 0 && b}</span>
+      <span className={clsx(styles.p, m < 0 && styles.on)}>"</span>
+    </span>
+  );
+
+  return (
+    <div className={styles.repl}>
+      <div className={styles.in} aria-hidden="true">
+        {g ? cut(g[0], Infinity) : (
+          <>
+            <span className={styles.p}># </span>
+            {cut(e, n)}
+            <span className={styles.cursor} />
+          </>
+        )}
+      </div>
+      <h1 className={clsx(styles.out, (o || g) && styles.lit)} aria-label="nowarp">
+        {g ? (
+          <>
+            {cut(g[1], Infinity)}
+            {g[2] && <span className={styles.cursor} />}
+          </>
+        ) : (
+          <>
+            <span className={styles.p}>- : </span>
+            <span className={styles.m}>string</span>
+            <span className={styles.p}> = </span>
+            {q('[')}
+            {C.map((c, j) => {
+              const x = m >= 0 && j >= m;
+              const s = j < C.length - 1 ? '; ' : '';
+              return (
+                <span key={c} className={styles.slot} style={{ width: `${x ? String(c).length + s.length : 1}ch` }}>
+                  <span className={clsx(styles.n, x && styles.on)}>{m >= 0 && `${c}${s}`}</span>
+                  <span className={clsx(styles.ch, !x && styles.on)}>{String.fromCharCode(c)}</span>
+                </span>
+              );
+            })}
+            {q(']')}
+          </>
+        )}
+      </h1>
+    </div>
+  );
+};
+
 const HomePage: React.FC = () => {
   const location = useLocation();
-  const [showTop, setShowTop] = useState(false);
-  const scrollTopRef = useRef<() => void>(() => {});
 
   useEffect(() => {
     if (location.hash) {
@@ -162,78 +331,6 @@ const HomePage: React.FC = () => {
       }, 100);
     }
   }, [location]);
-
-  // Snap the hero <-> content boundary (index page only). JS drives both wheel
-  // and keys so it actually fires in Firefox; one gesture = full commit, no half
-  // state. Deep in the content it does nothing -> free native scroll.
-  useEffect(() => {
-    const content = document.getElementById('content-start');
-    if (!content) return;
-
-    document.documentElement.classList.add('index-snap');
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const navH = () => {
-      const n = document.querySelector('.navbar');
-      return n ? n.getBoundingClientRect().height : 60;
-    };
-    // land just below the sticky navbar, with a little breathing room
-    const contentTop = () => content.getBoundingClientRect().top + window.scrollY - navH() - 16;
-
-    let locked = false;
-    let rafId = 0;
-    // rAF tween: animates even in Firefox with smooth-scroll turned off
-    // (scrollTo's "smooth" obeys that setting; painting scrollTop ourselves bypasses it).
-    const go = (to: number) => {
-      cancelAnimationFrame(rafId);
-      if (reduce) { window.scrollTo(0, to); return; } // honor prefers-reduced-motion
-      locked = true;
-      const from = window.scrollY;
-      const dist = to - from;
-      const ease = (t: number) => 1 - Math.pow(1 - t, 3); // easeOutCubic
-      let t0 = 0;
-      const step = (ts: number) => {
-        if (!t0) t0 = ts;
-        const p = Math.min((ts - t0) / 500, 1);
-        window.scrollTo(0, from + dist * ease(p));
-        if (p < 1) rafId = requestAnimationFrame(step);
-        else locked = false;
-      };
-      rafId = requestAnimationFrame(step);
-    };
-
-    const onWheel = (e: WheelEvent) => {
-      if (locked) { e.preventDefault(); return; }
-      const y = window.scrollY;
-      const cTop = contentTop();
-      if (e.deltaY > 0 && y < cTop - 5) { e.preventDefault(); go(cTop); }
-      else if (e.deltaY < 0 && y > 5 && y <= cTop + 5) { e.preventDefault(); go(0); }
-    };
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (locked || e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
-      const el = e.target as HTMLElement | null;
-      if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable)) return;
-      const y = window.scrollY;
-      const cTop = contentTop();
-      if ((e.key === 'ArrowDown' || e.key === 'PageDown') && y < cTop - 5) { e.preventDefault(); go(cTop); }
-      else if ((e.key === 'ArrowUp' || e.key === 'PageUp') && y > 5 && y <= cTop + 5) { e.preventDefault(); go(0); }
-    };
-
-    const onScroll = () => setShowTop(window.scrollY > window.innerHeight * 0.5);
-    onScroll();
-    scrollTopRef.current = () => go(0);
-
-    window.addEventListener('wheel', onWheel, { passive: false });
-    window.addEventListener('keydown', onKeyDown);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      cancelAnimationFrame(rafId);
-      document.documentElement.classList.remove('index-snap');
-      window.removeEventListener('wheel', onWheel);
-      window.removeEventListener('keydown', onKeyDown);
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
 
   return (
     <Layout>
@@ -248,125 +345,66 @@ const HomePage: React.FC = () => {
         />
       </Head>
 
-      {showTop && (
-        <button
-          type="button"
-          aria-label="Scroll to top"
-          className={styles.toTop}
-          onClick={() => scrollTopRef.current()}
-        >
-          <FaArrowUp aria-hidden="true" />
-        </button>
-      )}
+      <main className={clsx('container', styles.cards)}>
+        <Repl />
+        <div className={styles.row}>
+          <section id="tools" className={clsx(styles.featureBox, styles.card)}>
+            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Tools</h2>
+            {TOOLS.map((tool) => (
+              <ToolEntry key={tool.name} tool={tool} />
+            ))}
+          </section>
 
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <h1 className={styles.heroWordmark}>no&nbsp;warp<span className={styles.heroAccent}>.</span></h1>
-          <div className={styles.heroTagline}>What you write is what runs.</div>
-          <p className={styles.heroLede}>A holistic approach to protocol security — we audit your contracts and everything they rely on, across Ethereum, Move, and TON.</p>
-          <div className={styles.heroCtas}>
-            <a href="#audits" className={styles.heroBtnPrimary}>Request an audit</a>
-            <a href="#tools" className={styles.heroBtnSecondary}>Explore the tools</a>
-          </div>
-          <div className={styles.heroCols}>
-            <a href="#tools" className={styles.heroCol}>
-              <div className={styles.heroColTitle}>Tooling</div>
-              <div className={styles.heroColDesc}>Static analysis, fuzzing, compiler testing, AI.</div>
-            </a>
-            <a href="#audits" className={styles.heroCol}>
-              <div className={styles.heroColTitle}>Audits</div>
-              <div className={styles.heroColDesc}>Protocols, end to end.</div>
-            </a>
-            <a href="#blog" className={styles.heroCol}>
-              <div className={styles.heroColTitle}>Research</div>
-              <div className={styles.heroColDesc}>Approaches, insights, findings.</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <main id="content-start" style={{ marginTop: '1rem' }}>
-        {/* Container 1: Tools */}
-        <div className="container" style={{ marginBottom: '3rem' }}>
-          <div className={styles.featureBox}>
-            <section id="tools" className={styles.features}>
-              <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Tools</h2>
-              {TOOLS.map((tool) => (
-                <ToolEntry key={tool.name} tool={tool} />
-              ))}
-            </section>
-          </div>
+          <section id="audits" className={clsx(styles.featureBox, styles.card)}>
+            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Audits</h2>
+            <ul className={styles.auditList}>
+              <li>
+                Smart contracts
+                <span className={styles.auditItemDesc}>Across Ethereum, Move and TON. Non-trivial protocols only.</span>
+              </li>
+              <li>
+                Compiler / toolchain / runtime
+                <span className={styles.auditItemDesc}>Security across the layers beneath the contract.</span>
+              </li>
+            </ul>
+            <p className={styles.auditProse} style={{ marginBottom: 0 }}>
+              The <a href="#tools" className={styles.inlineLink}>tools we've built</a> and the{' '}
+              <a href="/blog" className={styles.inlineLink}>blog</a> carry our findings and insights. Previous audit reports on request.
+            </p>
+            <div className={styles.contactLinks} style={{ marginTop: '1rem' }}>
+              <a href="https://t.me/jubnzv" className={styles.contactLink} style={{ marginRight: '1rem' }}>
+                <FaTelegramPlane style={{ verticalAlign: 'middle' }} /> @jubnzv
+              </a>
+              <a href="mailto:oi@nowarp.io" className={styles.contactLink}>
+                <FaEnvelope style={{ verticalAlign: 'middle' }} /> oi@nowarp.io
+              </a>
+            </div>
+          </section>
         </div>
 
-        {/* Container 2: Audits */}
-        <div className="container" style={{ marginBottom: '3rem' }}>
-          <div className={styles.featureBox}>
-            <section id="audits" className={styles.features}>
-              <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Audits</h2>
-
-              <div className="row">
-                <div className="col col--12">
-                  <ul className={styles.auditList}>
-                    <li>
-                      Smart contracts
-                      <span className={styles.auditItemDesc}>Across Ethereum, Move and TON. Non-trivial protocols only.</span>
-                    </li>
-                    <li>
-                      Compiler / toolchain / runtime
-                      <span className={styles.auditItemDesc}>Security across the layers beneath the contract.</span>
-                    </li>
-                  </ul>
-                  <p className={styles.auditProse} style={{ marginBottom: 0 }}>
-                    The <a href="#tools" className={styles.inlineLink}>tools we've built</a> and the{' '}
-                    <a href="/blog" className={styles.inlineLink}>blog</a> carry our findings and insights. Previous audit reports on request.
-                  </p>
+        <section id="blog" className={clsx(styles.featureBox, styles.card, styles.posts)}>
+          <div className={styles.blogHeader}>
+            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: 0 }}>Latest Posts</h2>
+            <a href="/blog" className={styles.blogAllLink}>All posts →</a>
+          </div>
+          <div className={styles.blogGrid}>
+            {LATEST_POSTS.map((post) => (
+              <a key={post.href} href={post.href} className={styles.blogCard}>
+                <div
+                  className={styles.blogCardImage}
+                  style={{ backgroundImage: `url(${post.cover})` }}
+                  role="img"
+                  aria-label={post.title}
+                />
+                <div className={styles.blogCardContent}>
+                  <span className={styles.blogCardTag}>{post.tag}</span>
+                  <h3 className={styles.blogCardTitle}>{post.title}</h3>
+                  <p className={styles.blogCardExcerpt}>{post.excerpt}</p>
                 </div>
-              </div>
-
-              <div className="row" style={{ marginTop: '1rem' }}>
-                <div className="col col--12">
-                  <div className={styles.contactLinks}>
-                    <a href="https://t.me/jubnzv" className={styles.contactLink} style={{ marginRight: '1rem' }}>
-                      <FaTelegramPlane style={{ verticalAlign: 'middle' }} /> @jubnzv
-                    </a>
-                    <a href="mailto:oi@nowarp.io" className={styles.contactLink}>
-                      <FaEnvelope style={{ verticalAlign: 'middle' }} /> oi@nowarp.io
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
+              </a>
+            ))}
           </div>
-        </div>
-
-        {/* Container 3: Latest blog posts */}
-        <div className="container" style={{ marginBottom: '3rem' }}>
-          <div className={styles.featureBox}>
-            <section id="blog" className={styles.features}>
-              <div className={styles.blogHeader}>
-                <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: 0 }}>Latest Posts</h2>
-                <a href="/blog" className={styles.blogAllLink}>All posts →</a>
-              </div>
-              <div className={styles.blogGrid}>
-                {LATEST_POSTS.map((post) => (
-                  <a key={post.href} href={post.href} className={styles.blogCard}>
-                    <div
-                      className={styles.blogCardImage}
-                      style={{ backgroundImage: `url(${post.cover})` }}
-                      role="img"
-                      aria-label={post.title}
-                    />
-                    <div className={styles.blogCardContent}>
-                      <span className={styles.blogCardTag}>{post.tag}</span>
-                      <h3 className={styles.blogCardTitle}>{post.title}</h3>
-                      <p className={styles.blogCardExcerpt}>{post.excerpt}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </section>
-          </div>
-        </div>
+        </section>
       </main>
     </Layout>
   );

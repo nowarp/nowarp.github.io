@@ -103,7 +103,7 @@ export default function Home() {
                   <h3>🌐 TON & Tact Specific</h3>
                   <p>
                     Detect patterns unique to TON and Tact that could lead to unintended behavior, such as{' '}
-                    <a href="/tools/misti/docs/detectors/CellOverflow">CellOverflow</a> or{' '}
+                    <a href="/tools/misti/docs/detectors/CellBounds">CellBounds</a> or{' '}
                     <a href="/tools/misti/docs/detectors/StringReceiversOverlap">StringReceiversOverlap</a>.
                   </p>
                 </div>
