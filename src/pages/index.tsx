@@ -3,8 +3,11 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import styles from './index.module.css';
-import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown, FaShieldAlt, FaSearch, FaBug } from 'react-icons/fa';
+import { FaTelegramPlane, FaEnvelope, FaLock, FaChevronDown } from 'react-icons/fa';
 import { SiOpensourceinitiative } from 'react-icons/si';
+import MistiIcon from '@site/static/img/tools/misti.svg';
+import ScannerIcon from '@site/static/img/tools/scanner.svg';
+import LaronIcon from '@site/static/img/tools/laron.svg';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
 
@@ -51,7 +54,7 @@ interface Tool {
 
 const TOOLS: Tool[] = [
   {
-    icon: <FaShieldAlt />,
+    icon: <MistiIcon />,
     name: 'Misti',
     tagline: 'Static analyzer for TON smart contracts',
     license: 'open',
@@ -65,7 +68,7 @@ const TOOLS: Tool[] = [
     ),
   },
   {
-    icon: <FaSearch />,
+    icon: <ScannerIcon />,
     name: 'TON Scanner',
     tagline: 'Mass-scanner over verified TON contracts',
     license: 'closed',
@@ -84,7 +87,7 @@ const TOOLS: Tool[] = [
     ),
   },
   {
-    icon: <FaBug />,
+    icon: <LaronIcon />,
     name: 'Laron',
     tagline: 'Metamorphic compiler fuzzer with Lean4-verified mutations',
     license: 'closed',

@@ -341,6 +341,11 @@
   color: var(--ifm-color-primary);
 }
 
+.toolIcon svg {
+  width: 1em;
+  height: 1em;
+}
+
 .licenseBadge {
   display: inline-flex;
   align-items: center;
