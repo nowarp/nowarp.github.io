@@ -38,7 +38,7 @@
 }
 
 :global([data-theme='dark']) .backdrop {
-  background: #A9C3DA;
+  background: #4A6A87;
 }
 
 @media (max-width: 576px) {

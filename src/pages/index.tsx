@@ -8,6 +8,8 @@ import { SiOpensourceinitiative } from 'react-icons/si';
 import MistiIcon from '@site/static/img/tools/misti.svg';
 import ScannerIcon from '@site/static/img/tools/scanner.svg';
 import LaronIcon from '@site/static/img/tools/laron.svg';
+import ContractIcon from '@site/static/img/audits/contract.svg';
+import BaseIcon from '@site/static/img/audits/base.svg';
 import { useLocation } from '@docusaurus/router';
 import '../css/custom.css';
 
@@ -148,6 +150,39 @@ const ToolEntry: React.FC<{ tool: Tool }> = ({ tool }) => {
     </div>
   );
 };
+
+interface Audit {
+  icon: React.ReactNode;
+  name: string;
+  meta: string;
+  tagline: string;
+}
+
+const AUDITS: Audit[] = [
+  {
+    icon: <ContractIcon />,
+    name: 'Smart contracts',
+    meta: 'Ethereum · Move · TON',
+    tagline: 'Non-trivial protocols only.',
+  },
+  {
+    icon: <BaseIcon />,
+    name: 'Trusted base',
+    meta: 'compiler · toolchain · runtime',
+    tagline: 'The layers beneath the contract.',
+  },
+];
+
+const AuditEntry: React.FC<{ audit: Audit }> = ({ audit }) => (
+  <div className={styles.toolEntry}>
+    <h3 className={styles.toolTitle}>
+      <span className={styles.toolIcon} aria-hidden="true">{audit.icon}</span>
+      {audit.name}
+    </h3>
+    <span className={styles.auditMeta}>{audit.meta}</span>
+    <div className={clsx(styles.toolTagline, styles.auditTagline)}>{audit.tagline}</div>
+  </div>
+);
 
 type Tok = [string, 'p' | 's' | 'n' | 'm' | 'f'];
 
@@ -358,29 +393,22 @@ const HomePage: React.FC = () => {
             ))}
           </section>
 
-          <section id="audits" className={clsx(styles.featureBox, styles.card)}>
-            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Audits</h2>
-            <ul className={styles.auditList}>
-              <li>
-                Smart contracts
-                <span className={styles.auditItemDesc}>Across Ethereum, Move and TON. Non-trivial protocols only.</span>
-              </li>
-              <li>
-                Compiler / toolchain / runtime
-                <span className={styles.auditItemDesc}>Security across the layers beneath the contract.</span>
-              </li>
-            </ul>
-            <p className={styles.auditProse} style={{ marginBottom: 0 }}>
-              The <a href="#tools" className={styles.inlineLink}>tools we've built</a> and the{' '}
-              <a href="/blog" className={styles.inlineLink}>blog</a> carry our findings and insights. Previous audit reports on request.
-            </p>
-            <div className={styles.contactLinks} style={{ marginTop: '1rem' }}>
-              <a href="https://t.me/jubnzv" className={styles.contactLink} style={{ marginRight: '1rem' }}>
-                <FaTelegramPlane style={{ verticalAlign: 'middle' }} /> @jubnzv
-              </a>
-              <a href="mailto:oi@nowarp.io" className={styles.contactLink}>
-                <FaEnvelope style={{ verticalAlign: 'middle' }} /> oi@nowarp.io
-              </a>
+          <section id="audits" className={clsx(styles.featureBox, styles.card, styles.auditCard)}>
+            <div className={styles.auditMain}>
+              <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Audits</h2>
+              {AUDITS.map((audit) => (
+                <AuditEntry key={audit.name} audit={audit} />
+              ))}
+            </div>
+            <div className={styles.auditSide}>
+              <div className={styles.auditCta}>
+                <a href="mailto:oi@nowarp.io?subject=Audit%20request">
+                  <FaEnvelope /> oi@nowarp.io
+                </a>
+                <a href="https://t.me/jubnzv">
+                  <FaTelegramPlane /> @jubnzv
+                </a>
+              </div>
             </div>
           </section>
         </div>
