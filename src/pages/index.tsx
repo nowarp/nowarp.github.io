@@ -393,12 +393,9 @@ const HomePage: React.FC = () => {
           <div className={styles.blogGrid}>
             {LATEST_POSTS.map((post) => (
               <a key={post.href} href={post.href} className={styles.blogCard}>
-                <div
-                  className={styles.blogCardImage}
-                  style={{ backgroundImage: `url(${post.cover})` }}
-                  role="img"
-                  aria-label={post.title}
-                />
+                <div className={styles.blogCardImage}>
+                  <img src={post.cover} alt={post.title} loading="lazy" />
+                </div>
                 <div className={styles.blogCardContent}>
                   <span className={styles.blogCardTag}>{post.tag}</span>
                   <h3 className={styles.blogCardTitle}>{post.title}</h3>
