@@ -160,16 +160,16 @@ interface Audit {
 
 const AUDITS: Audit[] = [
   {
-    icon: <ContractIcon />,
-    name: 'Smart contracts',
-    meta: 'Ethereum · Move · TON',
-    tagline: 'Non-trivial protocols only.',
-  },
-  {
     icon: <BaseIcon />,
     name: 'Trusted base',
     meta: 'compiler · toolchain · runtime',
     tagline: 'The layers beneath the contract.',
+  },
+  {
+    icon: <ContractIcon />,
+    name: 'Smart contracts',
+    meta: 'Ethereum · Move · TON',
+    tagline: 'Non-trivial protocols, strong teams only.',
   },
 ];
 
@@ -402,7 +402,7 @@ const HomePage: React.FC = () => {
             </div>
             <div className={styles.auditCta}>
               <span className={styles.auditLabel}>Engagements</span>
-              <span className={styles.auditValue}>audits · tooling development</span>
+              <span className={styles.auditValue}>tooling development · audits</span>
               <span className={styles.auditLabel}>Contacts</span>
               <span className={clsx(styles.auditValue, styles.auditLinks)}>
                 <a href="mailto:oi@nowarp.io?subject=Audit%20request">
