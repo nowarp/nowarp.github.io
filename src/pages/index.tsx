@@ -375,10 +375,10 @@ const HomePage: React.FC = () => {
   return (
     <Layout>
       <Head>
-        <title>nowarp - Web3 Security</title>
+        <title>nowarp</title>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nowarp.io/" />
-        <meta property="og:title" content="nowarp - Web3 Security" />
+        <meta property="og:title" content="nowarp" />
         <meta
           property="og:description"
           content="A holistic approach to protocol security — we audit your contracts and everything they rely on, across Ethereum, Move, and TON."
