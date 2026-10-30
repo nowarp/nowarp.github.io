@@ -175,11 +175,13 @@ const AUDITS: Audit[] = [
 
 const AuditEntry: React.FC<{ audit: Audit }> = ({ audit }) => (
   <div className={styles.toolEntry}>
-    <h3 className={styles.toolTitle}>
-      <span className={styles.toolIcon} aria-hidden="true">{audit.icon}</span>
-      {audit.name}
-    </h3>
-    <span className={styles.auditMeta}>{audit.meta}</span>
+    <div className={styles.toolHeader}>
+      <h3 className={styles.toolTitle}>
+        <span className={styles.toolIcon} aria-hidden="true">{audit.icon}</span>
+        {audit.name}
+      </h3>
+      <span className={styles.auditMeta}>{audit.meta}</span>
+    </div>
     <div className={clsx(styles.toolTagline, styles.auditTagline)}>{audit.tagline}</div>
   </div>
 );
@@ -393,22 +395,26 @@ const HomePage: React.FC = () => {
             ))}
           </section>
 
-          <section id="audits" className={clsx(styles.featureBox, styles.card, styles.auditCard)}>
-            <div className={styles.auditMain}>
-              <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Audits</h2>
+          <section id="audits" className={clsx(styles.featureBox, styles.card)}>
+            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Services</h2>
+            <div className={styles.auditRows}>
               {AUDITS.map((audit) => (
                 <AuditEntry key={audit.name} audit={audit} />
               ))}
             </div>
-            <div className={styles.auditSide}>
-              <div className={styles.auditCta}>
+            <div className={styles.auditCta}>
+              <span className={styles.auditLabel}>Scope</span>
+              <span className={styles.auditValue}>security audits · security tooling development</span>
+              <span className={styles.auditLabel}>Contacts</span>
+              <span className={clsx(styles.auditValue, styles.auditLinks)}>
                 <a href="mailto:oi@nowarp.io?subject=Audit%20request">
                   <FaEnvelope /> oi@nowarp.io
                 </a>
+                <span>·</span>
                 <a href="https://t.me/jubnzv">
                   <FaTelegramPlane /> @jubnzv
                 </a>
-              </div>
+              </span>
             </div>
           </section>
         </div>

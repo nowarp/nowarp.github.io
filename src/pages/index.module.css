@@ -259,103 +259,61 @@
 }
 
 .auditMeta {
-  display: block;
-  margin-top: 0.3rem;
+  margin-left: auto;
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ifm-color-primary);
+  white-space: nowrap;
 }
 
 .auditTagline {
-  margin-top: 0.3rem;
+  margin-top: 0.35rem;
 }
 
-.auditCard {
-  flex-direction: row;
-  padding: 0;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.auditMain {
-  flex: 1;
-  min-width: 0;
-  padding: 1.5rem;
-}
-
-.auditMain .toolEntry:not(:last-child) {
-  padding-bottom: 1.4rem;
-  margin-bottom: 1.4rem;
-}
-
-.auditSide {
-  position: relative;
-  flex: 0 0 11.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem 1.25rem;
-}
-
-.auditSide::before,
-.auditSide::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 271px;
-  height: 150px;
-  pointer-events: none;
-}
-
-.auditSide::before {
-  background: rgba(10, 61, 98, 0.06);
-  mask: url('/img/audits/ridge-top.svg') center / 100% 100% no-repeat;
-}
-
-:global([data-theme='dark']) .auditSide::before {
-  background: rgba(75, 135, 179, 0.14);
-}
-
-.auditSide::after {
-  background: var(--ifm-color-primary);
-  mask: url('/img/audits/ridge.svg') center / 100% 100% no-repeat;
-  opacity: 0.14;
+.auditRows .toolEntry:last-child {
+  padding-bottom: 1rem;
 }
 
 .auditCta {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-content: center;
+  align-items: baseline;
+  gap: 0.35rem 1.5rem;
+  margin: 0 -1.5rem -1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  background: rgba(10, 61, 98, 0.06);
 }
 
-.auditCta a {
+:global([data-theme='dark']) .auditCta {
+  background: rgba(75, 135, 179, 0.14);
+}
+
+.auditLabel {
+  font-weight: 600;
+  color: var(--ifm-color-primary-darkest);
+}
+
+.auditValue {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.auditLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+}
+
+.auditLinks a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   text-decoration: underline;
-}
-
-@media (max-width: 620px) {
-  .auditCard {
-    flex-direction: column;
-  }
-
-  .auditSide {
-    flex: none;
-    padding-top: 0;
-  }
-
-  .auditSide::before,
-  .auditSide::after {
-    width: 200px;
-    height: 111px;
-  }
 }
 
 .inlineLink {
