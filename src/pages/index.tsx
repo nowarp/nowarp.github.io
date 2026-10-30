@@ -396,15 +396,15 @@ const HomePage: React.FC = () => {
           </section>
 
           <section id="audits" className={clsx(styles.featureBox, styles.card)}>
-            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Services</h2>
+            <h2 className={styles.featuresTitle} style={{ marginTop: 0, marginBottom: '1.5rem' }}>Security Services</h2>
             <div className={styles.auditRows}>
               {AUDITS.map((audit) => (
                 <AuditEntry key={audit.name} audit={audit} />
               ))}
             </div>
             <div className={styles.auditCta}>
-              <span className={styles.auditLabel}>Scope</span>
-              <span className={styles.auditValue}>security audits · security tooling development</span>
+              <span className={styles.auditLabel}>Engagements</span>
+              <span className={styles.auditValue}>audits · tooling development</span>
               <span className={styles.auditLabel}>Contacts</span>
               <span className={clsx(styles.auditValue, styles.auditLinks)}>
                 <a href="mailto:oi@nowarp.io?subject=Audit%20request">
