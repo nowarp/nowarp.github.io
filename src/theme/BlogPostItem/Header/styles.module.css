@@ -1,0 +1,49 @@
+.header {
+  position: relative;
+  isolation: isolate;
+}
+
+/* HACK: duotone -- grayscale cover multiplied onto the light end, then screened with navy so black maps to #072341 */
+.backdrop {
+  position: absolute;
+  z-index: -1;
+  inset: -0.5rem -1rem -3rem;
+  overflow: hidden;
+  isolation: isolate;
+  background: #FCFDFF;
+  opacity: 0.36;
+  pointer-events: none;
+  mask-image:
+    linear-gradient(to bottom, transparent, #000 25%, #000 75%, transparent),
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
+}
+
+.backdrop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1) blur(3px);
+  mix-blend-mode: multiply;
+  transform: scale(1.1);
+}
+
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #072341;
+  mix-blend-mode: screen;
+}
+
+:global([data-theme='dark']) .backdrop {
+  background: #A9C3DA;
+}
+
+@media (max-width: 576px) {
+  .backdrop {
+    inset: -0.5rem -1rem -2rem;
+    mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 75%, transparent);
+  }
+}
