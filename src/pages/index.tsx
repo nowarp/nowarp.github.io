@@ -215,8 +215,6 @@ const G: [Tok[], Tok[], number][] = [
   [[['  "����\\000\\000\\000\\007\\000\\000\\000\\001\\000\\000\\000\\003\\000\\000\\000\\002&nowarp"', 's']], Z, 1400],
   [[['# ', 'p']], [['(', 'p'], ['Marshal', 'm'], ['.from_string ', 'f'], ['s ', 'f'], ['0', 'n'], [' : ', 'p'], ['string array', 'm'], [');;', 'p']], 350],
   [[['Segmentation fault (core dumped)', 'f']], Z, 1400],
-  [D, [['ocaml -version', 'f']], 300],
-  [[['The OCaml toplevel, version 5.4.1', 'f']], Z, 1400],
   [D, [['gdb -q $(which ocamlrun) core.957329', 'f']], 900],
   [[['Program terminated with signal SIGSEGV, Segmentation fault.', 'f']], Z, 400],
   [[['#0  ', 'p'], ['Hd_val', 'f'], [' (val=', 'p'], ['72181230601727854', 'n'], [') at ', 'p'], ['runtime/caml/mlvalues.h:190', 'm']], Z, 1700],
