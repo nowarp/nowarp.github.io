@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import Head from '@docusaurus/Head';
 
 const ScannerPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,11 +17,7 @@ const ScannerPage: React.FC = () => {
   const randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
 
   return (
-    <Layout>
-      <Head>
-        <title>Scanner - TON Security</title>
-        <meta name="description" content="TON Smart Contract Scanner" />
-      </Head>
+    <Layout title="Scanner" description="TON Smart Contract Scanner">
       <div style={{
         padding: 0,
         margin: 0,

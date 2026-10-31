@@ -8,7 +8,7 @@ dotenvConfig();
 const config: Config = {
   title: 'nowarp',
   tagline: 'Web3 Security',
-  favicon: 'img/misti.svg',
+  favicon: 'img/favicon.svg',
   url: 'https://nowarp.io/',
   baseUrl: '/',
   organizationName: 'nowarp',
@@ -43,8 +43,8 @@ const config: Config = {
         },
         blog: {
           routeBasePath: 'blog',
-          blogTitle: 'Blog - Web3 Security',
-          blogDescription: 'Technical blog about Web3 security and toling',
+          blogTitle: 'Blog',
+          blogDescription: 'Technical blog about Web3 security and tooling',
           blogSidebarCount: 10,
           blogSidebarTitle: 'Latest Posts',
           postsPerPage: 5,
@@ -87,8 +87,9 @@ const config: Config = {
     navbar: {
       title: '',
       logo: {
-        alt: 'Misti Logo',
-        src: 'img/misti.svg',
+        alt: 'nowarp',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo-dark.svg',
         href: '/',
       },
       items: [

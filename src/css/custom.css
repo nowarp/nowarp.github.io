@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
-
 :root {
   --ifm-color-primary: #0A3D62;
   --ifm-color-secondary: #34B3F1;
@@ -98,11 +96,15 @@ html.plugin-blog .table-of-contents__left-border > li:has(.table-of-contents__li
     margin-top: 15px; /* Reduce button top margin */
 }
 
-/* Navbar logo */
 .navbar__brand {
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
-  text-transform: lowercase;
+  margin-right: 0;
+}
+
+.navbar__logo svg {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  color: var(--ifm-color-primary);
 }
 
 /**

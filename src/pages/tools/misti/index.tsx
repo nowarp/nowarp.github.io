@@ -1,14 +1,10 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Head from '@docusaurus/Head';
 import styles from './../../index.module.css';
 
 export default function Home() {
   return (
-     <Layout description="TON Static Analyzer">
-      <Head>
-        <title>Misti - TON Static Analyzer</title>
-      </Head>
+     <Layout title="Misti" description="TON Static Analyzer">
       <header className={styles.heroBanner}>
         <div className={styles.textContainer}>
           <h1 className={styles.heroTitle}>Misti</h1>
