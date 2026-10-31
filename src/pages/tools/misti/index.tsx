@@ -1,13 +1,17 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './../../index.module.css';
+import MistiIcon from '@site/static/img/tools/misti.svg';
 
 export default function Home() {
   return (
      <Layout title="Misti" description="TON Static Analyzer">
       <header className={styles.heroBanner}>
         <div className={styles.textContainer}>
-          <h1 className={styles.heroTitle}>Misti</h1>
+          <h1 className={styles.heroTitle}>
+            <MistiIcon aria-hidden="true" />
+            Misti
+          </h1>
           <p className={styles.heroSubtitle}>TON Static Analyzer</p>
           <p className={styles.heroSubtitleSmall}>
             Detect security issues in TON smart contracts before they reach
