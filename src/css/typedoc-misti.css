@@ -1,0 +1,10 @@
+
+.tsd-page-toolbar a.title::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.4em;
+  vertical-align: -0.4em;
+  background: url("../media/misti.svg") center / contain no-repeat;
+}

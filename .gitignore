@@ -21,4 +21,5 @@ yarn-error.log*
 node_modules
 tags
 static/api
+_deps
 .env

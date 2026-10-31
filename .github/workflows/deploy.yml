@@ -29,10 +29,28 @@ jobs:
           node-version: '22'
           cache: yarn
 
+      - name: Checkout Misti
+        uses: actions/checkout@v4
+        with:
+          repository: nowarp/misti
+          path: _deps/misti
+
+      - name: Checkout Souffle.js
+        uses: actions/checkout@v4
+        with:
+          repository: nowarp/souffle.js
+          path: _deps/souffle.js
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          yarn install --frozen-lockfile
+          yarn --cwd _deps/misti install
+          yarn --cwd _deps/souffle.js install
 
       - name: Build site
+        env:
+          MISTI_PATH: _deps/misti
+          SOUFFLE_PATH: _deps/souffle.js
         run: yarn build
 
       - name: Deploy to gh-pages

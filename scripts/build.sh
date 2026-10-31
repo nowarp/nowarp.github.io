@@ -1,26 +1,28 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
-# Use paths from environment variables if set
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
 MISTI_PATH=${MISTI_PATH:-../misti}
 SOUFFLE_PATH=${SOUFFLE_PATH:-../souffle.js}
-CUSTOM_CSS_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../src/css/typedoc-custom.css"
+CSS="$ROOT/src/css/typedoc-custom.css"
 
-# echo 'Generating Misti TypeDoc documentation...'
-# pushd "$MISTI_PATH"
-# yarn docs --customCss "$CUSTOM_CSS_PATH"
-# popd > /dev/null
-# rm -rf static/api/misti
-# mkdir -pv static/api
-# mv "$MISTI_PATH/docs/api" static/api/misti
-#
-# echo 'Generating Souffle.js TypeDoc documentation...'
-# pushd "$SOUFFLE_PATH"
-# yarn docs --customCss "$CUSTOM_CSS_PATH"
-# popd > /dev/null
-# rm -rf static/api/souffle-js/
-# mkdir -pv static/api
-# mv "$SOUFFLE_PATH/docs/api" static/api/souffle-js
+api() {
+  (cd "$1" && yarn docs --customCss "$CSS")
+  rm -rf "static/api/$2"
+  mkdir -p static/api
+  mv "$1/docs/api" "static/api/$2"
+}
+
+echo 'Generating Misti TypeDoc documentation...'
+api "$MISTI_PATH" misti
+mkdir -p static/api/misti/media
+sed 's|fill="currentColor">|><style>path{fill:#0A3D62}@media (prefers-color-scheme:dark){path{fill:#4B87B3}}</style>|' \
+  static/img/tools/misti.svg > static/api/misti/media/misti.svg
+cat src/css/typedoc-misti.css >> static/api/misti/assets/custom.css
+
+echo 'Generating Souffle.js TypeDoc documentation...'
+api "$SOUFFLE_PATH" souffle-js
 
 echo 'Generating docusaurus documentation...'
 rm -rf ./build
