@@ -377,10 +377,7 @@ const HomePage: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nowarp.io/" />
         <meta property="og:title" content="nowarp" />
-        <meta
-          property="og:description"
-          content="A holistic approach to protocol security — we audit your contracts and everything they rely on, across Ethereum, Move, and TON."
-        />
+        <meta property="og:description" content="Security tooling and audits. Smart contracts and trusted base." />
       </Head>
 
       <main className={clsx('container', styles.cards)}>
