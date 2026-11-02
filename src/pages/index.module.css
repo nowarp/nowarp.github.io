@@ -8,12 +8,33 @@
   align-items: flex-start;
   padding: 0 2rem; /* Default padding for smaller screens */
   text-align: left;
-  background-image: url('/img/background.svg');
-  background-size: cover;
-  background-position: center;
   color: #072341;
   margin: 0;
   overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/img/background.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+:global([data-theme='dark']) .heroBanner {
+  color: #E6F1FA;
+}
+
+:global([data-theme='dark']) .heroBanner::before {
+  filter: brightness(0.35);
+}
+
+:global([data-theme='dark']) .textContainer {
+  background: rgba(7, 35, 65, 0.55);
 }
 
 @media (min-width: 768px) {
@@ -29,20 +50,10 @@
 }
 
 .heroTitle {
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-}
-
-.heroTitle svg {
-  flex: none;
-  width: 1em;
-  height: 1em;
-  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
 }
 
 .heroSubtitle {
