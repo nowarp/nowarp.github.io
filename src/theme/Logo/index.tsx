@@ -4,11 +4,9 @@ import { useLocation } from '@docusaurus/router';
 import Logo from '@theme-original/Logo';
 import type { Props } from '@theme/Logo';
 import M from '@site/static/img/tools/misti.svg';
-import S from '@site/static/img/tools/scanner.svg';
 
 const T = [
   ['/tools/misti', M, 'Misti'],
-  ['/tools/scanner', S, 'Scanner'],
 ] as const;
 
 export default function W(p: Props): ReactNode {

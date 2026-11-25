@@ -76,15 +76,13 @@ const TOOLS: Tool[] = [
     license: 'closed',
     details: (
       <>
-        Web-interface to the demo version of mass-scan that runs code analysis over contracts publicly available on{' '}
+        Mass-scan that runs code analysis over contracts publicly available on{' '}
         <a href="https://verifier.ton.org" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
           verifier.ton.org
         </a> and{' '}
         <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
           GitHub
-        </a>. Only a couple of these contracts are displayed - manually verified projects that
-        don't contain any vulnerabilities.{' '}
-        <a href="/tools/scanner" className={styles.inlineLink}>Try the scanner.</a>
+        </a>.
       </>
     ),
   },

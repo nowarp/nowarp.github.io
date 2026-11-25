@@ -107,10 +107,6 @@ const config: Config = {
               label: 'Misti',
               to: '/tools/misti',
             },
-            {
-              label: 'Scanner',
-              to: '/tools/scanner',
-            },
           ],
         },
         {
